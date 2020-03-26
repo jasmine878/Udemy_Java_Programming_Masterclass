@@ -1,10 +1,10 @@
-#/bin/
+Git #/bin/
 #/target/
 #.classpath
 ##org.eclipse
 #.settings\
 
-/.DS_Store
+*.DS_Store
 *.iml
 .idea/
 out/
