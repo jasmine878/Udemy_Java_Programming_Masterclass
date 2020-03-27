@@ -9,5 +9,8 @@ public class Main {
 
         System.out.println("Minimum Int value is: " + minIntValue);
         System.out.println("Maximum Int value is: " + maxIntValue);
+
+        System.out.println("Busted MIN Int value is: " + (minIntValue - 1));
+        System.out.println("Busted MAX Int value is: " + (maxIntValue + 1));
     }
 }
