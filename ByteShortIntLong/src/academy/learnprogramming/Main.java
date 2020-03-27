@@ -1,5 +1,7 @@
 package academy.learnprogramming;
 
+import java.sql.SQLOutput;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -12,5 +14,12 @@ public class Main {
 
         System.out.println("Busted MIN Int value is: " + (minIntValue - 1));
         System.out.println("Busted MAX Int value is: " + (maxIntValue + 1));
+
+
+        byte minByteValue = Byte.MIN_VALUE;
+        byte maxByteValue = Byte.MAX_VALUE;
+
+        System.out.println("Minimum Byte value is: " + minByteValue);
+        System.out.println("Maximum Byte value is: " + maxByteValue);
     }
 }
