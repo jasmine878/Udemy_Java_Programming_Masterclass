@@ -21,5 +21,11 @@ public class Main {
 
         System.out.println("Minimum Byte value is: " + minByteValue);
         System.out.println("Maximum Byte value is: " + maxByteValue);
+
+        short minShortValue = Short.MIN_VALUE;
+        short maxShortValue = Short.MAX_VALUE;
+
+        System.out.println("Minimum Short value is: " + minShortValue);
+        System.out.println("Maximum Short value is: " + maxShortValue);
     }
 }
