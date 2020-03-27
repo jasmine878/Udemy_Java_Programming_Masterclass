@@ -27,5 +27,12 @@ public class Main {
 
         System.out.println("Minimum Short value is: " + minShortValue);
         System.out.println("Maximum Short value is: " + maxShortValue);
+        
+        long myLongValue = 100L;
+        long minLongValue = Long.MIN_VALUE;
+        long maxLongValue = Long.MAX_VALUE;
+
+        System.out.println("Minimum Long value is: " + minLongValue);
+        System.out.println("Maximum Long value is: " + maxLongValue);
     }
 }
