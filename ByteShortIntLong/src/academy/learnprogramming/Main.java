@@ -34,5 +34,10 @@ public class Main {
 
         System.out.println("Minimum Long value is: " + minLongValue);
         System.out.println("Maximum Long value is: " + maxLongValue);
+
+        int myTotal = minIntValue / 2;
+        byte myNewByte = (byte) (minByteValue / 2);   //when we use a variable the default whole number used by Java is an int
+
+        System.out.println(myTotal);
     }
 }
