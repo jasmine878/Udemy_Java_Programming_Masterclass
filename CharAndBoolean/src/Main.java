@@ -6,5 +6,8 @@ public class Main {
 
         System.out.println(letter);
         System.out.println(unicode);
+
+        char myCopyright = '\u00A9';
+        System.out.println(myCopyright);
     }
 }
