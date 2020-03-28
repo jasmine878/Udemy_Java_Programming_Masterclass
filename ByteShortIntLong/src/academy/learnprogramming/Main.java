@@ -37,7 +37,10 @@ public class Main {
 
         int myTotal = minIntValue / 2;
         byte myNewByte = (byte) (minByteValue / 2);   //when we use a variable the default whole number used by Java is an int
+        short myNewShort = (short) (minShortValue / 2);     //cast int to short
 
         System.out.println(myTotal);
+        System.out.println(myNewByte);
+        System.out.println(myNewShort);
     }
 }
