@@ -10,5 +10,11 @@ public class Main {
         numberString = numberString + "49.95";
 
         System.out.println("Concatenating two strings equals " + numberString);
+
+        String firstNumString = "10";
+        int secondNum = 50;
+
+        firstNumString = firstNumString + secondNum;
+        System.out.println("Adding a string and a num still concatenates " + firstNumString);
     }
 }
