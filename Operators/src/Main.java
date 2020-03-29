@@ -20,5 +20,11 @@ public class Main {
 
         result = result % 3;
         System.out.println("4 % 3 = " + result);                             //expect 1
+
+        result++;
+        System.out.println("1 + 1 = " + result);                            //expect 2
+
+        result--;
+        System.out.println("2 - 1 = " + result);                            //expect 1
     }
 }
