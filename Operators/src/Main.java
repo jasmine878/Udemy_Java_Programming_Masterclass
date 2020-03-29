@@ -17,5 +17,8 @@ public class Main {
 
         result = result / 5;
         System.out.println("20 / 5 = " + result);                            //expect 4
+
+        result = result % 3;
+        System.out.println("4 % 3 = " + result);                             //expect 1
     }
 }
