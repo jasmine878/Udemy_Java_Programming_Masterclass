@@ -11,5 +11,11 @@ public class Main {
         System.out.println("3 - 1 = " + result);                              //expect 2
 
         System.out.println("previousResult = " + previousResult);             //expect 3
+
+        result = result * 10;
+        System.out.println("2 * 10 = " + result);                             //expect 20
+
+        result = result / 5;
+        System.out.println("20 / 5 = " + result);                            //expect 4
     }
 }
