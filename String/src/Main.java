@@ -5,5 +5,10 @@ public class Main {
 
         myString = myString + " \u00A9 2019";
         System.out.println(myString);
+
+        String numberString = "250.55";
+        numberString = numberString + "49.95";
+
+        System.out.println("Concatenating two strings equals " + numberString);
     }
 }
