@@ -1,6 +1,11 @@
 public class MethodChallenge {
     public static void main(String[] args) {
 
+        displayHighScorePosition("Ralph", calculateHighScorePosition(1500));
+        displayHighScorePosition("Alex", calculateHighScorePosition((900)));
+        displayHighScorePosition("Louis", calculateHighScorePosition(400));
+        displayHighScorePosition("Ben", calculateHighScorePosition(50));
+
     }
 
     public static void displayHighScorePosition(String playerName, int playerPosition) {
