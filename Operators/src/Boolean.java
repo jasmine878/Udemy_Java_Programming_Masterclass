@@ -29,5 +29,8 @@ public class Boolean {
         if (isCar) {
             System.out.println("This is not supposed to happen");
         }
+
+        boolean wasCar = isCar ? true : false;
+        System.out.println("What is wasCar?l " + wasCar);
     }
 }
