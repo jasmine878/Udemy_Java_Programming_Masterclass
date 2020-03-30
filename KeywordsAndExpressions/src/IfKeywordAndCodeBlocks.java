@@ -10,8 +10,14 @@ public class IfKeywordAndCodeBlocks {
 
         if (gameOver) {
             int finalScore = score + levelCompleted * bonus;
-            
+
             System.out.println("Your final score was " + finalScore);
         }
+
+        score = 10_000;
+        levelCompleted = 8;
+        bonus = 200;
+
+        System.out.println("Your final score was " + (score + levelCompleted * bonus));
     }
 }
