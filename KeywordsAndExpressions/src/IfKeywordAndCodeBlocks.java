@@ -7,6 +7,11 @@ public class IfKeywordAndCodeBlocks {
 
         if (score == 5000)
             System.out.println("Your score was 5000");
-        
+
+        if (gameOver) {
+            int finalScore = score + levelCompleted * bonus;
+            
+            System.out.println("Your final score was " + finalScore);
+        }
     }
 }
