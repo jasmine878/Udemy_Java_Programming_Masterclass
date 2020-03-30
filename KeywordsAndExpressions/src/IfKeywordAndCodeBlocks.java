@@ -4,5 +4,9 @@ public class IfKeywordAndCodeBlocks {
         int score = 5_000;
         int levelCompleted = 5;
         int bonus = 100;
+
+        if (score == 5000)
+            System.out.println("Your score was 5000");
+        
     }
 }
