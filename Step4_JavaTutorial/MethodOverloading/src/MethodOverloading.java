@@ -2,11 +2,15 @@ public class MethodOverloading {
     public static void main(String[] args) {
         calcFeetAndInchesToCentimeters(12, 0);         //expect 365.76cm
         calcFeetAndInchesToCentimeters(6, 0);          //expect 182.88cm
-        calcFeetAndInchesToCentimeters(7, 5);          //expect 226.06
+        calcFeetAndInchesToCentimeters(7, 5);          //expect 226.06cm
         calcFeetAndInchesToCentimeters(-10, 1);         //expect -1
-        calcFeetAndInchesToCentimeters(0, 1);           //expect 2.54
+        calcFeetAndInchesToCentimeters(0, 1);           //expect 2.54cm
         calcFeetAndInchesToCentimeters(6, -10);         //expect -1
         calcFeetAndInchesToCentimeters(6, 13);          //expect -1
+        calcFeetAndInchesToCentimeters(100);                        //expect 254.0cm
+        calcFeetAndInchesToCentimeters(156);                        //expect 396.24cm
+        calcFeetAndInchesToCentimeters(157);                        //expect 398.78cm
+        calcFeetAndInchesToCentimeters(-10);                        //expect -1
     }
 
     public static double calcFeetAndInchesToCentimeters(double feet, double inches) {
