@@ -7,7 +7,10 @@ public class SpeedConverter {
         System.out.println(toMilesPerHour(75.114));             //expect 47
 
         printConversion(1.5);                     //expect 1.5 km/h = 1 mi/h
-
+        printConversion(10.25);                   //expect 10.25 km/h = 6 mi/h
+        printConversion(-5.6);                    //expect Invalid Value
+        printConversion(25.42);                   //expect 25.42 km/h = 16 mi/h
+        printConversion(75.114);                  //expect 75.114 km/h = 47 mi/h
     }
 
     public static long toMilesPerHour(double kilometersPerHour) {
