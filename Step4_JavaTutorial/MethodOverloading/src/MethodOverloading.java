@@ -30,8 +30,11 @@ public class MethodOverloading {
             return -1;
         }
 
-        double feet = Math.floor(inches / 12);
-        double remainingInches = inches - feet * 12;
+//        double feet = Math.floor(inches / 12);
+//        double remainingInches = inches - feet * 12;
+
+        double feet = (int) inches / 12;
+        double remainingInches = (int) inches % 12;
 
         return calcFeetAndInchesToCentimeters(feet, remainingInches);
     }
