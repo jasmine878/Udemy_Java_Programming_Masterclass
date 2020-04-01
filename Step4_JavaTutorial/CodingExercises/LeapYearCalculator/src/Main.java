@@ -14,5 +14,7 @@ public class Main {
         System.out.println(LeapYearCalculator.isLeapYear(2600));                   //expect false
         System.out.println(LeapYearCalculator.isLeapYear(-1600));                  //expect false
         System.out.println(LeapYearCalculator.isLeapYear(2017));                   //expect false
+
+        System.out.println(LeapYearCalculator.isLeapYear(1924));                   //expect true
     }
 }
