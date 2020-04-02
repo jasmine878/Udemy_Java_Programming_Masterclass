@@ -3,6 +3,8 @@ public class SecondsAndMinutes {
         System.out.println(getDurationString(61, 0));       //expect 01h 01m 00s
         System.out.println(getDurationString(301));                 //expect 00h 05m 01s
         System.out.println(getDurationString(3600));                //expect 01h 00m 00s
+        System.out.println(getDurationString(65, 45));      //expect 01h 05m 45s
+        System.out.println(getDurationString(3945));                //expect 01h 05m 45s
     }
 
     private static String getDurationString(int minutes, int seconds) {
