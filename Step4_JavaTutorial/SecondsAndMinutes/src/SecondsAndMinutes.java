@@ -5,7 +5,7 @@ public class SecondsAndMinutes {
         System.out.println(getDurationString(3600));                //expect 01h 00m 00s
     }
 
-    public static String getDurationString(int minutes, int seconds) {
+    private static String getDurationString(int minutes, int seconds) {
         if (minutes < 0 || seconds < 0 || seconds > 59) return "Invalid value";
 
         int hour = minutes / 60;
@@ -14,7 +14,7 @@ public class SecondsAndMinutes {
         return hour + "h " + remainingMinutes + "m " + seconds + "s";
     }
 
-    public static String getDurationString(int seconds) {
+    private static String getDurationString(int seconds) {
         if (seconds < 0) return "Invalid value";
 
         int minutes = seconds / 60;
