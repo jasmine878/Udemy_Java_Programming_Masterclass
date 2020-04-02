@@ -10,8 +10,20 @@ public class SecondsAndMinutes {
 
         int hour = minutes / 60;
         int remainingMinutes = minutes % 60;
+        String timeToString = "";
 
-        return hour + "h " + remainingMinutes + "m " + seconds + "s";
+//        return hour + "h " + remainingMinutes + "m " + seconds + "s";
+
+        if (hour < 10) timeToString += "0";
+        timeToString += hour + "h ";
+
+        if (remainingMinutes < 10) timeToString += "0";
+        timeToString += remainingMinutes + "m ";
+
+        if (seconds < 10) timeToString += "0";
+        timeToString += seconds + "s";
+
+        return timeToString;
     }
 
     private static String getDurationString(int seconds) {
