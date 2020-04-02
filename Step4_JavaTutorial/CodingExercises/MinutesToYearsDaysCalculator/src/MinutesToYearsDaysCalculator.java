@@ -1,10 +1,4 @@
 public class MinutesToYearsDaysCalculator {
-    public static void main(String[] args) {
-        printYearsAndDays(525600);                          //expect 1 y and 0 d
-        printYearsAndDays(1051200);                         //expect 2 y and 0 d
-        printYearsAndDays(561600);                          //expect 1 y and 25 d
-        printYearsAndDays(-525600);                         //expect Invalid value
-    }
 
     public static void printYearsAndDays(long minutes) {
         if (minutes < 0) System.out.println("Invalid Value");
