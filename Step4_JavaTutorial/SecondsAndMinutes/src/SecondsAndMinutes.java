@@ -1,14 +1,18 @@
 public class SecondsAndMinutes {
+    private static final String INVALID_MESSAGE = "Invalid value";
+
     public static void main(String[] args) {
         System.out.println(getDurationString(61, 0));       //expect 01h 01m 00s
         System.out.println(getDurationString(301));                 //expect 00h 05m 01s
         System.out.println(getDurationString(3600));                //expect 01h 00m 00s
         System.out.println(getDurationString(65, 45));      //expect 01h 05m 45s
         System.out.println(getDurationString(3945));                //expect 01h 05m 45s
+        System.out.println(getDurationString(-41));                 //expect Invalid value
+        System.out.println(getDurationString(65, 9));       //expect 01h 05m 09s
     }
 
     private static String getDurationString(int minutes, int seconds) {
-        if (minutes < 0 || seconds < 0 || seconds > 59) return "Invalid value";
+        if (minutes < 0 || seconds < 0 || seconds > 59) return INVALID_MESSAGE;
 
         int hour = minutes / 60;
         int remainingMinutes = minutes % 60;
@@ -29,7 +33,7 @@ public class SecondsAndMinutes {
     }
 
     private static String getDurationString(int seconds) {
-        if (seconds < 0) return "Invalid value";
+        if (seconds < 0) return INVALID_MESSAGE;
 
         int minutes = seconds / 60;
         int remainingSeconds = seconds % 60;
