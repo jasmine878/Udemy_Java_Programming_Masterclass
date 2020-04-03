@@ -20,7 +20,10 @@ public class PrimeNumCount {
 
         for (int i = num1; i <= num2; i++) {
             if (count == 3) break;
-            if (isPrime(i)) count++;
+            if (isPrime(i)) {
+                System.out.println("Number " + i + " is a prime number");
+                count++;
+            }
         }
 
         return count;
