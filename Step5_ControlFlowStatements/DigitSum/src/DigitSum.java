@@ -6,6 +6,7 @@ public class DigitSum {
 
     public static int sumDigit(int number) {
         if (number < 10) return -1;
+        System.out.println("The sum of digits in " + number + " is: ");
 
         int remainingDigits = number;
         int sum = 0;
