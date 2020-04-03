@@ -1,7 +1,10 @@
 public class DigitSum {
     public static void main(String[] args) {
         System.out.println(sumDigit(125));              //expect 8
+        System.out.println(sumDigit(-125));             //expect -1
+        System.out.println(sumDigit(4));                //expect -1
         System.out.println(sumDigit(1));                //expect -1
+        System.out.println(sumDigit(32123));            //expect 11
     }
 
     public static int sumDigit(int number) {
