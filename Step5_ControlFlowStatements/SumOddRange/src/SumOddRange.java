@@ -1,13 +1,4 @@
 public class SumOddRange {
-    public static void main(String[] args) {
-        System.out.println(sumOdd(1, 100));                 //expect 2500
-        System.out.println(sumOdd(-1, 100));                //expect -1
-        System.out.println(sumOdd(100, 100));               //expect 0
-        System.out.println(sumOdd(13, 13));                 //expect 13
-        System.out.println(sumOdd(100, -100));              //expect -1
-        System.out.println(sumOdd(100, 1000));              //expect 247500
-        System.out.println(sumOdd(10, 5));                  //expect -1
-    }
 
     public static boolean isOdd(int number) {
         if (number <= 0) return false;
