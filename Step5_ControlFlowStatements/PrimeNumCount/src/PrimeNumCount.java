@@ -8,7 +8,10 @@ public class PrimeNumCount {
         //a prime number is a whole number greater than 1
         if (n == 1) return false;
 
-        for (int i = 2; i <= n / 2; i++) {
+//        for (int i = 2; i <= n / 2; i++) {
+
+        //cycling to the square root of a number is faster or less numbers to calculate compared to n/2)
+        for (int i = 2; i <= (long) Math.sqrt(n); i++) {
             if (n % i == 0) return false;
         }
 
