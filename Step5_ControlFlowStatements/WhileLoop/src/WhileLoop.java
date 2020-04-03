@@ -16,15 +16,20 @@ public class WhileLoop {
 //
         int start = 4;
         int finishNumber = 20;
+        int count = 0;
 
         while (start <= finishNumber) {
-
+            if (count == 5) break;
+            
             if (isEvenNumber(start)) {
                 System.out.println(start + " is an even number");
+                count++;
             }
 
             start++;
         }
+
+        System.out.println("Total number of even numbers is " + count);
     }
 
     public static boolean isEvenNumber(int number) {
