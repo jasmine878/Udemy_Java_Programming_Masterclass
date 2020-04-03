@@ -6,6 +6,13 @@ public class WhileLoop {
             System.out.println("Count value is " + count);
             count++;
         }
+        System.out.println("\n");
+        count = 1;
+
+        do {
+            System.out.println("Count value is " + count);
+            count++;
+        } while(count != 6);
     }
 
 }
