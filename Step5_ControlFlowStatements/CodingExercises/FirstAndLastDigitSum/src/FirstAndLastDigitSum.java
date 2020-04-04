@@ -5,6 +5,7 @@ public class FirstAndLastDigitSum {
         System.out.println(sumFirstAndLastDigit(0));                //expect 0
         System.out.println(sumFirstAndLastDigit(5));                //expect 10
         System.out.println(sumFirstAndLastDigit(-10));              //expect -1
+        System.out.println(sumFirstAndLastDigit(11));               //expect 2
     }
 
     public static int sumFirstAndLastDigit(int number) {
@@ -20,7 +21,7 @@ public class FirstAndLastDigitSum {
         if (currentNum == 0) firstDigit = number;
 
         while (currentNum > 0) {
-            firstDigit = currentNum & 10;
+            firstDigit = currentNum % 10;
             currentNum /= 10;
         }
 
