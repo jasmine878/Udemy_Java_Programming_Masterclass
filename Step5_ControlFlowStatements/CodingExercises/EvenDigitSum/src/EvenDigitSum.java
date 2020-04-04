@@ -1,9 +1,4 @@
 public class EvenDigitSum {
-    public static void main(String[] args) {
-        System.out.println(getEvenDigitSum(123456789));             //expect 20
-        System.out.println(getEvenDigitSum(252));                   //expect 4
-        System.out.println(getEvenDigitSum(-22));                   //expect -1
-    }
 
     public static int getEvenDigitSum(int number) {
         int sum = 0;
