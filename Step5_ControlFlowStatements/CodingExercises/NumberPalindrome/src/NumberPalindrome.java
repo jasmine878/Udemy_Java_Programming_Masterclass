@@ -1,9 +1,4 @@
 public class NumberPalindrome {
-    public static void main(String[] args) {
-        System.out.println(isPalindrome(-1221));            //expect true;
-        System.out.println(isPalindrome(707));              //expect true;
-        System.out.println(isPalindrome(11212));            //expect false;
-    }
 
     public static boolean isPalindrome(int number) {
         if (number == 0) return false;
