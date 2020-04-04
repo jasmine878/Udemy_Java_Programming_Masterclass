@@ -1,9 +1,4 @@
 public class LastDigitChecker {
-    public static void main(String[] args) {
-        System.out.println(hasSameLastDigit(41, 22, 71));            //expect true
-        System.out.println(hasSameLastDigit(23, 32, 42));            //expect true
-        System.out.println(hasSameLastDigit(9, 99, 999));            //expect false
-    }
 
     public static boolean hasSameLastDigit(int num1, int num2, int num3) {
         if (!isValid(num1) || !isValid(num2) || !isValid(num3)) return false;
