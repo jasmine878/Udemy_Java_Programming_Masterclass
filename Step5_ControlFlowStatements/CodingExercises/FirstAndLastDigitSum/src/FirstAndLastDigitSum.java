@@ -1,12 +1,4 @@
 public class FirstAndLastDigitSum {
-    public static void main(String[] args) {
-        System.out.println(sumFirstAndLastDigit(252));              //expect 4
-        System.out.println(sumFirstAndLastDigit(257));              //expect 9
-        System.out.println(sumFirstAndLastDigit(0));                //expect 0
-        System.out.println(sumFirstAndLastDigit(5));                //expect 10
-        System.out.println(sumFirstAndLastDigit(-10));              //expect -1
-        System.out.println(sumFirstAndLastDigit(11));               //expect 2
-    }
 
     public static int sumFirstAndLastDigit(int number) {
         if (number < 0) return -1;
