@@ -1,9 +1,4 @@
 public class SharedDigit {
-    public static void main(String[] args) {
-        System.out.println(hasSharedDigit(12, 23));                 //expect true
-        System.out.println(hasSharedDigit(9, 99));                  //expect false
-        System.out.println(hasSharedDigit(15, 55 ));                //expect true
-    }
 
     public static boolean hasSharedDigit(int num1, int num2) {
         if (num1 < 10 || num1 > 99) return false;
