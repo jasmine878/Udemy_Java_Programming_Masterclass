@@ -9,5 +9,6 @@ public class Main {
         System.out.println(LargestPrime.getLargestPrime(0));         //expect -1
         System.out.println(LargestPrime.getLargestPrime(45));        //expect 5
         System.out.println(LargestPrime.getLargestPrime(-1));        //expect -1
+        System.out.println(LargestPrime.getLargestPrime(7));         //expect 7
     }
 }

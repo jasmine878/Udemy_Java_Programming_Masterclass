@@ -3,7 +3,7 @@ public class LargestPrime {
     public static int getLargestPrime(int number) {
         if (number < 0) return -1;
 
-        int currentNumber = number / 2;
+        int currentNumber = number;
 
         while (currentNumber > 1) {
 //            System.out.println("currentNumber is:  " + currentNumber);
