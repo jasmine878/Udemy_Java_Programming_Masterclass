@@ -6,26 +6,27 @@ public class LargestPrime {
         int currentNumber = number / 2;
 
         while (currentNumber > 1) {
-            if (isPrime(currentNumber) && number % currentNumber == 0) {
-//                System.out.println("Prime number is: " + currentNumber);
-                return currentNumber;
+//            System.out.println("currentNumber is:  " + currentNumber);
+            if (number % currentNumber == 0) {
+                int count = 2;
+                boolean isPrime = true;
+
+                while (count < currentNumber && isPrime == true) {
+//                    System.out.println("count is " + count + " isPrime is " + isPrime);
+                    if (currentNumber % count == 0) isPrime = false;
+                    count++;
+                }
+
+                if (isPrime == true) {
+//                    System.out.println("Prime number is: " + currentNumber);
+
+                    return currentNumber;
+                }
             }
+
             currentNumber--;
         }
 
         return -1;
-    }
-
-    public static boolean isPrime(int number) {
-        if (number <= 1) return false;
-
-        int count = 2;
-
-        while (count < number) {
-            if (number % count == 0) return false;
-            count++;
-        }
-
-        return true;
     }
 }
