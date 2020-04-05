@@ -1,15 +1,4 @@
 public class LargestPrime {
-    public static void main(String[] args) {
-//        System.out.println(isPrime(14));                //expect false;
-//        System.out.println(isPrime(11));                //expect true;
-//        System.out.println("\n");
-
-        System.out.println(getLargestPrime(21));        //expect 7
-        System.out.println(getLargestPrime(217));       //expect 31
-        System.out.println(getLargestPrime(0));         //expect -1
-        System.out.println(getLargestPrime(45));        //expect 5
-        System.out.println(getLargestPrime(-1));        //expect -1
-    }
 
     public static int getLargestPrime(int number) {
         if (number < 0) return -1;
