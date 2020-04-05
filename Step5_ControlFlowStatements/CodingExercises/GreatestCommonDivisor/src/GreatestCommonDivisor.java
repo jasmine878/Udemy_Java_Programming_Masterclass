@@ -1,10 +1,4 @@
 public class GreatestCommonDivisor {
-    public static void main(String[] args) {
-        System.out.println(getGreatestCommonDivisor(25, 15));           //expect 5;
-        System.out.println(getGreatestCommonDivisor(12, 30));           //expect 6;
-        System.out.println(getGreatestCommonDivisor(9, 18));            //expect -1;
-        System.out.println(getGreatestCommonDivisor(81, 153));          //expect 9;
-    }
 
     public static int getGreatestCommonDivisor(int num1, int num2) {
         if (num1 < 10 || num2 < 10) return -1;
