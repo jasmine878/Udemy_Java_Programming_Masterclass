@@ -1,8 +1,13 @@
 public class NumberToWords {
     public static void main(String[] args) {
-        numberToWords(234);                     //expect Four, Three, Two
-        numberToWords(123);                     //expect Three, Two, One
-        numberToWords(1010);                    //expect Zero, One, Zero, One
+//        numberToWords(234);                     //expect Four, Three, Two
+//        numberToWords(123);                     //expect Three, Two, One
+//        numberToWords(1010);                    //expect Zero, One, Zero, One
+
+        System.out.println(getDigitCount(0));           //expect 1
+        System.out.println(getDigitCount(123));         //expect 3
+        System.out.println(getDigitCount(-12));         //expect -1
+        System.out.println(getDigitCount(5200));        //expect 4;
     }
 
     public static void numberToWords(int number) {
@@ -49,5 +54,23 @@ public class NumberToWords {
                 }
             }
         }
+    }
+
+    public static int reverse(int number) {
+        return 1;
+    }
+
+    public static int getDigitCount(int number) {
+        if (number < 0) return -1;
+
+        int count = 0;
+        int currentNumber = number;
+
+        while (currentNumber > 0) {
+            currentNumber /= 10;
+            count++;
+        }
+
+        return count;
     }
 }
