@@ -1,10 +1,4 @@
 public class PerfectNumber {
-    public static void main(String[] args) {
-        System.out.println(isPerfectNumber(6));                 //expect true
-        System.out.println(isPerfectNumber(28));                //expect true
-        System.out.println(isPerfectNumber(5));                 //expect false
-        System.out.println(isPerfectNumber(-1));                //expect false
-    }
 
     public static boolean isPerfectNumber(int number) {
         if (number < 1) return false;
