@@ -1,29 +1,34 @@
 public class NumberToWords {
     public static void main(String[] args) {
-//        numberToWords(234);                     //expect Four, Three, Two
-//        numberToWords(123);                     //expect Three, Two, One
-//        numberToWords(1010);                    //expect Zero, One, Zero, One
+        numberToWords(234);                     //expect Two, Three, Four
+        numberToWords(123);                     //expect One, Two, Three
+        numberToWords(1010);                    //expect One, Zero, One, Zero
+        numberToWords(100);                     //expect One, Zero, Zero
 
 //        System.out.println(getDigitCount(0));           //expect 1
 //        System.out.println(getDigitCount(123));         //expect 3
 //        System.out.println(getDigitCount(-12));         //expect -1
 //        System.out.println(getDigitCount(5200));        //expect 4;
 
-        System.out.println(reverse(-121));              //expect -121
-        System.out.println(reverse(1212));              //expect 2121
-        System.out.println(reverse(1234));              //expect 4321
-        System.out.println(reverse(100));               //expect 1
+//        System.out.println(reverse(-121));              //expect -121
+//        System.out.println(reverse(1212));              //expect 2121
+//        System.out.println(reverse(1234));              //expect 4321
+//        System.out.println(reverse(100));               //expect 1
     }
 
     public static void numberToWords(int number) {
         if (number < 0) System.out.println("Invalid Value");
         else {
             int lastDigit = 0;
-            int remainingDigits = number;
+            int remainingDigits = reverse(number);
+            int countDigits = 0;
+            int reconcilingDigits = getDigitCount(number);
+
 
             while (remainingDigits > 0) {
                 lastDigit = remainingDigits % 10;
                 remainingDigits /= 10;
+                countDigits++;
 
                 switch (lastDigit) {
                     case 0:
@@ -58,6 +63,11 @@ public class NumberToWords {
 
                 }
             }
+            while (countDigits < reconcilingDigits)  {
+                System.out.println("Zero");
+                countDigits++;
+            }
+
         }
     }
 
