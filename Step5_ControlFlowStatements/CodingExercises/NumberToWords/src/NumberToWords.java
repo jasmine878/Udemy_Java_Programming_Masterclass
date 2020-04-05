@@ -4,10 +4,15 @@ public class NumberToWords {
 //        numberToWords(123);                     //expect Three, Two, One
 //        numberToWords(1010);                    //expect Zero, One, Zero, One
 
-        System.out.println(getDigitCount(0));           //expect 1
-        System.out.println(getDigitCount(123));         //expect 3
-        System.out.println(getDigitCount(-12));         //expect -1
-        System.out.println(getDigitCount(5200));        //expect 4;
+//        System.out.println(getDigitCount(0));           //expect 1
+//        System.out.println(getDigitCount(123));         //expect 3
+//        System.out.println(getDigitCount(-12));         //expect -1
+//        System.out.println(getDigitCount(5200));        //expect 4;
+
+        System.out.println(reverse(-121));              //expect -121
+        System.out.println(reverse(1212));              //expect 2121
+        System.out.println(reverse(1234));              //expect 4321
+        System.out.println(reverse(100));               //expect 1
     }
 
     public static void numberToWords(int number) {
@@ -57,7 +62,20 @@ public class NumberToWords {
     }
 
     public static int reverse(int number) {
-        return 1;
+        int reversedNumber = 0;
+        int remainingDigits= number;
+        int lastDigit = 0;
+
+        if (number < 1) remainingDigits *= -1;
+
+        while (remainingDigits > 0) {
+            lastDigit = remainingDigits % 10;
+            remainingDigits /= 10;
+            reversedNumber = reversedNumber * 10 + lastDigit;
+        }
+        if (number < 0) reversedNumber *= -1;
+
+        return reversedNumber;
     }
 
     public static int getDigitCount(int number) {
