@@ -13,13 +13,12 @@ public class ReadingUserInputChallenge {
 
             if (hasNextInt) {
                 int number = scanner.nextInt();
-                scanner.nextLine();
                 sum += number;
                 counter++;
             } else {
                 System.out.println("Invalid Number");
-                break;
             }
+            scanner.nextLine();
         }
 
         scanner.close();
