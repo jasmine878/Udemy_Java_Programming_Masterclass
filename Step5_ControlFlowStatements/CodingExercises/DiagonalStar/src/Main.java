@@ -9,7 +9,7 @@ public class Main {
         //          *****
 
         System.out.println();
-        
+
         DiagonalStar.printSquareStar(8);
         //expect
         //          ********
