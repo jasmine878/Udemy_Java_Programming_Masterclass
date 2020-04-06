@@ -1,24 +1,4 @@
 public class DiagonalStar {
-    public static void main(String[] args) {
-//        printSquareStar(5);
-        //expect
-        //          *****
-        //          ** **
-        //          * * *
-        //          ** **
-        //          *****
-
-        printSquareStar(8);
-        //expect
-        //          ********
-        //          **    **
-        //          * *  * *
-        //          *  **  *
-        //          *  **  *
-        //          * *  * *
-        //          **    **
-        //          ********
-    }
 
     public static void printSquareStar(int number) {
         if (number < 5) System.out.println("Invalid Value");
