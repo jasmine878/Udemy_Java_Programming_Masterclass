@@ -9,8 +9,8 @@ public class Person {
         person.setLastName("");
         person.setAge(10);
 
-//        System.out.println("fullname= " + person.getFullName());        //expect fullname=
-//        System.out.println("teen= " + person.isTeen());                 //expect false
+        System.out.println("fullname= " + person.getFullName());        //expect fullname=
+        System.out.println("teen= " + person.isTeen());                 //expect false
 
         person.setFirstName("John");
         person.setAge(18);
@@ -54,8 +54,8 @@ public class Person {
 
     public String getFullName() {
         if (this.firstName.isEmpty() && this.lastName.isEmpty()) return "";
-        if (this.firstName == "") return this.getLastName();
-        if (this.lastName == "") return this.getFirstName();
+        if (this.firstName.isEmpty()) return this.getLastName();
+        if (this.lastName.isEmpty()) return this.getFirstName();
 
         return this.getFirstName() + " " + this.getLastName();
     }
