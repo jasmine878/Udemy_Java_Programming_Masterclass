@@ -10,6 +10,42 @@ public class BankAccount {
 
         account.customerDeposit(100);               //balance = 100
         account.customerWithdrawal(40);             //balance = 60
+        
+    }
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public int getAccountNumber() {
+        return this.accountNumber;
+    }
+
+    public double getBalance() {
+        return this.balance;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public String getCustomerName() {
+        return this.customerName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public int getPhoneNumber() {
+        return this.phoneNumber;
     }
 
     public void customerDeposit(double amount) {
