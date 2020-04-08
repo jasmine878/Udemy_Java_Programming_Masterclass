@@ -1,22 +1,49 @@
 public class BankAccount {
-    private int accountNumber;
-    private double balance = 0;
+
+    private String accountNumber;
+    private double balance;
     private String customerName;
     private String email;
-    private int phoneNumber;
+    private String phoneNumber;
+
+    public BankAccount() {
+        this("56789", 2.50, "Default name", "Default email", "Default phone");
+    }
+
+    public BankAccount(String accountNumber, double balance, String customerName, String email, String phoneNumber) {
+        System.out.println("Account constructor with parameters called");
+
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.customerName = customerName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
 
     public static void main(String[] args) {
+//        BankAccount account = new BankAccount("12345", 0.00, "Bob Brown",
+//                "myemail@bob.com", "(087) 123-4567");
         BankAccount account = new BankAccount();
 
-        account.customerDeposit(100);               //balance = 100
-        account.customerWithdrawal(40);             //balance = 60
-        
+        System.out.println(account.getAccountNumber());                     //expect 12345
+        System.out.println(account.getBalance());                           //expect 0.00
+
+//        account.setAccountNumber("12345");
+//        account.setCustomerName("Bob Brown");
+//        account.setEmail("myemail@bob.com");
+//        account.setPhoneNumber("(087) 123-4567");
+
+        account.customerWithdrawal(100);             //expect error
+        account.customerDeposit(50);                 //balance = 50
+        account.customerWithdrawal(100);             //expect error
+        account.customerDeposit(51);                 //balance 101
+        account.customerWithdrawal(100);             //balance 1
     }
-    public void setAccountNumber(int accountNumber) {
+    public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
 
-    public int getAccountNumber() {
+    public String getAccountNumber() {
         return this.accountNumber;
     }
 
@@ -40,11 +67,11 @@ public class BankAccount {
         return this.email;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return this.phoneNumber;
     }
 
@@ -57,6 +84,8 @@ public class BankAccount {
         if (amount <= this.balance) {
             this.balance -= amount;
             System.out.println("Client's balance after withdrawal is: " + this.balance);
+        } else {
+            System.out.println("Only " + this.balance + " available.  Withdrawal not processed");
         }
     }
 }
