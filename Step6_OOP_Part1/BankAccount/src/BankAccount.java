@@ -10,6 +10,10 @@ public class BankAccount {
         this("56789", 2.50, "Default name", "Default email", "Default phone");
     }
 
+    public BankAccount(String customerName, String email, String phoneNumber) {
+        this("99999", 100.55, customerName, email, phoneNumber);
+    }
+
     public BankAccount(String accountNumber, double balance, String customerName, String email, String phoneNumber) {
         System.out.println("Account constructor with parameters called");
 
@@ -38,6 +42,10 @@ public class BankAccount {
         account.customerWithdrawal(100);             //expect error
         account.customerDeposit(51);                 //balance 101
         account.customerWithdrawal(100);             //balance 1
+
+        System.out.println();
+        BankAccount timsAccount = new BankAccount("Tim", "tim@email.com", "12345");
+        System.out.println("Tims phone is: " + timsAccount.getPhoneNumber());
     }
     public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
