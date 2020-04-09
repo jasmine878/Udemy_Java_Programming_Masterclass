@@ -35,4 +35,12 @@ public class Animal {
     public int getWeight() {
         return weight;
     }
+
+    public void eat() {
+
+    }
+
+    public void move() {
+
+    }
 }
