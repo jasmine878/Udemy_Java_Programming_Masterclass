@@ -10,7 +10,7 @@ public class Main {
 
         one.subtract(number);
 
-        System.out.println("one.real= " + one.getImaginary());                  //expect -.5
+        System.out.println("one.real= " + one.getImaginary());                  //expect 3.5
         System.out.println("one.imaginary= " + one.getImaginary());             //expect 3.5
 
         number.subtract(one);
