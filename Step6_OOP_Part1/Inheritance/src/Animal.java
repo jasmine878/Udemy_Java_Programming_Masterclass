@@ -13,9 +13,6 @@ public class Animal {
         this.weight = weight;
     }
 
-    public static void main(String[] args) {
-    }
-
     public String getName() {
         return name;
     }
@@ -37,7 +34,7 @@ public class Animal {
     }
 
     public void eat() {
-
+        System.out.println("Animal.eat() called");
     }
 
     public void move() {
