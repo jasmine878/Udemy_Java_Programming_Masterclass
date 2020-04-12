@@ -21,6 +21,10 @@ public class Printer {
         return tonerLevel;
     }
 
+    public int getNumberPagesPrinted() {
+        return numberPagesPrinted;
+    }
+
     public int addToner(int tonerAmount) {
         if (tonerAmount < 0 || tonerAmount > 100) return -1;
         if (tonerLevel + tonerAmount > 100) return -1;
