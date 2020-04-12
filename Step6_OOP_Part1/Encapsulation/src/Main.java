@@ -14,5 +14,8 @@ public class Main {
         player1.loseHealth(damage);
         System.out.println("Remaining health = " + player1.healthRemaining());               //expect -1
 
+        EnhancedPlayer player2 = new EnhancedPlayer("Tim", 50, "Sword");
+        System.out.println("Initial health is " + player2.getHealth());
+
     }
 }
