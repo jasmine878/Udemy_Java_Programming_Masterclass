@@ -3,9 +3,9 @@ public class Printer {
     private int numberPagesPrinted;
     private boolean duplex;
 
-    public Printer(double tonerLevel, int numberPagesPrinted, boolean duplex) {
+    public Printer(double tonerLevel, boolean duplex) {
         this.tonerLevel = tonerLevel;
-        this.numberPagesPrinted = numberPagesPrinted;
+        this.numberPagesPrinted = 0;
         this.duplex = duplex;
     }
 
