@@ -7,8 +7,6 @@ public class Main {
 
         PC pc = new PC(theCase, monitor, motherboard);
 
-        pc.getMonitor().drawPixelAt(1500, 1200, "red");
-        pc.getMotherboard().loadProgram("Windows 1.0");
-        pc.getTheCase().pressPowerButton();
+        pc.powerUp();
     }
 }
