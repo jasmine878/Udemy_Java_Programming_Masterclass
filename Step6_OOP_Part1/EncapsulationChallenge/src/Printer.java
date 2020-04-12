@@ -30,17 +30,16 @@ public class Printer {
         return this.tonerLevel;
     }
 
-    public void printPage(int number) {
-        int count = 0;
+    public int printPages(int pages) {
+        int pagesToPrint = pages;
 
-        while (count < number) {
-            if (getTonerLevel() > 0) {
-                numberPagesPrinted++;
-                tonerLevel -= 10;
-            } else {
-                System.out.println("There is not enough toner to print");
-                break;
-            }
+        if (this.duplex) {
+            pagesToPrint = (int) Math.ceil(pagesToPrint / 2);
+            System.out.println("Printing in duplex mode");
         }
+
+        this.numberPagesPrinted += pagesToPrint;
+
+        return pagesToPrint;
     }
 }
