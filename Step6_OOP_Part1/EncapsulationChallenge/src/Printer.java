@@ -20,7 +20,7 @@ public class Printer {
     public void fillToner(double addedToner) {
         tonerLevel += addedToner;
 
-        if (getTonerLevel() > 1) tonerLevel = 1;
+        if (getTonerLevel() > 100) tonerLevel = 100;
     }
 
     public void printPage(int number) {
@@ -29,7 +29,7 @@ public class Printer {
         while (count < number) {
             if (getTonerLevel() > 0) {
                 numberPagesPrinted++;
-                tonerLevel -= .1;
+                tonerLevel -= 10;
             } else {
                 System.out.println("There is not enough toner to print");
                 break;
