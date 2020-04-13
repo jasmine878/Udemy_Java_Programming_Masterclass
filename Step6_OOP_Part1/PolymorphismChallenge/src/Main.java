@@ -18,6 +18,27 @@ public class Main {
         System.out.println(ford.brake());
         System.out.println();
     }
+
+    static class Holden extends Car {
+        public Holden(String name, int cylinders) {
+            super(name, cylinders);
+        }
+
+        @Override
+        public String startEngine() {
+            return "Main.Holden -> startEngine()";
+        }
+
+        @Override
+        public String accelerate() {
+            return "Main.Holden -> accelerate()";
+        }
+
+        @Override
+        public String brake() {
+            return "Main.Holden -> brake()";
+        }
+    }
 }
 
 class Car {
