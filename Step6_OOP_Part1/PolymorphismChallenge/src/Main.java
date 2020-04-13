@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-
+        
     }
 }
 
@@ -30,10 +30,31 @@ class Car {
     }
 
     public String accelerate() {
-        return "Car -> accelerate";
+        return "Car -> accelerate()";
     }
 
     public String brake() {
-        return "Car -> brake";
+        return "Car -> brake()";
+    }
+}
+
+class Mitsubishi extends Car {
+    public Mitsubishi(String name, int cylinders) {
+        super(name, cylinders);
+    }
+
+    @Override
+    public String startEngine() {
+        return "Mitsubishi -> startEngine()";
+    }
+
+    @Override
+    public String accelerate() {
+        return "Mitsubishi -> accelerate()";
+    }
+
+    @Override
+    public String brake() {
+        return "Mitsubishi -> brake()";
     }
 }
