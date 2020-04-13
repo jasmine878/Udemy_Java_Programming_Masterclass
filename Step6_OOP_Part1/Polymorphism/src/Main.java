@@ -14,4 +14,14 @@ public class Main {
             return "No plot here";
         }
     }
+
+    public class Jaws extends Movie {
+        public Jaws() {
+            super("Jaws");
+        }
+
+        public String plot() {
+            return "A shark eats lots of people";
+        }
+    }
 }
