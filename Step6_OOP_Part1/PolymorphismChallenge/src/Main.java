@@ -5,6 +5,11 @@ public class Main {
         System.out.println(car.accelerate());
         System.out.println(car.brake());
         System.out.println();
+
+        Mitsubishi mitsubishi = new Mitsubishi("Outlander VRX 4WD", 6);
+        System.out.println(mitsubishi.startEngine());
+        System.out.println(mitsubishi.accelerate());
+        System.out.println(mitsubishi.brake());
     }
 }
 
