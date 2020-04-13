@@ -42,7 +42,7 @@ public class Hamburger {
     public double itemizeHamburger() {
         double cost = this.price;
 
-        System.out.println(this.name + " hamburger on a " + this.rollType + " roll with " + this.meat + " costs " + this.price);
+        System.out.println(this.name + " hamburger on a " + this.rollType + " roll with " + this.meat + " patty costs " + this.price);
 
         if (this.toppingPrice1 > 0) {
             cost += this.toppingPrice1;
