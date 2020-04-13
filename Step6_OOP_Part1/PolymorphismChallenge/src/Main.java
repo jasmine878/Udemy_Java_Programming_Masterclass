@@ -12,7 +12,7 @@ public class Main {
         System.out.println(mitsubishi.brake());
         System.out.println();
 
-        Ford ford = new Ford("Outlander VRX 4WD", 6);
+        Ford ford = new Ford("Ford Falcon", 6);
         System.out.println(ford.startEngine());
         System.out.println(ford.accelerate());
         System.out.println(ford.brake());
