@@ -16,5 +16,10 @@ public class Main {
         healthyBurger.addTopping1("tomato", .50);
         healthyBurger.addHealthyTopping1("avocado", 2);
         System.out.println("Total healthy burger price is " + healthyBurger.itemizeHamburger());      //expect 8.50
+        System.out.println();
+
+        DeluxeBurger deluxeBurger = new DeluxeBurger("potato", "pork", 9.99);
+        deluxeBurger.addTopping1("tomato", .50);
+        System.out.println("Total deluxe burger price is " + deluxeBurger.itemizeHamburger());      //expect 12.99
     }
 }
