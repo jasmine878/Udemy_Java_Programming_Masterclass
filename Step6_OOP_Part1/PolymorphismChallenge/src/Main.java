@@ -18,6 +18,10 @@ public class Main {
         System.out.println(ford.brake());
         System.out.println();
 
+        Holden holden = new Holden("Holden Commodore", 6);
+        System.out.println(holden.startEngine());
+        System.out.println(holden.accelerate());
+        System.out.println(holden.brake());
     }
 }
 
@@ -104,17 +108,17 @@ class Holden extends Car {
 
     @Override
     public String startEngine() {
-        return "Main.Holden -> startEngine()";
+        return "Holden -> startEngine()";
     }
 
     @Override
     public String accelerate() {
-        return "Main.Holden -> accelerate()";
+        return "Holden -> accelerate()";
     }
 
     @Override
     public String brake() {
-        return "Main.Holden -> brake()";
+        return "Holden -> brake()";
     }
 }
 
