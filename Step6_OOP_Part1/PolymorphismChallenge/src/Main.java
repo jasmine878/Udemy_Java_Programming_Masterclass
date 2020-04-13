@@ -10,6 +10,13 @@ public class Main {
         System.out.println(mitsubishi.startEngine());
         System.out.println(mitsubishi.accelerate());
         System.out.println(mitsubishi.brake());
+        System.out.println();
+
+        Ford ford = new Ford("Outlander VRX 4WD", 6);
+        System.out.println(ford.startEngine());
+        System.out.println(ford.accelerate());
+        System.out.println(ford.brake());
+        System.out.println();
     }
 }
 
