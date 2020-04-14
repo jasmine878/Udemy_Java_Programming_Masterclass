@@ -23,5 +23,14 @@ public class Main {
         System.out.println("myIntArray = " + Arrays.toString(myIntArray));      //expect [10, 0, 0, 0, 0]
         System.out.println("anotherArray = " + Arrays.toString(anotherArray));  //expect [10, 0, 0, 0, 0]
         System.out.println();
+
+        modifyArray(myIntArray);
+        System.out.println("myIntArray = " + Arrays.toString(myIntArray));      //expect [10, 0, 0, 0, 0]
+        System.out.println("anotherArray = " + Arrays.toString(anotherArray));  //expect [10, 0, 0, 0, 0]
+        System.out.println();
+    }
+
+    private static void modifyArray(int[] array) {
+        array[1] = 20;
     }
 }
