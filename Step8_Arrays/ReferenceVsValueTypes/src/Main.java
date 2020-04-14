@@ -30,8 +30,13 @@ public class Main {
         System.out.println();
 
         modifyArray2(myIntArray);
+        System.out.println("myIntArray = " + Arrays.toString(myIntArray));      //expect [10, 20, 0, 0, 0]
+        System.out.println("anotherArray = " + Arrays.toString(anotherArray));  //expect [10, 20, 0, 0, 0]
+        System.out.println();
+
+        anotherArray = new int[] {4, 5, 6, 7, 8};
         System.out.println("myIntArray = " + Arrays.toString(myIntArray));      //expect [10, 0, 0, 0, 0]
-        System.out.println("anotherArray = " + Arrays.toString(anotherArray));  //expect [10, 0, 0, 0, 0]
+        System.out.println("anotherArray = " + Arrays.toString(anotherArray));  //expect [4, 5, 6, 7, 8]
         System.out.println();
     }
 
