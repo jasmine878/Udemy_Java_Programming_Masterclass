@@ -16,5 +16,18 @@ public class Main {
             myIntArray3[i] = i * 10;
         }
         System.out.println(myIntArray3[5]);             //expect 50
+        System.out.println();
+
+        int[] myIntArray4 = new int[10];
+        printArray(myIntArray4);
+        System.out.println(myIntArray4[5]);             //expect 50
+    }
+
+    public static int[] printArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i * 10;
+        }
+
+        return array;
     }
 }
