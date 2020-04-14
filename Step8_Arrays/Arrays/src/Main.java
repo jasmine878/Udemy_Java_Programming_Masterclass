@@ -12,7 +12,7 @@ public class Main {
 
         int[] myIntArray3 = new int[10];
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < myIntArray3.length; i++) {
             myIntArray3[i] = i * 10;
         }
         System.out.println(myIntArray3[5]);             //expect 50
