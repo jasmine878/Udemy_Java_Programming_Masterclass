@@ -5,6 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
         int[] myIntegers = getIntegers(5);
+        printArray(myIntegers);
     }
 
     public static int[] getIntegers(int arrayCapacity) {
@@ -20,7 +21,10 @@ public class Main {
     }
 
     public static void printArray(int[] array) {
-
+        System.out.println("There are " + array.length + " items in this array");
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i] + " is at index " + i);
+        }
     }
 
     public static int[] sortIntegers(int[] array) {
