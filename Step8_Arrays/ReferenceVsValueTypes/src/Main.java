@@ -25,12 +25,25 @@ public class Main {
         System.out.println();
 
         modifyArray(myIntArray);
+        System.out.println("myIntArray = " + Arrays.toString(myIntArray));      //expect [10, 20, 0, 0, 0]
+        System.out.println("anotherArray = " + Arrays.toString(anotherArray));  //expect [10, 20, 0, 0, 0]
+        System.out.println();
+
+        modifyArray2(myIntArray);
         System.out.println("myIntArray = " + Arrays.toString(myIntArray));      //expect [10, 0, 0, 0, 0]
         System.out.println("anotherArray = " + Arrays.toString(anotherArray));  //expect [10, 0, 0, 0, 0]
         System.out.println();
     }
 
+    //modifies the passing array
     private static void modifyArray(int[] array) {
         array[1] = 20;
+        System.out.println("The parameter array = " + Arrays.toString(array));
+    }
+
+    //does not modify the passing array.  only reassigns the parameter
+    private static void modifyArray2(int[] array) {
+        array = new int[] {1, 2, 3, 4, 5};
+        System.out.println("The parameter array = " + Arrays.toString(array));
     }
 }
