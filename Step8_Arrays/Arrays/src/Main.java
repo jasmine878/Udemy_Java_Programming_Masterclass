@@ -21,6 +21,10 @@ public class Main {
         int[] myIntArray4 = new int[10];
         printArray(myIntArray4);
         System.out.println(myIntArray4[5]);             //expect 50
+        System.out.println();
+
+        int[] myIntegers = Arrays.getIntegers(5);
+        System.out.println(myIntegers[4]);
     }
 
     public static int[] printArray(int[] array) {
@@ -30,4 +34,5 @@ public class Main {
 
         return array;
     }
+
 }
