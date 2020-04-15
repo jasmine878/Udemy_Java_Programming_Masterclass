@@ -59,7 +59,7 @@ public class Main {
     public static void modifyItem() {
         System.out.print("Enter item to update: ");
         String oldItem = scanner.nextLine();
-        System.out.println("Enter replacement item: ");
+        System.out.print("Enter replacement item: ");
         String newItem = scanner.nextLine();
 
         groceryList.modifyGroceryItem(oldItem, newItem);

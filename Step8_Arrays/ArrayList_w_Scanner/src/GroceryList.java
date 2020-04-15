@@ -18,12 +18,12 @@ public class GroceryList {
     public void modifyGroceryItem(String updateItem, String newItem) {
         int itemIndex = groceryList.indexOf(updateItem);
 
-        if (itemIndex >= 0) modifyGroceryItem(updateItem, newItem);
+        System.out.println("Grocery item " + updateItem + " has been modified");
+        if (itemIndex >= 0) modifyGroceryItem(itemIndex, newItem);
     }
 
     private void modifyGroceryItem(int position, String newItem) {
         groceryList.set(position, newItem);
-        System.out.println("Grocery item " + (position + 1) + " has been modified");
     }
 
     public void removeGroceryItem(String removedItem) {
