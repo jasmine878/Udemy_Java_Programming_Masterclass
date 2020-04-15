@@ -72,4 +72,13 @@ public class Main {
 
         groceryList.removeGroceryItem(itemNo - 1);
     }
+
+    public static void searchItem() {
+        System.out.print("Enter item to search for: ");
+        String searchItem = scanner.nextLine();
+        String result = groceryList.findItem(searchItem);
+
+        if (result != null) System.out.println("Found " + searchItem + " in the shopping list");
+        else System.out.println(searchItem + " is not in the shopping list");
+    }
 }
