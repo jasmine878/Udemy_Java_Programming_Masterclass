@@ -14,7 +14,19 @@ public class Main {
         for (int i = 0; i < count; i++) {
             array[i] = scanner.nextInt();
         }
-        
+
         return array;
+    }
+
+    public static int findMin(int[] array) {
+        int lowestValue = Integer.MAX_VALUE;
+
+        for (int i = 0; i < array.length; i++) {
+            int currentValue = array[i];
+
+            if (currentValue < lowestValue) lowestValue = currentValue;
+        }
+
+        return lowestValue;
     }
 }
