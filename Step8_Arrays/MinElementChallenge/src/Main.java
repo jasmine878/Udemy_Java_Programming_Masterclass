@@ -4,7 +4,8 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-
+        int[] arr1 = readIntegers(5);
+        System.out.println("the smallest value is: " + findMin(arr1));
     }
 
     public static int[] readIntegers(int count) {
