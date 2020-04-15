@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -35,6 +36,9 @@ public class Main {
                     searchItem();
                     break;
                 case 6:
+                    processArrayList();
+                    break;
+                case 7:
                     quit = true;
             }
         }
@@ -49,6 +53,7 @@ public class Main {
         System.out.println("\t 4 - to remove an item from the list");
         System.out.println("\t 5 - to search for an item in the list");
         System.out.println("\t 6 - to quit the application");
+        System.out.println("\t 7 - to quit the application");
     }
 
     public static void addItem() {
@@ -79,5 +84,11 @@ public class Main {
 
         if (result) System.out.println("Found " + searchItem + " in the shopping list");
         else System.out.println(searchItem + " is not in the shopping list");
+    }
+
+    public static void processArrayList() {
+        ArrayList<String> copyArray = new ArrayList<String>();
+
+        copyArray.addAll(groceryList.getGroceryList());
     }
 }
