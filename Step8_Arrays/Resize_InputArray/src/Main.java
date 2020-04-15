@@ -1,12 +1,14 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
-    private static int[] baseArray = new int[10];
+    private static int[] baseArray = new int[5];
 
     public static void main(String[] args) {
         getInput();
         printArray();
+        resizeArray();
     }
 
     private static void getInput() {
@@ -23,5 +25,16 @@ public class Main {
         System.out.println();
     }
 
-    
+    private static void resizeArray() {
+        int[] original = baseArray;
+
+        baseArray = new int[7];
+        System.out.println("Reinitialized array: " + Arrays.toString(baseArray));
+
+        for (int i = 0; i < original.length; i++) {
+            baseArray[i] = original[i];
+        }
+
+        System.out.println("Resized array after copy: " + Arrays.toString(baseArray));
+    }
 }
