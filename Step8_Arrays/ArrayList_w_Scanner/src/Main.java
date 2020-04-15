@@ -87,10 +87,14 @@ public class Main {
     }
 
     public static void processArrayList() {
-        ArrayList<String> copyArray = new ArrayList<String>();
+        ArrayList<String> copyArrayList1 = new ArrayList<String>();
 
-        copyArray.addAll(groceryList.getGroceryList());
+        copyArrayList1.addAll(groceryList.getGroceryList());
 
-        ArrayList<String> anotherArray = new ArrayList<String>(groceryList.getGroceryList());
+        ArrayList<String> copyArrayList2 = new ArrayList<String>(groceryList.getGroceryList());
+
+        String[] convertedArray = new String[groceryList.getGroceryList().size()];
+
+        convertedArray = groceryList.getGroceryList().toArray(convertedArray);
     }
 }
