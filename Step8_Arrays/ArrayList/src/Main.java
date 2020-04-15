@@ -38,4 +38,15 @@ public class Main {
             }
         }
     }
+
+    public static void printInstructions() {
+        System.out.println("\nPress");
+        System.out.println("\t 0 - to print choice options.");
+        System.out.println("\t 1 - to print the list of grocery items");
+        System.out.println("\t 2 - to add an item to the list");
+        System.out.println("\t 3 - to modify an item in the list");
+        System.out.println("\t 4 - to remove an item from the list");
+        System.out.println("\t 5 - to search for an item in the list");
+        System.out.println("\t 6 - to quit the application");
+    }
 }
