@@ -26,6 +26,18 @@ public class GroceryList {
         System.out.println("Grocery item " + (position + 1) + " has been modified");
     }
 
+    public void removeGroceryItem(String removedItem) {
+        int itemIndex = groceryList.indexOf(removedItem);
+
+        if (itemIndex >= 0) {
+            groceryList.remove(itemIndex);
+            System.out.println("You removed " + removedItem + " from your list");
+        } else {
+            System.out.println(removedItem + " is not in the grocery list.  Unable to remove");
+        }
+
+    }
+
     public void removeGroceryItem(int position) {
         String removedItem = groceryList.get(position);
 
