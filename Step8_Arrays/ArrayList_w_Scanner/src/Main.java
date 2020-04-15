@@ -90,5 +90,7 @@ public class Main {
         ArrayList<String> copyArray = new ArrayList<String>();
 
         copyArray.addAll(groceryList.getGroceryList());
+
+        ArrayList<String> anotherArray = new ArrayList<String>(groceryList.getGroceryList());
     }
 }
