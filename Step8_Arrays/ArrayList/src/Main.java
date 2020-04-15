@@ -64,4 +64,12 @@ public class Main {
 
         groceryList.modifyGroceryItem(itemNo - 1, newItem);
     }
+
+    public static void removeItem() {
+        System.out.print("Enter item number to remove: ");
+        int itemNo = scanner.nextInt();
+        scanner.nextLine();
+
+        groceryList.removeGroceryItem(itemNo - 1);
+    }
 }
