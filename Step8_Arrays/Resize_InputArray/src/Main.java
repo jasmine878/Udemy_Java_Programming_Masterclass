@@ -6,21 +6,22 @@ public class Main {
     private static int[] baseArray = new int[5];
 
     public static void main(String[] args) {
+        System.out.println("Enter 5 integers");
         getInput();
-        printArray();
+        printArray(baseArray);
         resizeArray();
     }
 
     private static void getInput() {
         for (int i = 0; i < baseArray.length; i++) {
-            System.out.println("Enter a number");
             baseArray[i] = scanner.nextInt();
         }
+        System.out.println();
     }
 
-    private static void printArray() {
-        for (int i = 0; i < baseArray.length; i++) {
-            System.out.println(baseArray[i]);
+    private static void printArray(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
         }
         System.out.println();
     }
