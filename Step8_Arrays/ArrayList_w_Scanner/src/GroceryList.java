@@ -21,7 +21,7 @@ public class GroceryList {
         if (itemIndex >= 0) modifyGroceryItem(itemIndex, newItem);
     }
 
-    public void modifyGroceryItem(int position, String newItem) {
+    private void modifyGroceryItem(int position, String newItem) {
         groceryList.set(position, newItem);
         System.out.println("Grocery item " + (position + 1) + " has been modified");
     }
@@ -30,15 +30,14 @@ public class GroceryList {
         int itemIndex = groceryList.indexOf(removedItem);
 
         if (itemIndex >= 0) {
-            groceryList.remove(itemIndex);
-            System.out.println("You removed " + removedItem + " from your list");
+            removeGroceryItem(itemIndex);
         } else {
             System.out.println(removedItem + " is not in the grocery list.  Unable to remove");
         }
 
     }
 
-    public void removeGroceryItem(int position) {
+    private void removeGroceryItem(int position) {
         String removedItem = groceryList.get(position);
 
         groceryList.remove(position);
