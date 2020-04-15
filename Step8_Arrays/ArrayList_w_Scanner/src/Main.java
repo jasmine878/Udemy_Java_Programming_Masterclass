@@ -66,11 +66,10 @@ public class Main {
     }
 
     public static void removeItem() {
-        System.out.print("Enter item number to remove: ");
-        int itemNo = scanner.nextInt();
-        scanner.nextLine();
+        System.out.print("Enter item name to remove: ");
+        String item = scanner.nextLine();
 
-        groceryList.removeGroceryItem(itemNo - 1);
+        groceryList.removeGroceryItem(item);
     }
 
     public static void searchItem() {
