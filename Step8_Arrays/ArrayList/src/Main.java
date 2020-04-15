@@ -13,6 +13,7 @@ public class Main {
         while(!quit) {
             System.out.println("Enter your choice: ");
             choice = scanner.nextInt();
+            scanner.nextLine();
 
             switch (choice) {
                 case 0:
