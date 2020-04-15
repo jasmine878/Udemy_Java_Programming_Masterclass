@@ -15,10 +15,10 @@ public class GroceryList {
         }
     }
 
-    public void modifyGroceryItem(String newItem) {
-        int itemIndex = groceryList.indexOf(newItem);
+    public void modifyGroceryItem(String updateItem, String newItem) {
+        int itemIndex = groceryList.indexOf(updateItem);
 
-        if (itemIndex >= 0) modifyGroceryItem(itemIndex, newItem);
+        if (itemIndex >= 0) modifyGroceryItem(updateItem, newItem);
     }
 
     private void modifyGroceryItem(int position, String newItem) {

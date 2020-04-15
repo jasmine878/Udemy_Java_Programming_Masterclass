@@ -57,13 +57,12 @@ public class Main {
     }
 
     public static void modifyItem() {
-        System.out.print("Enter item number: ");
-        int itemNo = scanner.nextInt();
-        scanner.nextLine();
+        System.out.print("Enter item to update: ");
+        String oldItem = scanner.nextLine();
         System.out.println("Enter replacement item: ");
         String newItem = scanner.nextLine();
 
-        groceryList.modifyGroceryItem(itemNo - 1, newItem);
+        groceryList.modifyGroceryItem(oldItem, newItem);
     }
 
     public static void removeItem() {
