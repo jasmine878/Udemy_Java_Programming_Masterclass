@@ -54,4 +54,14 @@ public class Main {
         System.out.print("Please enter a grocery item: ");
         groceryList.addGroceryItem(scanner.nextLine());
     }
+
+    public static void modifyItem() {
+        System.out.print("Enter item number: ");
+        int itemNo = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Enter replacement item: ");
+        String newItem = scanner.nextLine();
+
+        groceryList.modifyGroceryItem(itemNo - 1, newItem);
+    }
 }
