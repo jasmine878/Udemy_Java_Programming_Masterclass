@@ -8,7 +8,7 @@ public class Main {
         System.out.println("the smallest value is: " + findMin(arr1));
     }
 
-    public static int[] readIntegers(int count) {
+    private static int[] readIntegers(int count) {
         System.out.println("Enter " + count + " integer values");
         int[] array = new int[count];
 
@@ -19,7 +19,7 @@ public class Main {
         return array;
     }
 
-    public static int findMin(int[] array) {
+    private static int findMin(int[] array) {
         int lowestValue = Integer.MAX_VALUE;
 
         for (int i = 0; i < array.length; i++) {
