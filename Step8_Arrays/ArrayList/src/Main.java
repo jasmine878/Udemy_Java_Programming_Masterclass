@@ -49,4 +49,9 @@ public class Main {
         System.out.println("\t 5 - to search for an item in the list");
         System.out.println("\t 6 - to quit the application");
     }
+
+    public static void addItem() {
+        System.out.print("Please enter a grocery item: ");
+        groceryList.addGroceryItem(scanner.nextLine());
+    }
 }
