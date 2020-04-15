@@ -75,9 +75,9 @@ public class Main {
     public static void searchItem() {
         System.out.print("Enter item to search for: ");
         String searchItem = scanner.nextLine();
-        int result = groceryList.findItem(searchItem);
+        boolean result = groceryList.onFile(searchItem);
 
-        if (result > -1) System.out.println("Found " + searchItem + " in the shopping list");
+        if (result) System.out.println("Found " + searchItem + " in the shopping list");
         else System.out.println(searchItem + " is not in the shopping list");
     }
 }

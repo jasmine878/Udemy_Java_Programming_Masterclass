@@ -42,7 +42,10 @@ public class GroceryList {
         groceryList.remove(position);
     }
 
-    public int findItem(String searchItem) {
-        return groceryList.indexOf(searchItem);
+    public boolean onFile(String searchItem) {
+        int position = groceryList.indexOf(searchItem);
+
+        if (position > -1) return true;
+        return false;
     }
 }
