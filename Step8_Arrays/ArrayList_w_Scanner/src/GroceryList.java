@@ -30,6 +30,7 @@ public class GroceryList {
         int itemIndex = groceryList.indexOf(removedItem);
 
         if (itemIndex >= 0) {
+            System.out.println("You removed " + removedItem + " from your list");
             removeGroceryItem(itemIndex);
         } else {
             System.out.println(removedItem + " is not in the grocery list.  Unable to remove");
@@ -38,10 +39,7 @@ public class GroceryList {
     }
 
     private void removeGroceryItem(int position) {
-        String removedItem = groceryList.get(position);
-
         groceryList.remove(position);
-        System.out.println("You removed " + removedItem + " from your list");
     }
 
     public int findItem(String searchItem) {
