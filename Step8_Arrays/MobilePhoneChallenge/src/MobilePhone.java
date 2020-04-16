@@ -32,6 +32,18 @@ public class MobilePhone {
         }
     }
 
+    public boolean removeContact(Contact contact) {
+        int foundContactIndex = findContact(contact);
+
+        if (foundContactIndex >= 0) {
+            this.myContacts.remove(foundContactIndex);
+            return true;
+        } else {
+            System.out.println(contact.getName() + " does not exist");
+            return false;
+        }
+    }
+
     //we don't want to expose these private methods publicly
     //indexes should be hidden from the Main class
     private int findContact(String name) {
@@ -51,7 +63,7 @@ public class MobilePhone {
     }
 
     //lets the calling method know that the contact is on file
-    //use this public method instead of our private methods when we're using our Main file
+    //use this public method instead of our private methods when we're using our Main class
     //we're hiding the inner workings of our private methods in this public method
     public String queryContact(Contact contact) {
         if (findContact(contact) >= 0) return contact.getName();
