@@ -72,14 +72,14 @@ public class Main {
     }
 
     private static void updateContact() {
-        System.out.println("Enter existing contact name");
+        System.out.println("Enter contact name");
         String updateName = scanner.nextLine();
 
         Contact updateContact = cellphone.queryContact(updateName);
         if (updateContact != null) {
-            System.out.println("Enter updated contact name: ");
+            System.out.println("Enter new contact name: ");
             String newName = scanner.nextLine();
-            System.out.println("Enter updated contact phone number");
+            System.out.println("Enter new contact phone number");
             String newPhoneNumber = scanner.nextLine();
 
             Contact newContact = Contact.createContact(newName, newPhoneNumber);
