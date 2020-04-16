@@ -76,6 +76,7 @@ public class Main {
         String updateName = scanner.nextLine();
 
         Contact updateContact = cellphone.queryContact(updateName);
+
         if (updateContact != null) {
             System.out.println("Enter new contact name: ");
             String newName = scanner.nextLine();
@@ -84,7 +85,6 @@ public class Main {
 
             Contact newContact = Contact.createContact(newName, newPhoneNumber);
             cellphone.updateContact(updateContact, newContact);
-            System.out.println("Successfully updated the record");
         } else {
             System.out.println(updateName + " does not exist.  Cannot update");
         }
