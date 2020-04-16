@@ -70,4 +70,25 @@ public class Main {
             System.out.println("New contact added: name = " + name + ", phone number = " + phoneNumber);
         } else System.out.println("Contact " + name + "already exists");
     }
+
+    private static void updateContact() {
+        System.out.println("Enter existing contact name");
+        String updateName = scanner.nextLine();
+
+        Contact updateContact = cellphone.queryContact(updateName);
+        if (updateName != null) {
+            System.out.println("Enter updated contact name: ");
+            String newName = scanner.nextLine();
+            System.out.println("Enter updated contact phone number");
+            String newPhoneNumber = scanner.nextLine();
+
+            Contact newContact = Contact.createContact(newName, newPhoneNumber);
+            cellphone.updateContact(updateContact, newContact);
+            System.out.println("Successfully updated the record");
+        } else {
+            System.out.println(updateName + " does not exist.  Cannot update");
+        }
+    }
+
+    
 }

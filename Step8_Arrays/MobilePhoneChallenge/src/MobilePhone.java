@@ -26,7 +26,6 @@ public class MobilePhone {
             this.myContacts.set(oldContactIndex, newContact);
             return true;
         } else {
-            System.out.println(oldContact.getName() + " does not exist. Cannot update it");
             return false;
         }
     }
@@ -68,6 +67,13 @@ public class MobilePhone {
         if (findContact(contact) >= 0) return contact.getName();
 
         return null;
+    }
+
+    public Contact queryContact(String name) {
+        int contactIndex = findContact(name);
+
+        if (contactIndex > -1) return this.myContacts.get(contactIndex);
+        else return null;
     }
 
     public void printContacts() {
