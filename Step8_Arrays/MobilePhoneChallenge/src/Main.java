@@ -24,7 +24,19 @@ public class Main {
                     cellphone.printContacts();
                     break;
                 case 2:
-
+                    addContact();
+                    break;
+                case 3:
+                    updateContact();
+                    break;
+                case 4:
+                    removeContact();
+                    break;
+                case 5:
+                    queryContact();
+                    break;
+                case 6:
+                    printActions();
             }
         }
     }
@@ -44,5 +56,18 @@ public class Main {
                             "6 - to print a list of available actions");
         System.out.println("Choose your action: ");
 
+    }
+
+    private static void addContact() {
+        System.out.println("Enter new contact name: ");
+        String name = scanner.nextLine();
+        System.out.println("Enter new phone number: ");
+        String phoneNumber = scanner.nextLine();
+
+        Contact newContact = Contact.createContact(name, phoneNumber);
+
+        if(cellphone.addContact(newContact)) {
+            System.out.println("New contact added: name = " + name + ", phone number = " + phoneNumber);
+        } else System.out.println("Contact " + name + "already exists");
     }
 }
