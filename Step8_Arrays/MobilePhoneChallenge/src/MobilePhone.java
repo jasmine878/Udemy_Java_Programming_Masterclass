@@ -32,6 +32,8 @@ public class MobilePhone {
         }
     }
 
+    //we don't want to expose these private methods publicly
+    //indexes should be hidden from the Main class
     private int findContact(String name) {
         for (int i = 0; i < this.myContacts.size(); i++) {
             Contact contact = this.myContacts.get(i);
@@ -42,7 +44,18 @@ public class MobilePhone {
         return -1;
     }
 
+    //we don't want to expose these private methods publicly
+    //indexes should be hidden from the Main class
     private int findContact(Contact contact) {
-        return this.myContacts.indexOf(contact;
+        return this.myContacts.indexOf(contact);
+    }
+
+    //lets the calling method know that the contact is on file
+    //use this public method instead of our private methods when we're using our Main file
+    //we're hiding the inner workings of our private methods in this public method
+    public String queryContact(Contact contact) {
+        if (findContact(contact) >= 0) return contact.getName();
+
+        return null;
     }
 }
