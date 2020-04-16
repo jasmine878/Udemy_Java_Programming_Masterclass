@@ -76,7 +76,7 @@ public class Main {
         String updateName = scanner.nextLine();
 
         Contact updateContact = cellphone.queryContact(updateName);
-        if (updateName != null) {
+        if (updateContact != null) {
             System.out.println("Enter updated contact name: ");
             String newName = scanner.nextLine();
             System.out.println("Enter updated contact phone number");
@@ -106,9 +106,9 @@ public class Main {
     private static void queryContact() {
         System.out.println("Enter a name to query");
         String queryName = scanner.nextLine();
+        Contact result = cellphone.queryContact(queryName);
 
-        if (queryName != null) {
-            Contact result = cellphone.queryContact(queryName);
+        if (result != null) {
             System.out.println("Name: " + result.getName() + ", Phone Number: " + result.getPhoneNumber());
         } else {
             System.out.println(queryName + " does not exist");
