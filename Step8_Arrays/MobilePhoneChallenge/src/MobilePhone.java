@@ -20,6 +20,18 @@ public class MobilePhone {
         }
     }
 
+    public boolean updateContact(Contact oldContact, Contact newContact) {
+        int oldContactIndex = findContact(oldContact);
+
+        if (oldContactIndex >= 0) {
+            this.myContacts.set(oldContactIndex, newContact);
+            return true;
+        } else {
+            System.out.println(oldContact.getName() + " does not exist. Cannot update it");
+            return false;
+        }
+    }
+
     private int findContact(String name) {
         for (int i = 0; i < this.myContacts.size(); i++) {
             Contact contact = this.myContacts.get(i);
