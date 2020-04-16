@@ -37,7 +37,6 @@ public class MobilePhone {
             this.myContacts.remove(foundContactIndex);
             return true;
         } else {
-            System.out.println(contact.getName() + " does not exist");
             return false;
         }
     }

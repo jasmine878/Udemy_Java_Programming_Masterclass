@@ -90,5 +90,18 @@ public class Main {
         }
     }
 
-    
+    private static void removeContact() {
+        System.out.println("Enter a contact to delete");
+        String deleteName = scanner.nextLine();
+        Contact deletedContact = cellphone.queryContact(deleteName);
+
+        if (deletedContact != null) {
+            cellphone.removeContact(deletedContact);
+            System.out.println("Removed contact");
+        } else {
+            System.out.println(deleteName + " does not exist.  Cannot remove");
+        }
+    }
+
+
 }
