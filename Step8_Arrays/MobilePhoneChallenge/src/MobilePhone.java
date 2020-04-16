@@ -70,4 +70,15 @@ public class MobilePhone {
 
         return null;
     }
+
+    public void printContacts() {
+        System.out.println("Contact List");
+
+        for (int i = 0; i < this.myContacts.size(); i++) {
+            Contact currentContact = this.myContacts.get(i);
+            System.out.println((i+1) + ". " +
+                    currentContact.getName() + " -> " +
+                    currentContact.getPhoneNumber());
+        }
+    }
 }
