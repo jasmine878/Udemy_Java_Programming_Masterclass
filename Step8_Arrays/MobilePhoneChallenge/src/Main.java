@@ -21,16 +21,12 @@ public class Main {
                     quit = true;
                     break;
                 case 1:
-                    printContacts();
+                    cellphone.printContacts();
                     break;
                 case 2:
 
             }
         }
-    }
-
-    private static void printContacts() {
-        cellphone.printContacts();
     }
 
     private static void startPhone() {
