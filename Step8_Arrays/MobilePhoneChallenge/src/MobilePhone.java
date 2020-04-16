@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
 public class MobilePhone {
-    ArrayList<Object> contacts = new ArrayList<>();
+    private String myNumber;
+    ArrayList<Contact> myContacts;
 
-
+    
 }
