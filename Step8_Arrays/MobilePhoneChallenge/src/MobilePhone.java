@@ -20,14 +20,16 @@ public class MobilePhone {
     }
 
     public boolean updateContact(Contact oldContact, Contact newContact) {
-        int oldContactIndex = findContact(oldContact);
-
-        if (oldContactIndex >= 0) {
-            this.myContacts.set(oldContactIndex, newContact);
-            return true;
-        } else if (findContact(newContact) >= 0) {
+        if (findContact(newContact) >= 0) {
             System.out.println(newContact.getName() + " already exists.  Could not update");
             return false;
+        }
+
+        int oldContactIndex = findContact(oldContact);
+
+        if (findContact(oldContact) >= 0) {
+            this.myContacts.set(oldContactIndex, newContact);
+            return true;
         } else {
             return false;
         }
