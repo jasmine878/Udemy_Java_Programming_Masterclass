@@ -103,5 +103,15 @@ public class Main {
         }
     }
 
+    private static void queryContact() {
+        System.out.println("Enter a name to query");
+        String queryName = scanner.nextLine();
 
+        if (queryName != null) {
+            Contact result = cellphone.queryContact(queryName);
+            System.out.println("Name: " + result.getName() + ", Phone Number: " + result.getPhoneNumber());
+        } else {
+            System.out.println(queryName + " does not exist");
+        }
+    }
 }
