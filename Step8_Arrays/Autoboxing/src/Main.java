@@ -20,12 +20,21 @@ public class Main {
 
         ArrayList<Double> myDoubleValues = new ArrayList<Double>();
 
+//        for (double dbl = 0.0; dbl <=10.0; dbl+= 0.5) {
+//            myDoubleValues.add(Double.valueOf(dbl));
+//        }
+//
+//        for (int i = 0; i < myDoubleValues.size(); i ++) {
+//            double value = myDoubleValues.get(i).doubleValue();
+//            System.out.println(i + " --> " + value);
+//        }
+
         for (double dbl = 0.0; dbl <=10.0; dbl+= 0.5) {
-            myDoubleValues.add(Double.valueOf(dbl));
+            myDoubleValues.add(dbl);
         }
 
         for (int i = 0; i < myDoubleValues.size(); i ++) {
-            double value = myDoubleValues.get(i).doubleValue();
+            double value = myDoubleValues.get(i);
             System.out.println(i + " --> " + value);
         }
     }
