@@ -4,9 +4,8 @@ public class Bank {
     private String name;
     private ArrayList<Branch> branches = new ArrayList<Branch>();
 
-    public Bank(String name, ArrayList<Branch> branches) {
+    public Bank(String name) {
         this.name = name;
-        this.branches = branches;
     }
 
     public String getName() {
@@ -15,5 +14,9 @@ public class Bank {
 
     public ArrayList<Branch> getBranches() {
         return this.getBranches();
+    }
+
+    public void addBranch(String name) {
+        branches.add(new Branch(name));
     }
 }

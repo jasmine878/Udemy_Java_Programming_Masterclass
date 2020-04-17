@@ -2,10 +2,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Branch {
+    private String name;
     private ArrayList<Customer> customers = new ArrayList<Customer>();
 
-    public Branch(ArrayList<Customer> customers) {
-        this.customers = customers;
+    public Branch(String name) {
+        this.name = name;
     }
 
     public ArrayList<Customer> getCustomers() {
@@ -41,7 +42,7 @@ public class Branch {
                     System.out.println("Sucessfully added transaction to customer");
                 }
             }
-        } else System.out.println("Cannot find the customer.  Unable to add transaction.");
+        } else System.out.println("Cannot find the customer.  Unable to add transaction");
     }
 
     public void getCustomerList() {
