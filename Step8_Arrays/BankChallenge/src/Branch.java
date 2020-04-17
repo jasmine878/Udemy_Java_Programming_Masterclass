@@ -17,9 +17,10 @@ public class Branch {
         return this.customers;
     }
 
-    public Customer findCustomer(String name) {
-        for (int i = 0; i < getCustomers().size(); i++) {
-            Customer currentCustomer = getCustomers().get(i);
+    //find customer is a method that's only used internally in the Branch class
+    private Customer findCustomer(String name) {
+        for (int i = 0; i < this.customers.size(); i++) {
+            Customer currentCustomer = this.customers.get(i);
 
             if (currentCustomer.getName().equals(name)) return currentCustomer;
         }
