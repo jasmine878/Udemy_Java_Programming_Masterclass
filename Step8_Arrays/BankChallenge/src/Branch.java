@@ -38,6 +38,8 @@ public class Branch {
     public void getCustomerList() {
         for (int i = 0; i < getCustomers().size(); i++) {
             System.out.println(i + " " + getCustomers().get(i).getName());
+            System.out.print("Transactions: " );
+            getCustomerTransactions(getCustomers().get(i).getName());
         }
     }
 
