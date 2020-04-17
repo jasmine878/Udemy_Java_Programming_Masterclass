@@ -1,17 +1,22 @@
+import java.util.ArrayList;
+
 public class Customer {
     private String name;
-    private double initialTransaction;
+    private ArrayList<Double> transactions;
 
     public Customer(String name, double initialTransaction) {
         this.name = name;
-        this.initialTransaction = initialTransaction;
+        this.transactions = new ArrayList<Double>();
+        
+        addTransaction(initialTransaction);
     }
 
     public String getName() {
         return this.name;
     }
 
-    public double getInitialTransaction() {
-        return this.initialTransaction;
+    public void addTransaction(double nextTransaction) {
+        this.transactions.add(nextTransaction);
     }
+
 }
