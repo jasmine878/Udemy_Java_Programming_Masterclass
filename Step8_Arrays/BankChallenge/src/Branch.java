@@ -17,30 +17,33 @@ public class Branch {
         return this.customers;
     }
 
-    public boolean doesCustomerExist(String name) {
+    public Customer findCustomer(String name) {
         for (int i = 0; i < getCustomers().size(); i++) {
-            if (getCustomers().get(i).getName().equals(name)) return true;
+            Customer currentCustomer = getCustomers().get(i);
+
+            if (currentCustomer.getName().equals(name)) return currentCustomer;
         }
-        return false;
+        return null;
     }
 
     public boolean addCustomer(String name, double initialTransaction) {
-        if (doesCustomerExist(name)) return false;
+        if (findCustomer(name) != null) return false;
         else {
             this.customers.add(new Customer(name, initialTransaction));
             return true;
         }
     }
 
-    public void addTransactions(String name, double nextTransaction) {
-        if (doesCustomerExist(name)) {
-            for (int i = 0; i < getCustomers().size(); i++) {
-                if (getCustomers().get(i).getName().equals(name)) {
-                    getCustomers().get(i).getTransactions().add(nextTransaction);
-                    System.out.println("Sucessfully added transaction to customer");
-                }
-            }
-        } else System.out.println("Cannot find the customer.  Unable to add transaction");
+    public boolean addTransactions(String name, double nextTransaction) {
+        Customer foundCustomer = findCustomer(name);
+
+        if (foundCustomer != null) {
+            foundCustomer.addTransaction(nextTransaction);
+
+            return true;
+        }
+
+        return false;
     }
 
 //    public void getCustomerList() {
