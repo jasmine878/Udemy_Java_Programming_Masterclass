@@ -19,4 +19,18 @@ public class Branch {
 
         getCustomers().add(newCustomer);
     }
+
+    public void addTransactions(String name, double nextTransaction) {
+        boolean foundCustomer = false;
+
+        for (int i = 0; i < getCustomers().size(); i++) {
+            if (getCustomers().get(i).getName().equals(name)) {
+                getCustomers().get(i).getTransactions().add(nextTransaction);
+                foundCustomer = true;
+            }
+        }
+
+        if (foundCustomer) System.out.println("Sucessfully added transaction to customer");
+        else System.out.println("Cannot find the customer");
+    }
 }
