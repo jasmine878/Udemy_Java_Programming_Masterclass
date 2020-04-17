@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Branch {
     private ArrayList<Customer> customers = new ArrayList<Customer>();
@@ -32,5 +33,21 @@ public class Branch {
 
         if (foundCustomer) System.out.println("Sucessfully added transaction to customer");
         else System.out.println("Cannot find the customer");
+    }
+
+    public void getCustomerList() {
+        for (int i = 0; i < getCustomers().size(); i++) {
+            System.out.println(i + " " + getCustomers().get(i).getName());
+        }
+    }
+
+    public void getCustomerTransactions(String name) {
+        for (int i = 0;i < getCustomers().size(); i++) {
+            if (getCustomers().get(i).getName().equals(name)) {
+                ArrayList<Double> currentTransactions = getCustomers().get(i).getTransactions();
+
+                System.out.println(Arrays.toString(currentTransactions.toArray()));
+            }
+        }
     }
 }
