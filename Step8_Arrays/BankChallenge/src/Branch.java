@@ -13,9 +13,9 @@ public class Branch {
         return name;
     }
 
-    public ArrayList<Customer> getCustomers() {
-        return this.customers;
-    }
+//    public ArrayList<Customer> getCustomers() {
+//        return this.customers;
+//    }
 
     //find customer is a method that's only used internally in the Branch class
     private Customer findCustomer(String name) {
