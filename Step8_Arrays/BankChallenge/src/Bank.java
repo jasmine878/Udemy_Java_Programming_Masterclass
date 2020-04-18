@@ -56,4 +56,39 @@ public class Bank {
 
         return false;
     }
+
+
+    public boolean getCustomerList(String branchName, boolean showTransactions) {
+        Branch branch = findBranch(branchName);
+
+        if (branch != null) {
+            System.out.println("Customer details for branch " + branchName);
+
+            ArrayList<Customer> branchCustomers = branch.getCustomers();
+
+            for (int i = 0; i < branchCustomers.size(); i++) {
+                Customer currentCustomer = branchCustomers.get(i);
+
+                System.out.println((i+1) + " " + currentCustomer.getName());
+
+                if (showTransactions) {
+                    System.out.print("Transactions: " + currentCustomer.getTransactions().toArray().toString());
+                }
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+//
+//    public void getCustomerTransactions(String name) {
+//        for (int i = 0;i < getCustomers().size(); i++) {
+//            if (getCustomers().get(i).getName().equals(name)) {
+//                ArrayList<Double> currentTransactions = getCustomers().get(i).getTransactions();
+//
+//                System.out.println(Arrays.toString(currentTransactions.toArray()));
+//            }
+//        }
+//    }
 }

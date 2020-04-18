@@ -13,9 +13,9 @@ public class Branch {
         return name;
     }
 
-//    public ArrayList<Customer> getCustomers() {
-//        return this.customers;
-//    }
+    public ArrayList<Customer> getCustomers() {
+        return this.customers;
+    }
 
     //find customer is a method that's only used internally in the Branch class
     private Customer findCustomer(String name) {
@@ -46,22 +46,4 @@ public class Branch {
 
         return false;
     }
-
-//    public void getCustomerList() {
-//        for (int i = 0; i < getCustomers().size(); i++) {
-//            System.out.println(i + " " + getCustomers().get(i).getName());
-//            System.out.print("Transactions: " );
-//            getCustomerTransactions(getCustomers().get(i).getName());
-//        }
-//    }
-//
-//    public void getCustomerTransactions(String name) {
-//        for (int i = 0;i < getCustomers().size(); i++) {
-//            if (getCustomers().get(i).getName().equals(name)) {
-//                ArrayList<Double> currentTransactions = getCustomers().get(i).getTransactions();
-//
-//                System.out.println(Arrays.toString(currentTransactions.toArray()));
-//            }
-//        }
-//    }
 }
