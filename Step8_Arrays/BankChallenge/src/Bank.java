@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Bank {
     private String name;
@@ -72,7 +73,8 @@ public class Bank {
                 System.out.println((i+1) + " " + currentCustomer.getName());
 
                 if (showTransactions) {
-                    System.out.print("Transactions: " + currentCustomer.getTransactions().toArray().toString());
+//                    getCustomerTransactions(Customer currentCustomer);
+                    System.out.print("Transactions: " + Arrays.toString(currentCustomer.getTransactions().toArray()));
                 }
 
                 return true;
@@ -81,10 +83,12 @@ public class Bank {
 
         return false;
     }
+
+//    public void getCustomerTransactions(Customer customer) {
+//        ArrayList<Double> currentTransactions = customer.getTransactions();
 //
-//    public void getCustomerTransactions(String name) {
-//        for (int i = 0;i < getCustomers().size(); i++) {
-//            if (getCustomers().get(i).getName().equals(name)) {
+//        for (int i = 0;i < currentTransactions.size(); i++) {
+//            if (currentTransactions.get(i).getName().equals(name)) {
 //                ArrayList<Double> currentTransactions = getCustomers().get(i).getTransactions();
 //
 //                System.out.println(Arrays.toString(currentTransactions.toArray()));
