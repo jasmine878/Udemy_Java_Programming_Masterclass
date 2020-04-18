@@ -25,6 +25,20 @@ public class LinkedListExample {
         placesToVisit.remove(4);
         printList(placesToVisit);
 
+        LinkedList<String> orderedPlaces = new LinkedList<String>();
+        addInOrder(orderedPlaces, "Sydney");
+        addInOrder(orderedPlaces, "Melbourne");
+        addInOrder(orderedPlaces, "Brisbane");
+        addInOrder(orderedPlaces, "Perth");
+        addInOrder(orderedPlaces, "Canberra");
+        addInOrder(orderedPlaces, "Adelaide");
+        addInOrder(orderedPlaces, "Darwin");
+        printList(orderedPlaces);
+
+        addInOrder(orderedPlaces, "Alice Springs");
+        addInOrder(orderedPlaces, "Darwin");
+        printList(orderedPlaces);
+
     }
 
     //using an iterator
