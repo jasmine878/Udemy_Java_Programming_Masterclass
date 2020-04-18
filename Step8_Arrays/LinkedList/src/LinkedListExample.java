@@ -1,5 +1,6 @@
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 //a linked list of places to visit in Australia.
 //we're using Capital cities in Australia
@@ -19,7 +20,9 @@ public class LinkedListExample {
         printList(placesToVisit);
 
         placesToVisit.add(1, "Alice Springs");
+        printList(placesToVisit);
 
+        placesToVisit.remove(4);
         printList(placesToVisit);
 
     }
@@ -34,5 +37,38 @@ public class LinkedListExample {
             System.out.println("Now visiting " + i.next());
         }
         System.out.println("===============================");
+    }
+
+    private static boolean addInOrder(LinkedList<String> linkedList, String newCity) {
+        ListIterator<String> stringListIterator = linkedList.listIterator();
+
+        while(stringListIterator.hasNext()) {
+
+            int comparison = stringListIterator.next().compareTo(newCity);
+
+            //if comparison == 0, it means the two values are equal
+            //we don't want to add duplicates
+            if(comparison == 0) {
+                System.out.println(newCity + " is already included as a destination");
+                return false;
+            } else if (comparison > 0) {
+                //newCity should appear before the current one
+                //Adelaide                          Brisbane
+                //.next() means we already moved the pointer to the next element
+                stringListIterator.previous();
+                //the add() method in ListIterator inserts at the correct position, without providing an index
+                //.add() will insert before the position
+                stringListIterator.add(newCity);
+
+                return true;
+            } else if (comparison < 0) {
+                //move on to the next city.
+                //.next() will automatically do this so we don't have to do anything here
+            }
+        }
+
+        //if we don't find any greater values than we just add the newCity to the end of the file
+        stringListIterator.add(newCity);
+        return true;
     }
 }
