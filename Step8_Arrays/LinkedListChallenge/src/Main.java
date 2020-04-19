@@ -42,5 +42,6 @@ public class Main {
         myAlbums.get(1).addToPlayList(2, myPlaylist);
         myAlbums.get(1).addToPlayList(24, myPlaylist);          //Testing does not exist
 
+//        play(myPlaylist);
     }
 }
