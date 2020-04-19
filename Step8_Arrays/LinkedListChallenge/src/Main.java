@@ -99,12 +99,40 @@ public class Main {
                     }
                     break;
                 case 3:
+                        //TIM'S WAY!!!
+//                    //if we're going backwards, we have to go forwards to replay the song
+//                    if (!goingForward) {
+//                        if (playlistTool.hasNext()) {
+//                            System.out.println("Now playing " + playlistTool.next());
+//                            goingForward = true;
+//                        } else {
+//                            System.out.println("Reached the end of the Playlist");
+//                        }
+//                    } else {
+//                        //if we're going forwards, we have to go backwards to replay the song
+//                        if (playlistTool.hasPrevious()) {
+//                            System.out.println("Now playing " + playlistTool.previous());
+//                            goingForward = false;
+//                        } else {
+//                            System.out.println("Reached the beginning of the Playlist");
+//                        }
+//                    }
+
+                    //MY WAY!!!
                     if (!goingForward) {
-                        System.out.println("Now playing " + playlistTool.next());
-                        playlistTool.previous();
+                        if (playlistTool.hasNext()) {
+                            System.out.println("Now playing " + playlistTool.next());
+                            playlistTool.previous();
+                        } else {
+                            System.out.println("Reached the end of the Playlist");
+                        }
                     } else {
-                        System.out.println("Now playing " + playlistTool.previous());
-                        playlistTool.next();
+                        if (playlistTool.hasPrevious()) {
+                            System.out.println("Now playing " + playlistTool.previous());
+                            playlistTool.next();
+                        } else {
+                            System.out.println("Reached the beginning of the Playlist");
+                        }
                     }
                     break;
                 case 4:
