@@ -47,7 +47,7 @@ public class Main {
         play(myPlaylist);
     }
 
-    public static void play(LinkedList playlist) {
+    private static void play(LinkedList<Song> playlist) {
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
         boolean goingForward = true;
@@ -57,7 +57,7 @@ public class Main {
         if (playlist.isEmpty()) {
             System.out.println("There are no songs in the playlist");
         } else {
-            System.out.println("Song playing from Playlist is: " + playlistTool.next());
+            System.out.println("Song playing from Playlist is: " + playlistTool.next().toString());
             printMenu();
         }
 
@@ -77,7 +77,7 @@ public class Main {
                     }
 
                     if (playlistTool.hasNext()) {
-                        System.out.println("Song playing from Playlist is: " + playlistTool.next());
+                        System.out.println("Now playing " + playlistTool.next().toString());
                     } else {
                         System.out.println("Reached the end of the Playlist");
                         goingForward = false;
@@ -90,7 +90,7 @@ public class Main {
                     }
 
                     if(playlistTool.hasPrevious()) {
-                        System.out.println("Song playing from Playlist is: " + playlistTool.previous());
+                        System.out.println("Now playing " + playlistTool.previous().toString());
                     } else {
                         System.out.println("Reached the beginning of the Playlist");
                         goingForward = true;
@@ -98,17 +98,25 @@ public class Main {
                     break;
                 case 3:
                     if (!goingForward) {
-                        System.out.println("Song playing from Playlist is: " + playlistTool.next());
+                        System.out.println("Now playing " + playlistTool.next());
                         playlistTool.previous();
                     } else {
-                        System.out.println("Song playing from Playlist is: " + playlistTool.previous());
+                        System.out.println("Now playing " + playlistTool.previous());
                         playlistTool.next();
                     }
                     break;
                 case 4:
+                    printPlaylist(playlist);
+                case 5:
                     printMenu();
                     break;
             }
+        }
+    }
+
+    private static void printPlaylist(LinkedList<Song> playlist) {
+        for (Song songObj: playlist) {
+            System.out.println(songObj.toString());
         }
     }
 

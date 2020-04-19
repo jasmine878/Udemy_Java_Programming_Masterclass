@@ -11,7 +11,9 @@ public class Song {
         return this.title;
     }
 
+    //we're overriding the Object.toString() method to give us something more useful than the Object's location in memory
+    @Override
     public String toString() {
-        return this.title + " is playing for " + this.duration;
+        return this.title + ": " + this.duration;
     }
 }
