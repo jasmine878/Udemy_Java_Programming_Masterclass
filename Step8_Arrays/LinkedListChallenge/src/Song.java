@@ -14,4 +14,8 @@ public class Song {
     public double getDuration() {
         return this.duration;
     }
+
+    public String toString() {
+        return getTitle() + " is playing for " + getDuration();
+    }
 }
