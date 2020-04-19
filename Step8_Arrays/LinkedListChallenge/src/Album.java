@@ -16,4 +16,12 @@ public class Album {
     public ArrayList<Song> getSongs() {
         return this.songs;
     }
+
+    public boolean hasSong(Song song) {
+        if (this.songs.contains(song)) return true;
+
+        return false;
+    }
+
+
 }
