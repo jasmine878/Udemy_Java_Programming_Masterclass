@@ -11,11 +11,7 @@ public class Song {
         return this.title;
     }
 
-    public double getDuration() {
-        return this.duration;
-    }
-
     public String toString() {
-        return getTitle() + " is playing for " + getDuration();
+        return this.title + " is playing for " + this.duration;
     }
 }
