@@ -123,10 +123,11 @@ public class Main {
     private static void printMenu() {
         System.out.println("Available actions: \npress ");
         System.out.println("0 - Quit\n" +
-                "1 - Skip forward to next song\n" +
-                "2 - Skip backwards to previous song\n" +
+                "1 - Play next song\n" +
+                "2 - Play previous song\n" +
                 "3 - Replay the current song\n" +
-                "4 - List playlist songs");
+                "4 - List playlist songs" +
+                "5 - Print available actions");
     }
 
 }
