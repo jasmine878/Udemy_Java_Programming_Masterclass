@@ -11,18 +11,33 @@ public class Album {
         this.songs = new ArrayList<Song>();
     }
 
-    public String getTitle() {
-        return this.title;
+//    public String getTitle() {
+//        return this.title;
+//    }
+//
+//    public ArrayList<Song> getSongs() {
+//        return this.songs;
+//    }
+    
+    private Song findSong(String title) {
+        for (Song currentSong: this.songs) {
+            if (currentSong.getTitle().equals(title)) {
+                return currentSong;
+            }
+        }
+        return null;
     }
 
-    public ArrayList<Song> getSongs() {
-        return this.songs;
-    }
+    //if the title doesn't exist in the album then add the song, else return false since it's already in the album
+    public boolean addSong(String title, double duration) {
+        Song newSong = new Song(title, duration);
 
-    public boolean hasSong(Song song) {
-        if (this.songs.contains(song)) return true;
-
-        return false;
+        if (findSong(title) == null) {
+            this.songs.add(newSong);
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
