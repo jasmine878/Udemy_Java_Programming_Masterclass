@@ -38,7 +38,56 @@ public class Playlist {
             System.out.println("Song playing from Playlist is: " + playlistTool.next());
             printMenu();
         }
-        
+
+        while (!quit) {
+            int action = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (action) {
+                case 0:
+                    System.out.println("Exiting playlist");
+                    quit = true;
+                    break;
+                case 1:
+                    if(!goingForward) {
+                        if(playlistTool.hasNext()) playlistTool.next();
+                        goingForward = true;
+                    }
+
+                    if (playlistTool.hasNext()) {
+                        System.out.println("Song playing from Playlist is: " + playlistTool.next());
+                    } else {
+                        System.out.println("Reached the end of the Playlist");
+                        goingForward = false;
+                    }
+                    break;
+                case 2:
+                    if (goingForward) {
+                        if(playlistTool.hasPrevious()) playlistTool.previous();
+                        goingForward = false;
+                    }
+
+                    if(playlistTool.hasPrevious()) {
+                        System.out.println("Song playing from Playlist is: " + playlistTool.previous());
+                    } else {
+                        System.out.println("Reached the beginning of the Playlist");
+                        goingForward = true;
+                    }
+                    break;
+                case 3:
+                    if (!goingForward) {
+                        System.out.println("Song playing from Playlist is: " + playlistTool.next());
+                        playlistTool.previous();
+                    } else {
+                        System.out.println("Song playing from Playlist is: " + playlistTool.previous());
+                        playlistTool.next();
+                    }
+                    break;
+                case 4:
+                    printMenu();
+                    break;
+            }
+        }
     }
 
     private static void printMenu() {
