@@ -7,6 +7,7 @@ public class Main {
     private static ArrayList<Album> myAlbums = new ArrayList<Album>();
 
     public static void main(String[] args) {
+        //create a new Album
         Album album = new Album("Stormbringer", "Deep Purple");
 
         album.addSong("Stormbinger", 4.6);
@@ -20,6 +21,7 @@ public class Main {
         album.addSong("Soldier of Fortune", 3.13);
         myAlbums.add(album);
 
+        //create a second Album
         album = new Album("For those about to rock", "AC/DC");
 
         album.addSong("For those about to rock", 5.44);
@@ -33,6 +35,7 @@ public class Main {
         album.addSong("Night of the long knives", 5.12);
         myAlbums.add(album);
 
+        //create a playlist as a LinkedList
         LinkedList<Song> myPlaylist = new LinkedList<Song>();
 
         myAlbums.get(0).addToPlayList("You can't do it right", myPlaylist);
@@ -140,6 +143,18 @@ public class Main {
                 case 5:
                     printMenu();
                     break;
+                case 6:
+                    //when we delete a song, the next song is automatically playing here
+                    if (playlist.size() > 0) {
+                        //removes the current song
+                        playlistTool.remove();
+                        if (playlistTool.hasNext()) {
+                            System.out.println("Now playing " + playlistTool.next());
+                        } else if(playlistTool.hasPrevious()) {
+                            System.out.println("Now playing " + playlistTool.previous());
+                        }
+                    }
+                    break;
             }
         }
     }
@@ -159,7 +174,8 @@ public class Main {
                 "2 - Play previous song\n" +
                 "3 - Replay the current song\n" +
                 "4 - List playlist songs\n" +
-                "5 - Print available actions");
+                "5 - Print available actions\n" +
+                "6 - Remove song");
     }
 
 }
