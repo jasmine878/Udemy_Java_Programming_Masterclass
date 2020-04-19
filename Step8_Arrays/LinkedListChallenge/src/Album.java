@@ -12,14 +12,6 @@ public class Album {
         this.songs = new ArrayList<Song>();
     }
 
-//    public String getTitle() {
-//        return this.title;
-//    }
-//
-//    public ArrayList<Song> getSongs() {
-//        return this.songs;
-//    }
-
     private Song findSong(String title) {
         for (Song currentSong: this.songs) {
             if (currentSong.getTitle().equals(title)) {
