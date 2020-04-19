@@ -4,9 +4,9 @@ public class Albums {
     private String title;
     private ArrayList<Album> albums;
 
-    public Albums(String title, ArrayList<Album> albums) {
+    public Albums(String title) {
         this.title = title;
-        this.albums = albums;
+        this.albums = new ArrayList<Album>();
     }
 
     public String getTitle() {

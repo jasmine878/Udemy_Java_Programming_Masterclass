@@ -2,11 +2,13 @@ import java.util.ArrayList;
 
 public class Album {
     private String title;
+    private String artist;
     private ArrayList<Song> songs;
 
-    public Album(String title, ArrayList<Song> songs) {
+    public Album(String title, String artist) {
         this.title = title;
-        this.songs = songs;
+        this.artist = artist;
+        this.songs = new ArrayList<Song>();
     }
 
     public String getTitle() {

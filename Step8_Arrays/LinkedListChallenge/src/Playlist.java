@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.Scanner;
@@ -6,8 +5,8 @@ import java.util.Scanner;
 public class Playlist {
     private LinkedList<Song> playlist;
 
-    public Playlist(ArrayList<Album> albums, LinkedList<Song> playlist) {
-        this.playlist = playlist;
+    public Playlist() {
+        this.playlist = new LinkedList<Song>();
     }
 
     public LinkedList<Song> getPlaylist() {
