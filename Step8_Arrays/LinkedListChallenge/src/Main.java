@@ -77,6 +77,7 @@ public class Main {
                     }
 
                     if (playlistTool.hasNext()) {
+                        //toString is the default option.  It's not required to add it here
                         System.out.println("Now playing " + playlistTool.next().toString());
                     } else {
                         System.out.println("Reached the end of the Playlist");
@@ -85,6 +86,7 @@ public class Main {
                     break;
                 case 2:
                     if (goingForward) {
+                        //toString is the default option.  It's not required to add it here
                         if(playlistTool.hasPrevious()) playlistTool.previous();
                         goingForward = false;
                     }
@@ -115,9 +117,11 @@ public class Main {
     }
 
     private static void printPlaylist(LinkedList<Song> playlist) {
+        System.out.println("===========================");
         for (Song songObj: playlist) {
             System.out.println(songObj.toString());
         }
+        System.out.println("===========================");
     }
 
     private static void printMenu() {
@@ -126,7 +130,7 @@ public class Main {
                 "1 - Play next song\n" +
                 "2 - Play previous song\n" +
                 "3 - Replay the current song\n" +
-                "4 - List playlist songs" +
+                "4 - List playlist songs\n" +
                 "5 - Print available actions");
     }
 
