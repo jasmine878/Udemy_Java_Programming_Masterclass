@@ -1,10 +1,7 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.ListIterator;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
-    private static ArrayList<Album> myAlbums = new ArrayList<Album>();
+    private static List<Album> myAlbums = new ArrayList<Album>();
 
     public static void main(String[] args) {
         //create a new Album
@@ -36,7 +33,7 @@ public class Main {
         myAlbums.add(album);
 
         //create a playlist as a LinkedList
-        LinkedList<Song> myPlaylist = new LinkedList<Song>();
+        List<Song> myPlaylist = new ArrayList<Song>();
 
         myAlbums.get(0).addToPlayList("You can't do it right", myPlaylist);
         myAlbums.get(0).addToPlayList("Holy Man", myPlaylist);
@@ -50,7 +47,7 @@ public class Main {
         play(myPlaylist);
     }
 
-    private static void play(LinkedList<Song> playlist) {
+    private static void play(List<Song> playlist) {
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
         boolean goingForward = true;
@@ -159,7 +156,7 @@ public class Main {
         }
     }
 
-    private static void printPlaylist(LinkedList<Song> playlist) {
+    private static void printPlaylist(List<Song> playlist) {
         System.out.println("===========================");
         for (Song songObj: playlist) {
             System.out.println(songObj.toString());
