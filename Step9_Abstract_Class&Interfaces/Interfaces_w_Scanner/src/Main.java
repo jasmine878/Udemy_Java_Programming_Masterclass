@@ -33,7 +33,8 @@ public class Main {
         myAlbums.add(album);
 
         //create a playlist as a LinkedList
-        List<Song> myPlaylist = new ArrayList<Song>();
+//        List<Song> myPlaylist = new ArrayList<Song>();
+        List<Song> myPlaylist = new Vector<Song>();
 
         myAlbums.get(0).addToPlayList("You can't do it right", myPlaylist);
         myAlbums.get(0).addToPlayList("Holy Man", myPlaylist);
