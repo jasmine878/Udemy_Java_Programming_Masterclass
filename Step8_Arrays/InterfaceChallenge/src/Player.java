@@ -54,5 +54,14 @@ public class Player implements ISaveable {
     public void read(ArrayList<String> savedValues) {
 
     }
-    
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", hitPoints=" + hitPoints +
+                ", strength=" + strength +
+                ", weapon='" + weapon + '\'' +
+                '}';
+    }
 }
