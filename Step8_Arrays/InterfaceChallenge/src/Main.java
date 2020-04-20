@@ -3,7 +3,23 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Player tim = new Player("Tim", 10, 15);
+        System.out.println(tim.toString());
+        System.out.println();
 
+        saveObject(tim);
+        System.out.println();
+
+        tim.setHitPoints(8);
+        System.out.println(tim);
+        System.out.println();
+
+        tim.setWeapon("Stormbringer");
+        saveObject(tim);
+        System.out.println();
+        loadObject(tim);
+        System.out.println();
+        System.out.println(tim);
     }
 
     // In Main, write a method that takes an object that implements the interface as a parameter and
@@ -23,7 +39,7 @@ public class Main {
         ArrayList<String> values = readValues();
         objectToLoad.read(values);
     }
-    
+
 
     // Also in the Main class, write a method that restores the values to a Saveable object
     // e.g. calls the method from the interface for populating fields (see above).
