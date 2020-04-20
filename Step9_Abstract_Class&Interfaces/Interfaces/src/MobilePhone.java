@@ -36,6 +36,7 @@ public class MobilePhone implements ITelephone{
             isRinging = true;
             System.out.println("Melody ring");
         } else {
+            System.out.println("Mobile phone is not on or number is different");
             isRinging = false;
         }
         return isRinging;
