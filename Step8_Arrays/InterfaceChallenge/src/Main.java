@@ -6,8 +6,21 @@ public class Main {
 
     }
 
-    //this method simulates getting values from a file
-    //since we haven't learned Java Input/Output yet
+    // In Main, write a method that takes an object that implements the interface as a parameter and
+    // "saves" the values e.g. calls the method defined in the interface.
+    // We haven't covered I/O yet, so your method should just print the values to the screen.
+
+
+
+
+
+
+
+
+    // Also in the Main class, write a method that restores the values to a Saveable object
+    // e.g. calls the method from the interface for populating fields (see above).
+
+    //this method simulates getting values from a file since we haven't learned Java Input/Output yet
     //this allows you to type in as many values as the Class requires and returns an ArrayList
     public static ArrayList<String> readValues() {
         ArrayList<String> values = new ArrayList<String>();
