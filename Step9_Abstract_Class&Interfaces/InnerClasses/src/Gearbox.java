@@ -12,13 +12,17 @@ public class Gearbox {
 
         Gear neutral = new Gear(0, 0.0);
         this.gears.add(neutral);
+
+        for (int i = 0; i < maxGears; i++) {                    //this is adding individual gears to the Gearbox
+            addGear(i, i * 5.3);                          //the machine ratio is the same for all gears
+        }
     }
 
     public void operateClutch(boolean in) {
         this.clutchIsIn = in;
     }
 
-    public void addGear(int number, double ratio) {
+    private void addGear(int number, double ratio) {
         if (number > 0 && number <= maxGears) {
             this.gears.add(new Gear(number, ratio));
         }
