@@ -1,0 +1,19 @@
+public class Song {
+    private String title;
+    private double duration;
+
+    public Song(String title, double duration) {
+        this.title = title;
+        this.duration = duration;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    //we're overriding the Object.toString() method to give us something more useful than the Object's location in memory
+    @Override
+    public String toString() {
+        return this.title + ": " + this.duration;
+    }
+}
