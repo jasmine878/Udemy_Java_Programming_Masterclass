@@ -20,6 +20,10 @@ public class Monster implements ISaveable{
         return this.hitPoints;
     }
 
+    public int getStrength() {
+        return this.strength;
+    }
+
     @Override
     public String toString() {
         return "Monster{" +

@@ -17,9 +17,17 @@ public class Main {
         tim.setWeapon("Stormbringer");
         saveObject(tim);
         System.out.println();
-        loadObject(tim);
+//        loadObject(tim);
+//        System.out.println();
+//        System.out.println(tim);
+//        System.out.println();
+
+        ISaveable werewolf = new Monster("Werewolf", 20, 40);
+        System.out.println(werewolf);
+        System.out.println("Strength = " + ((Monster) werewolf).getStrength());
         System.out.println();
-        System.out.println(tim);
+
+        saveObject(werewolf);
     }
 
     // In Main, write a method that takes an object that implements the interface as a parameter and
