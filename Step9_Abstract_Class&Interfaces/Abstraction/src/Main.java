@@ -9,5 +9,9 @@ public class Main {
         parrot.breathe();
         parrot.eat();
         parrot.fly();
+        System.out.println();
+
+        Penguin penguin = new Penguin("Emperor");
+        penguin.fly();
     }
 }
