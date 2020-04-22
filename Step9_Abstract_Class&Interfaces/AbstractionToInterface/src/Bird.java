@@ -2,7 +2,7 @@
 //create an Abstract Bird class that extends Animal and also
 //has an abstract fly method that individual Bird objects can implement
 
-public abstract class Bird extends Animal {
+public class Bird extends Animal implements CanFly {
     public Bird(String name) {
         super(name);
     }
@@ -17,5 +17,12 @@ public abstract class Bird extends Animal {
         System.out.println("Breathe in, breath out, repeat");
     }
 
-    public abstract void fly();
+    //  REPLACE THE ABSTRACT METHOD OF FLY WITH THE INTERFACE CANFLY
+//    public abstract void fly();
+
+
+    @Override
+    public void fly() {
+        System.out.println(getName() + " is flapping its wings");
+    }
 }
