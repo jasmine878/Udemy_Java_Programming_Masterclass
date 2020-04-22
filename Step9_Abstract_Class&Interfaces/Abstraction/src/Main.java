@@ -5,8 +5,9 @@ public class Main {
         dog.eat();
         System.out.println();
 
-        Bird bird = new Bird("Parrot");
-        bird.breathe();
-        bird.eat();
+        Parrot parrot = new Parrot("Australian ringneck");
+        parrot.breathe();
+        parrot.eat();
+        parrot.fly();
     }
 }
