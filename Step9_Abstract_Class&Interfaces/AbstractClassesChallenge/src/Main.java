@@ -12,6 +12,9 @@ public class Main {
         }
         
         list.traverse(list.getRoot());
+        System.out.println();
+
+      
     }
 
 
