@@ -29,6 +29,9 @@ public class Node extends ListItem{
 
     @Override
     public int compareTo(ListItem compareItem) {
+        //if parameter is null, it's less than currentNode, return -1
+        //the parameter is the compareItem
+
         //if compareItem < this.value return < 0
         //if compareItem > this.value return > 0
         //if compareItem == this.value return 0
