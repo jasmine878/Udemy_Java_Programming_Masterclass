@@ -22,7 +22,7 @@ public abstract class ListItem {
     //abstract methods
     abstract ListItem next();
     abstract ListItem previous();
-    abstract void setNext(ListItem nextItem);
-    abstract void setPrevious(ListItem previousItem);
+    abstract ListItem setNext(ListItem nextItem);
+    abstract ListItem setPrevious(ListItem previousItem);
     abstract int compareTo(ListItem compareItem);
 }
