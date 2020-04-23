@@ -29,8 +29,10 @@ public class MyLinkedList implements NodeList {
                 if (currentNode != null) {
                     currentNode = currentNode.next();
                 } else {
-                    currentNode.setNext(newNode);
-                    newNode.setPrevious(currentNode);
+//                    currentNode.setNext(newNode);
+//                    newNode.setPrevious(currentNode);
+                    //since setNext returns the nextNode, we can just build off of the return value
+                    currentNode.setNext(newNode).setPrevious(currentNode);
                     return true;
                 }
                 //newNode < currentNode, insert before currentNode
@@ -38,8 +40,10 @@ public class MyLinkedList implements NodeList {
                 if(currentNode.previous() != null) {
                     currentNode.previous.setNext(newNode);
                     newNode.setPrevious(currentNode.previous());
-                    newNode.setNext(currentNode);
-                    currentNode.setPrevious(newNode);
+//                    newNode.setNext(currentNode);
+//                    currentNode.setPrevious(newNode);
+                    //since setPrevious returns the previousNode, we can just build off of the return value
+                    newNode.setNext(currentNode).setPrevious(newNode);
                 } else {
                     //the currentNode is the rootNode
                     currentNode.setPrevious(newNode);
