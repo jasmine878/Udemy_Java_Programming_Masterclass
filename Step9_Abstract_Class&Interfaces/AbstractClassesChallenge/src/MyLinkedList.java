@@ -1,9 +1,9 @@
 //this linked list is more like a double linked list since it is able to access next AND previous nodes.
 
 public class MyLinkedList implements NodeList {
-    private ListItem root = null;
+    private ListItem root;
 
-    public MyLinkedList() {
+    public MyLinkedList(ListItem root) {
         this.root = root;
     }
 

@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        MyLinkedList list = new MyLinkedList();
+        MyLinkedList list = new MyLinkedList(null);
         list.traverse(list.getRoot());
         System.out.println();
 
@@ -14,7 +14,7 @@ public class Main {
         list.traverse(list.getRoot());
         System.out.println();
 
-        MyLinkedList list2 = new MyLinkedList();
+        MyLinkedList list2 = new MyLinkedList(null);
         String stringData2 = "5 7 3 9 8 2 1 0 4 6";
         String[] dataArray2 = stringData2.split(" ");
 
