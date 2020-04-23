@@ -26,7 +26,7 @@ public class MyLinkedList implements NodeList {
 
             //newNode is greater than currentNode, so move to the NEXT node until we find the appropriate place
             if (comparison < 0) {
-                if (currentNode != null) {
+                if (currentNode.next() != null) {
                     currentNode = currentNode.next();
                 } else {
 //                    currentNode.setNext(newNode);

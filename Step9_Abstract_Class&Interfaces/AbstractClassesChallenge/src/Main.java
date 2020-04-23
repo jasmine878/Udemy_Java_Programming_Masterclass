@@ -10,8 +10,7 @@ public class Main {
         for (String word : dataArray) {
             list.addItem(new Node(word));
         }
-
-        //MISSING SOME WORDS IN MY PRINTOUT!!  DO OVER
+        
         list.traverse(list.getRoot());
     }
 
