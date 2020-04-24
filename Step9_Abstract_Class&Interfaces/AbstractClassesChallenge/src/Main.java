@@ -43,6 +43,32 @@ public class Main {
         list2.traverse(list2.getRoot());
         System.out.println();
 
-        
+        SearchTree tree = new SearchTree(null);
+        tree.traverse(tree.getRoot());
+        System.out.println();
+
+        String stringData3 = "5 7 3 9 8 2 1 0 4 6";
+        String[] dataArray3 = stringData3.split(" ");
+
+        for (String word : dataArray3) {
+            tree.addItem(new Node(word));
+        }
+
+        tree.traverse(tree.getRoot());
+        System.out.println();
+
+        SearchTree tree2 = new SearchTree(null);
+        tree2.traverse(tree2.getRoot());
+        System.out.println();
+
+        String stringData4 = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
+        String[] dataArray4 = stringData4.split(" ");
+
+        for (String word : dataArray4) {
+            tree2.addItem(new Node(word));
+        }
+
+        tree2.traverse(tree2.getRoot());
+        System.out.println();
     }
 }
