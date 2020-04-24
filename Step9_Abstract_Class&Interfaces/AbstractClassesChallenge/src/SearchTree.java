@@ -20,8 +20,18 @@ public class SearchTree implements NodeList {
         return false;
     }
 
+
+    //RECURSIVE METHOD!!
+    //it will travel to the leftmost node until it reaches null and print the leftmost node
+    //it will travel back to the current node and print the current node
+    //then it will travel to the right node and repeat the process
+    //until it prints the entire tree
     @Override
     public void traverse(ListItem root) {
-
+        if (root != null) {
+            traverse(root.previous());
+            System.out.println(root.getValue());
+            traverse(root.next());
+        }
     }
 }
