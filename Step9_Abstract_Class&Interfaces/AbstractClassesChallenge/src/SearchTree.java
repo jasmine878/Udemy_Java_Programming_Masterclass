@@ -79,7 +79,57 @@ public class SearchTree implements NodeList {
         return false;
     }
 
+    //I CANNOT FOLLOW THE INSTRUCTOR'S ANSWER AT ALL.  HIS EXPLANATION IS CONFUSING
+    //I tried my own way, but the last part is confusing
+    //INCOMPLETE
+    public void performRemoval(ListItem removalNode, ListItem parentNode) {
+        //if the node we want to remove doesn't have a left or right node, it's easy to remove
+        if (removalNode.next() == null && removalNode.previous() == null) {
+            if (parentNode.previous() == removalNode) {
+                //if the removal node is the parentNode.previous, then remove the parent's previous node
+                parentNode.setPrevious(null);
+            }
+            if (parentNode.next() == removalNode) {
+                //if the removal node is the parentNode.next, then remove the parent's next node
+                parentNode.setNext(null);
+            }
+            //if the node we want to remove has a right node, but no left node, we have to reconnect the parent to the only child node
+        } else if (removalNode.next() != null && removalNode.previous() == null) {
+            if (parentNode.previous() == removalNode) {
+                //if the removal node is the parentNode.previous, then remove the parent's previous node
+                parentNode.setPrevious(removalNode.next());
+            }
+            if (parentNode.next() == removalNode) {
+                //if the removal node is the parentNode.next, then remove the parent's next node
+                parentNode.setNext(removalNode.next());
+            }
+            //if the node we want to remove has a left node, but no right node, we have to reconnect the parent to the only child node
+        } else if (removalNode.next() == null && removalNode.previous() != null) {
+            if (parentNode.previous() == removalNode) {
+                //if the removal node is the parentNode.previous, then remove the parent's previous node
+                parentNode.setPrevious(removalNode.previous());
+            }
+            if (parentNode.next() == removalNode) {
+                //if the removal node is the parentNode.next, then remove the parent's next node
+                parentNode.setNext(removalNode.previous());
+            }
+            //if the node we want to remove has a left node and a right node, we have to reconnect the parent to both child nodes
+            //this is complicated since it's a binary search tree.  The parent node can't have 3 branches only two
+            //right node would need to become the bigger node with the left node as its child
+        } else if (removalNode.next() != null && removalNode.previous != null) {
+            //if the removal node is the parentNode.previous, then remove the parent's previous node
+            if (parentNode.previous() == removalNode) {
+                parentNode.setPrevious(removalNode.next());
+                removalNode.next().setPrevious(removalNode.previous());
+            }
+            //if the removal node is the parentNode.next, then remove the parent's next node
+            if (parentNode.next() == removalNode) {
+                parentNode.setNext(removalNode.previous());
+            }
 
+        }
+    }
+    
     //RECURSIVE METHOD!!
     //it will travel to the leftmost node until it reaches null and print the leftmost node
     //it will travel back to the current node and print the current node
