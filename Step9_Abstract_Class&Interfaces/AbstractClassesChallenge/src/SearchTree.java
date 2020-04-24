@@ -51,7 +51,31 @@ public class SearchTree implements NodeList {
     }
 
     @Override
-    public boolean removeItem(ListItem item) {
+    public boolean removeItem(ListItem removeNode) {
+        if (removeNode != null) {
+            System.out.println("Deleting item " + removeNode.getValue());
+        }
+        ListItem currentNode = this.root;
+        ListItem parentNode = currentNode;
+
+        while (currentNode != null) {
+            int comparison = currentNode.compareTo(removeNode);
+
+            //if the removeNode is bigger than currentNode, keep moving next
+            if (comparison < 0) {
+                parentNode = currentNode;
+                currentNode = currentNode.next();
+                //if the removeNode is smaller than currenNode, we need to move to the previous
+            } else if (comparison > 0) {
+                parentNode = currentNode;
+                currentNode = currentNode.previous();
+            } else {
+                //comparison = 0.  It's a match.  We can remove it.
+                performRemoval(currentNode, parentNode);
+                return true;
+            }
+        }
+
         return false;
     }
 
