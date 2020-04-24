@@ -29,4 +29,8 @@ public class Team {
         }
     }
 
+    public int numPlayer() {
+        return this.members.size();
+    }
+
 }
