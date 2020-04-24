@@ -44,4 +44,8 @@ public class Team {
             opponent.gameResult(null, theirScore, ourScore);
         }
     }
+
+    public int ranking() {
+        return gamesWon * 2 + gamesTied;
+    }
 }
