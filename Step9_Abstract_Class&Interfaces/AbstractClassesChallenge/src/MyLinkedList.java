@@ -97,11 +97,20 @@ public class MyLinkedList implements NodeList {
 
     @Override
     public void traverse(ListItem root) {
-        if (root == null) System.out.println("This list is empty");
+//        if (root == null) System.out.println("This list is empty");
+//
+//        while (root != null) {
+//            System.out.println(root.getValue());
+//            root = root.next();
+//        }
 
-        while (root != null) {
+        //RECURSIVE IMPLEMENTATION!!
+        //generally this is not recommended due to the depth of the recursion
+        //recursive calls can take up a lot of memory and slow the computer down
+        //to the point that we reach a stack overflow!!  Computer doesn't have any more memory to complete the method calls
+        if (root != null) {
             System.out.println(root.getValue());
-            root = root.next();
+            traverse(root.next());
         }
     }
 }
