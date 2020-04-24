@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList items = new ArrayList();
+        ArrayList<Integer> items = new ArrayList<>();
 
         items.add(1);
         items.add(2);
@@ -13,9 +13,9 @@ public class Main {
         printDoubled(items);
     }
 
-    private static void printDoubled(ArrayList arr) {
-        for (Object ele : arr) {
-            System.out.println((Integer) ele * 2);
+    private static void printDoubled(ArrayList<Integer> arr) {
+        for (int ele : arr) {
+            System.out.println(ele * 2);
         }
     }
 }
