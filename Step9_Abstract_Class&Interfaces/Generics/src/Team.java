@@ -18,4 +18,15 @@ public class Team {
         return this.name;
     }
 
+    public boolean addPlayer(Player player) {
+        if (!members.contains(player)) {
+            members.add(player);
+            System.out.println(player.getName() + " picked for team " + this.name);
+            return true;
+        } else {
+            System.out.println(player.getName() + " is already on this team");
+            return false;
+        }
+    }
+
 }
