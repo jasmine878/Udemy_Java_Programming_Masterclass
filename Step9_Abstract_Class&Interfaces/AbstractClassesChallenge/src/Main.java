@@ -10,7 +10,7 @@ public class Main {
         for (String word : dataArray) {
             list.addItem(new Node(word));
         }
-        
+
         list.traverse(list.getRoot());
         System.out.println();
 
@@ -41,5 +41,8 @@ public class Main {
         list2.traverse(list2.getRoot());
         list2.removeItem(list2.getRoot());
         list2.traverse(list2.getRoot());
+        System.out.println();
+
+        
     }
 }

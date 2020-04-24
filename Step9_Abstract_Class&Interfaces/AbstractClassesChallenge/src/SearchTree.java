@@ -11,7 +11,42 @@ public class SearchTree implements NodeList {
     }
 
     @Override
-    public boolean addItem(ListItem item) {
+    public boolean addItem(ListItem newNode) {
+        if (this.root == null) {
+            this.root = newNode;
+            return true;
+        }
+        ListItem currentNode = this.root;
+
+        while(currentNode != null) {
+            int comparison = currentNode.compareTo(newNode);
+
+            //newNode is greater than currentNode, so move to the NEXT node until we find the appropriate place
+            if (comparison < 0) {
+                //newNode is greater, move right if possible
+                if (currentNode.next() != null) {
+                    currentNode = currentNode.next();
+                } else {
+                    //we only need to set one direction with the tree
+                    currentNode.setNext(newNode);
+                    return true;
+                }
+                //newNode < currentNode, insert before currentNode
+            } else if (comparison > 0) {
+                //newNode is less, move left if possible
+                if(currentNode.previous() != null) {
+                    currentNode = currentNode.previous();
+                } else {
+                    currentNode.setPrevious(newNode);
+                    return true;
+                }
+            } else {
+                //newNode.value() == currentNode.value()
+                System.out.println(newNode.getValue() + " is already present, not added");
+                return false;
+            }
+        }
+        //we'll never arrive to this point, but Java requires us to return a boolean for this method
         return false;
     }
 
