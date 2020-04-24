@@ -33,4 +33,15 @@ public class Team {
         return this.members.size();
     }
 
+    public void gameResult(Team opponent, int ourScore, int theirScore) {
+        if (ourScore > theirScore) gamesWon++;
+        if (ourScore < theirScore) gamesLost--;
+        if (ourScore == theirScore) gamesTied++;
+
+        gamesPlayed++;
+
+        if (opponent != null) {
+            opponent.gameResult(null, theirScore, ourScore);
+        }
+    }
 }
