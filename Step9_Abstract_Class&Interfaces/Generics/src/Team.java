@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Team {
+public class Team<T> {
     private String name;
     int gamesPlayed = 0;
     int gamesWon = 0;
@@ -8,7 +8,7 @@ public class Team {
     int gamesLost = 0;
 
     //we're creating an arrayList using generics
-    private ArrayList<Player> members = new ArrayList<>();
+    private ArrayList<T> members = new ArrayList<>();
 
     public Team(String name) {
         this.name = name;
@@ -18,13 +18,13 @@ public class Team {
         return this.name;
     }
 
-    public boolean addPlayer(Player player) {
+    public boolean addPlayer(T player) {
         if (!members.contains(player)) {
             members.add(player);
-            System.out.println(player.getName() + " picked for team " + this.name);
+            System.out.println(((Player) player).getName() + " picked for team " + this.name);
             return true;
         } else {
-            System.out.println(player.getName() + " is already on this team");
+            System.out.println(((Player) player).getName() + " is already on this team");
             return false;
         }
     }
