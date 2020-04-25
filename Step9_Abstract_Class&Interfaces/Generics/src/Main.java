@@ -70,6 +70,12 @@ public class Main {
         System.out.println(melbourne.getName() + ": " + melbourne.ranking());
         System.out.println(fremantle.getName() + ": " + fremantle.ranking());
         System.out.println(hawthorn.getName() + ": " + hawthorn.ranking());
+        System.out.println("==========================");
+
+        System.out.println(adelaideCrows2.compareTo(melbourne));
+        System.out.println(adelaideCrows2.compareTo(hawthorn));
+        System.out.println(hawthorn.compareTo(adelaideCrows2));
+        System.out.println(melbourne.compareTo(fremantle));
 
     }
 

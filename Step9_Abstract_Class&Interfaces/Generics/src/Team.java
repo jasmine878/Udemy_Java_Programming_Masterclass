@@ -62,11 +62,10 @@ public class Team<T extends Player> implements Comparable<Team<T>> {
     //the Object Class already has the compareTo class built in.
     // We are overriding the built in method below
     //if this.ranking > team.ranking we're returning -1, because we want it to appear higher in the list
-
     @Override
     public int compareTo(Team<T> team) {
         if(this.ranking() > team.ranking()) return -1;
-        if (this.ranking() < team.ranking()) return 1;
+        if(this.ranking() < team.ranking()) return 1;
 
         return 0;
     }
