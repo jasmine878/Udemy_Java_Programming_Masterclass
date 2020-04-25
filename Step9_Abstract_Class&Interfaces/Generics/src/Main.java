@@ -63,6 +63,14 @@ public class Main {
 
         adelaideCrows2.gameResult(fremantle, 2, 1);
 //        adelaideCrows2.gameResult(baseballTeam, 1, 1);
+        System.out.println("==========================");
+
+        System.out.println("Rankings");
+        System.out.println(adelaideCrows2.getName() + ": " + adelaideCrows2.ranking());
+        System.out.println(melbourne.getName() + ": " + melbourne.ranking());
+        System.out.println(fremantle.getName() + ": " + fremantle.ranking());
+        System.out.println(hawthorn.getName() + ": " + hawthorn.ranking());
+
     }
 
     private static void printDoubled(ArrayList<Integer> arr) {
