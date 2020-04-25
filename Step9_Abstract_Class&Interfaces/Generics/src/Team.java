@@ -33,14 +33,24 @@ public class Team<T extends Player> {
         return this.members.size();
     }
 
-    public void gameResult(Team opponent, int ourScore, int theirScore) {
-        if (ourScore > theirScore) gamesWon++;
-        if (ourScore < theirScore) gamesLost--;
-        if (ourScore == theirScore) gamesTied++;
+    public void gameResult(Team<T> opponent, int ourScore, int theirScore) {
+        String message;
+
+        if (ourScore > theirScore) {
+            gamesWon++;
+            message = " beat ";
+        } else if (ourScore < theirScore) {
+            gamesLost--;
+            message = " lost to ";
+        } else {
+            gamesTied++;
+            message = " drew with ";
+        }
 
         gamesPlayed++;
 
         if (opponent != null) {
+            System.out.println(this.getName() + message + opponent.getName());
             opponent.gameResult(null, theirScore, ourScore);
         }
     }
