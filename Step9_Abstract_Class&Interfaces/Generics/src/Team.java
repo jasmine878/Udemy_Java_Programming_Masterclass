@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Team<T> {
+public class Team<T extends Player> {
     private String name;
     int gamesPlayed = 0;
     int gamesWon = 0;
@@ -21,10 +21,10 @@ public class Team<T> {
     public boolean addPlayer(T player) {
         if (!members.contains(player)) {
             members.add(player);
-            System.out.println(((Player) player).getName() + " picked for team " + this.name);
+            System.out.println(player.getName() + " picked for team " + this.name);
             return true;
         } else {
-            System.out.println(((Player) player).getName() + " is already on this team");
+            System.out.println(player.getName() + " is already on this team");
             return false;
         }
     }

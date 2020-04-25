@@ -46,8 +46,10 @@ public class Main {
         //Unfortunately, we can put any Generic Type here, even STRING
         //there are no compile errors
         //but when we run the code, it will break, because of the <Player> caste we have in the Class method addPlayer
-        Team<String> brokenTeam = new Team<>("this won't work");
-        brokenTeam.addPlayer("no-one");
+//        Team<String> brokenTeam = new Team<>("this won't work");
+//        brokenTeam.addPlayer("no-one");
+        Team<SoccerPlayer> brokenTeam = new Team<>("this won't work");
+        brokenTeam.addPlayer(beckham);
     }
 
     private static void printDoubled(ArrayList<Integer> arr) {
