@@ -1,3 +1,5 @@
+//awt = Abstract Windows Toolkit
+
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
