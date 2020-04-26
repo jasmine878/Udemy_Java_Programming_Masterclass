@@ -6,6 +6,7 @@ public class Main {
         Team<FootballPlayer> melbourne = new Team<>("Melbourne");
         Team<FootballPlayer> hawthorn = new Team<>("Hawthorn");
         Team<FootballPlayer> fremantle = new Team<>("Fremantle");
+        Team<BaseballPlayer> baseballTeam = new Team<>("Chicago Cubs");
 
         footballLeague.addTeam(adelaideCrows2);
         footballLeague.addTeam(melbourne);
