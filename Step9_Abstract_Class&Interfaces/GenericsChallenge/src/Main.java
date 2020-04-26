@@ -22,5 +22,26 @@ public class Main {
 //        footballLeague.addTeam(baseballTeam);
 
         footballLeague.showLeague();
+        System.out.println("==========================");
+
+        BaseballPlayer pat = new BaseballPlayer("Pat");
+        SoccerPlayer beckham = new SoccerPlayer("Beckham");
+
+        //Examples of the complications with using RAW types
+        Team rawTeam = new Team("Raw Team");
+        rawTeam.addPlayer(beckham);
+        rawTeam.addPlayer(pat);
+
+        footballLeague.addTeam(rawTeam);
+
+        League<Team> rawLeague = new League<>("Raw");
+        rawLeague.addTeam(adelaideCrows2);
+        rawLeague.addTeam(baseballTeam);
+        rawLeague.addTeam(rawTeam);
+
+        League reallyRaw =  new League("Really raw");
+        reallyRaw.addTeam(adelaideCrows2);
+        reallyRaw.addTeam(baseballTeam);
+        reallyRaw.addTeam(rawTeam);
     }
 }
