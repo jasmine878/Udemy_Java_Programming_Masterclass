@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class League<T extends Team> {
     public String name;
@@ -17,5 +18,12 @@ public class League<T extends Team> {
         return true;
     }
 
-
+    public void showLeague() {
+        //first we sort our league by each team's ranking
+        Collections.sort(league);
+        //then we print out each team in our league
+        for(T team: league) {
+            System.out.println(team.getName() + ": " + team.ranking());
+        }
+    }
 }
