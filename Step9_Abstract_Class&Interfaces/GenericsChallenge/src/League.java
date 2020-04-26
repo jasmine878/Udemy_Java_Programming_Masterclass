@@ -8,7 +8,14 @@ public class League<T extends Team> {
         this.name = name;
     }
 
+    public boolean addTeam(T team) {
+        if(league.contains(team)) {
+            return false;
+        }
 
+        league.add(team);
+        return true;
+    }
 
 
 }
