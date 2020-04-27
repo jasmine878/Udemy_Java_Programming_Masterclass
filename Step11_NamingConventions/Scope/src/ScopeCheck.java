@@ -23,6 +23,14 @@ public class ScopeCheck {
         }
     }
 
+    //the containing class has access to all of the methods and fields of a contained class even if they're marked as private
+    //So from Scopecheck() we have access to the variables inside InsideClass()
+    public void useInner() {
+        InnerClass innerClass = new InnerClass();
+
+        System.out.println("acessing varThree while in the outer class: " + innerClass.var3);
+    }
+
     public class InnerClass {
         public int var3 = 3;
 
