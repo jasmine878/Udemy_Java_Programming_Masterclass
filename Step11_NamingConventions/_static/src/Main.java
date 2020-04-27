@@ -5,5 +5,8 @@ public class Main {
 
         StaticTest secondInstance = new StaticTest("2nd Instance");
         System.out.println(secondInstance.getName() + " is instance number " + secondInstance.getNumInstances());
+
+        StaticTest thirdInstance = new StaticTest("3rd Instance");
+        System.out.println(thirdInstance.getName() + " is instance number " + thirdInstance.getNumInstances());
     }
 }
