@@ -4,6 +4,8 @@ public class Main {
         String var4 = "this is private to main()";
         ScopeCheck scopeInstance = new ScopeCheck();
 
+        scopeInstance.useInner();
+
         System.out.println("scopeInstance Var1 is " + scopeInstance.getVar1());
         System.out.println(var4);
 

@@ -32,7 +32,7 @@ public class ScopeCheck {
     }
 
     public class InnerClass {
-        public int var3 = 3;
+        private int var3 = 3;
 
         public InnerClass() {
             System.out.println("InnerClass created, var1 is " + var1 + " and var3 is " + var3);
