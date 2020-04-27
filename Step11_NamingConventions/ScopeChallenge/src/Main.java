@@ -14,9 +14,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a number for the timesTable method");
-        int number = scanner.nextInt();
-        scanner.nextLine();
-        X x = new X(number);
+        X x = new X(scanner.nextInt());
 
         x.x();
         scanner.close();
