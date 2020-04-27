@@ -4,7 +4,7 @@ public class StaticTest {
 
     public StaticTest(String name) {
         this.name = name;
-        numInstances++;
+        this.numInstances++;
     }
 
     public int getNumInstances() {
