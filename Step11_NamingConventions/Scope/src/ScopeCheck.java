@@ -31,10 +31,10 @@ public class ScopeCheck {
         }
 
         public void timesTwo() {
-            int privateVar = 2;
-
             for (int i = 0; i < 10; i++) {
                 System.out.println(i + " times two is " + i * privateVar);
+//                We can also use the privateVar from the Outer Class as well
+//                System.out.println(i + " times two is " + i * ScopeCheck.this.privateVar);
             }
         }
     }
