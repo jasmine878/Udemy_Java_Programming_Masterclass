@@ -22,4 +22,20 @@ public class ScopeCheck {
             System.out.println(i + " times two is " + i * this.privateVar);
         }
     }
+
+    public class InnerClass {
+        public int privateVar = 3;
+
+        public InnerClass() {
+            System.out.println("InnerClass created, privateVar is " + privateVar);
+        }
+
+        public void timesTwo() {
+            int privateVar = 2;
+
+            for (int i = 0; i < 10; i++) {
+                System.out.println(i + " times two is " + i * privateVar);
+            }
+        }
+    }
 }
