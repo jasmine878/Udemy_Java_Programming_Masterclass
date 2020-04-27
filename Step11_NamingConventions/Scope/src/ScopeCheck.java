@@ -17,5 +17,9 @@ public class ScopeCheck {
         for (int i = 0; i < 10; i++) {
             System.out.println(i + " times two is " + i * privateVar);
         }
+        System.out.println("============================");
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i + " times two is " + i * this.privateVar);
+        }
     }
 }
