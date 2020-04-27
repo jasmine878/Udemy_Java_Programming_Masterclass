@@ -16,6 +16,9 @@ public class Series {
     //36 + 9 = 45
     //45 + 10 = 55
     public static int nSum(int n) {
+        //shorter method
+//        return (n * (n + 1) / 2);
+
         if (n == 0) return 0;
 
         int result = 0;
@@ -42,6 +45,7 @@ public class Series {
     //40320 * 9 = 362880
     //362880 * 10 = 2628800
     public static int factorial(int n) {
+
         if (n == 0) return 0;
 
         int result = 1;
@@ -74,17 +78,17 @@ public class Series {
 
         int num1 = 0;
         int num2 = 1;
-        int sum = 0;
+        int fib = 0;
         int i = 1;
 
         while (n > i) {
-            sum = num1 + num2;
+            fib = num1 + num2;
             num1 = num2;
-            num2 = sum;
+            num2 = fib;
             i++;
         }
 
-        return sum;
+        return fib;
     }
 
 }
