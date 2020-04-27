@@ -10,4 +10,12 @@ public class ScopeCheck {
     public int getPrivateVar() {
         return privateVar;
     }
+
+    public void timesTwo() {
+        int privateVar = 2;
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i + " times two is " + i * privateVar);
+        }
+    }
 }
