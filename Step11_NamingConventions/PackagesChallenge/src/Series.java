@@ -55,4 +55,36 @@ public class Series {
         return result;
     }
 
+    //result:    0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
+    //      n  = 0, 1, 2, 3, 4, 5, 6,  7,  8,  9, 10
+    //0
+    //1
+    //1
+    //2
+    //2 + 1 = 3
+    //3 + 2 = 5
+    //5 + 3 = 8
+    //8 + 5 = 13
+    //13 + 8 = 21
+    //21 + 13 = 34
+    //34 + 21 = 55
+    public static int fibonacci(int n) {
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+
+        int num1 = 0;
+        int num2 = 1;
+        int sum = 0;
+        int i = 1;
+
+        while (n > i) {
+            sum = num1 + num2;
+            num1 = num2;
+            num2 = sum;
+            i++;
+        }
+
+        return sum;
+    }
+
 }
