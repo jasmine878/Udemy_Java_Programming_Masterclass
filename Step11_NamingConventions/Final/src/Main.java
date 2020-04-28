@@ -1,3 +1,5 @@
+import static java.lang.Math.PI;
+
 public class Main {
     public static void main(String[] args) {
         SomeClass one = new SomeClass("one");
@@ -8,5 +10,8 @@ public class Main {
         System.out.println(one.getInstanceNumber());
         System.out.println(two.getInstanceNumber());
         System.out.println(three.getInstanceNumber());
+
+        System.out.println(PI);
+
     }
 }
