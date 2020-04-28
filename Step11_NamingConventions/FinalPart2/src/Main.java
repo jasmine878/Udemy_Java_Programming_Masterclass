@@ -33,7 +33,12 @@ public class Main {
 //        password.letMeIn(-1);
 //        password.letMeIn(674312);
 
-        System.out.println("Main method called");
 
+        //Notice both the static initialization blocks are called before the constructor method
+        System.out.println("Main method called");
+        SIBTest test = new SIBTest();
+
+        test.someMethod();
+        System.out.println("Owner is " + SIBTest.owner);
     }
 }

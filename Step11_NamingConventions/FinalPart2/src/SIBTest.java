@@ -4,7 +4,7 @@ public class SIBTest {
     public static final String owner;
 
     static {
-        owner = 'tim';
+        owner = "tim";
         System.out.println("SIBTest static initialization block called");
     }
 
