@@ -11,7 +11,8 @@ public class Password {
     }
 
     //someone can overwrite this method in a subClass
-    public void storePassword() {
+    //unless we put a final keyword here
+    public final void storePassword() {
         System.out.println("Saving password as " + this.encryptedPassword);
     }
 
