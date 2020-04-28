@@ -3,6 +3,8 @@ public class Password {
     private final int encryptedPassword;
 
     public Password(int password) {
+        //we don't want this password to be overwritten again
+        //this is why we marked it as final
         this.encryptedPassword = encryptDecrypt(password);
     }
 
