@@ -3,8 +3,6 @@ public class Password {
     private final int encryptedPassword;
 
     public Password(int password) {
-        //we don't want this password to be overwritten again
-        //this is why we marked it as final
         this.encryptedPassword = encryptDecrypt(password);
     }
 
@@ -12,6 +10,7 @@ public class Password {
         return password ^ key;
     }
 
+    //someone can overwrite this method in a subClass
     public void storePassword() {
         System.out.println("Saving password as " + this.encryptedPassword);
     }
