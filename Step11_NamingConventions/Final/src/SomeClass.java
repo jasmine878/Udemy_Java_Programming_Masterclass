@@ -7,7 +7,7 @@ public class SomeClass {
         this.name = name;
         classCounter++;
         instanceNumber = classCounter;
-        System.out.println(name + "created, instance is " + instanceNumber);
+        System.out.println(name + " created, instance is " + instanceNumber);
     }
 
     public int getInstanceNumber() {
