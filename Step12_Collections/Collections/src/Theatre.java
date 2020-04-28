@@ -1,4 +1,6 @@
-//simple seatbooking system
+//simple seatbooking system in a theatre
+//Theatre seats are numbered with a row letter and then a
+//seat number within each row
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +13,7 @@ public class Theatre {
         this.name = name;
 
         int lastRow = 'A' + (numRows - 1);
+        System.out.println("lastRow is " + lastRow);
 
         for (char row = 'A'; row <= lastRow; row++) {
             for (int seatNum = 1; seatNum <= seatsPerRow; seatNum++) {
@@ -49,6 +52,7 @@ public class Theatre {
         }
     }
 
+    //Inner Class
     private class Seat {
         private final String seatNumber;
         private boolean reserved = false;
