@@ -3,6 +3,7 @@
 //seat number within each row
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -46,10 +47,8 @@ public class Theatre {
     }
 
     //for testing
-    public void getSeats() {
-        for (Seat seat: seats) {
-            System.out.println(seat.getSeatNumber());
-        }
+    public Collection<Seat> getSeats() {
+        return seats;
     }
 
     //Inner Class
@@ -65,6 +64,10 @@ public class Theatre {
 
         public String getSeatNumber() {
             return seatNumber;
+        }
+
+        public double getPrice() {
+            return price;
         }
 
         public boolean reserve() {
