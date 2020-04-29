@@ -9,7 +9,7 @@ public class Theatre {
     private final String name;
 
     //LIST CAN BE A COLLECTION
-    private List<Seat> seats = new ArrayList<>();
+    public List<Seat> seats = new ArrayList<>();
 
     public Theatre(String name, int numRows, int seatsPerRow) {
         this.name = name;
@@ -64,7 +64,7 @@ public class Theatre {
     }
 
     //Inner Class
-    private class Seat implements Comparable<Seat>{
+    public class Seat implements Comparable<Seat>{
         private final String seatNumber;
         private boolean reserved = false;
 
