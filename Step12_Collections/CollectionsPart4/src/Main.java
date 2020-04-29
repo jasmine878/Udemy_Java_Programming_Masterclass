@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -10,13 +11,25 @@ public class Main {
         printList(seatCopy);
 
         //make a reservation of the 2nd seat from our arraylist copy
-        //note the reservation is also made in the original theatre arrayList as well
+        //note the reservation is also made in the original theatre.seats arrayList as well
         seatCopy.get(1).reserve();
         if (theatre.reserveSeat("A02")) {
             System.out.println("Please pay for A02");
         } else {
             System.out.println("Seat already reserved");
         }
+
+        Collections.reverse(seatCopy);
+        System.out.println("Printing seatCopy");
+        printList(seatCopy);
+        System.out.println("Printing theatre.seats");
+        printList(theatre.seats);
+
+        Collections.shuffle(seatCopy);
+        System.out.println("Printing seatCopy");
+        printList(seatCopy);
+        System.out.println("Printing theatre.seats");
+        printList(theatre.seats);
     }
 
     //method that prints the List
