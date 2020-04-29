@@ -17,5 +17,16 @@ public class Main {
         }
         System.out.println("============================");
 
+        if (theatre.reserveSeat("D12")) {
+            System.out.println("Please pay");
+        } else {
+            System.out.println("Sorry, seat is taken");
+        }
+
+        if (theatre.reserveSeat("B13")) {
+            System.out.println("Please pay");
+        } else {
+            System.out.println("Sorry, seat is taken");
+        }
     }
 }
