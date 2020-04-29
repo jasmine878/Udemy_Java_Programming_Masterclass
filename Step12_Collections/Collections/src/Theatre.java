@@ -7,7 +7,15 @@ import java.util.List;
 
 public class Theatre {
     private final String name;
+
+    //LIST CAN BE AN ARRAYLIST
     private List<Seat> seats = new ArrayList<>();
+
+    //LIST CAN BE A LINKED LIST
+//    private List<Seat> seats = new LinkedList<>();
+
+    //LIST CAN ALSO BE A COLLECTION
+//    private Collection<Seat> seats = new LinkedHashSet<>();
 
     public Theatre(String name, int numRows, int seatsPerRow) {
         this.name = name;
@@ -31,6 +39,7 @@ public class Theatre {
         Seat requestedSeat = null;
 
         for (Seat seat: seats) {
+            System.out.print(".");
             if (seat.getSeatNumber().equals(seatNumber)) {
                 requestedSeat = seat;
                 break;
@@ -53,7 +62,7 @@ public class Theatre {
     }
 
     //Inner Class
-    private class Seat {
+    private class Seat implements Comparable<Seat>{
         private final String seatNumber;
         private boolean reserved = false;
 
@@ -83,6 +92,11 @@ public class Theatre {
             } else {
                 return false;
             }
+        }
+
+        @Override
+        public int compareTo(Seat seat) {
+            return this.seatNumber.compareToIgnoreCase(getSeatNumber());
         }
     }
 }
