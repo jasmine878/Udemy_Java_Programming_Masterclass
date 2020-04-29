@@ -40,7 +40,7 @@ public class Theatre {
     //we want to see what is happening behind the scenes
     public boolean reserveSeat(String seatNumber) {
         //use requestedSeat for comparison purposes
-        Seat requestedSeat = new Seat(seatNumber);
+        Seat requestedSeat = new Seat(seatNumber, 0);
 
         int foundSeat = Collections.binarySearch(seats, requestedSeat, null);
 
@@ -57,7 +57,7 @@ public class Theatre {
     }
 
     //Inner Class
-    private class Seat implements Comparable<Seat>{
+    public class Seat implements Comparable<Seat>{
         private final String seatNumber;
         private double price;
         private boolean reserved = false;
