@@ -3,13 +3,14 @@
 //seat number within each row
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Theatre {
     private final String name;
 
     //LIST CAN BE A COLLECTION
-    public List<Seat> seats = new ArrayList<>();
+    private List<Seat> seats = new ArrayList<>();
 
     public Theatre(String name, int numRows, int seatsPerRow) {
         this.name = name;
@@ -32,28 +33,16 @@ public class Theatre {
     //source code for binary search that comes with Java
     //we want to see what is happening behind the scenes
     public boolean reserveSeat(String seatNumber) {
-        int low = 0;
-        int high = seats.size() - 1;
+        //use requestedSeat for comparison purposes
+        Seat requestedSeat = new Seat(seatNumber);
 
-        while (low <= high) {
-            System.out.print(".");
+        int foundSeat = Collections.binarySearch(seats, requestedSeat, null);
 
-            int midIdx = (low + high) / 2;
-
-            Seat midValue = seats.get(midIdx);
-
-            int compareResult = midValue.getSeatNumber().compareTo(seatNumber);
-
-            if (compareResult < 0) {
-                low = midIdx + 1;
-            } else if (compareResult > 0) {
-                high = midIdx - 1;
-            } else {
-                return seats.get(midIdx).reserve();
-            }
+        if (foundSeat >= 0) return seats.get(foundSeat).reserve();
+        else {
+            System.out.println("There is no seat " + seatNumber);
+            return false;
         }
-        System.out.println("There is no seat " + seatNumber);
-        return false;
     }
 
     //for testing
@@ -64,7 +53,7 @@ public class Theatre {
     }
 
     //Inner Class
-    public class Seat implements Comparable<Seat>{
+    private class Seat implements Comparable<Seat>{
         private final String seatNumber;
         private boolean reserved = false;
 
