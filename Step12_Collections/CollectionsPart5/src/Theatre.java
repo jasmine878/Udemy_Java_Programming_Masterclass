@@ -55,10 +55,12 @@ public class Theatre {
     //Inner Class
     private class Seat implements Comparable<Seat>{
         private final String seatNumber;
+        private double price;
         private boolean reserved = false;
 
-        public Seat(String seatNumber) {
+        public Seat(String seatNumber, double price) {
             this.seatNumber = seatNumber;
+            this.price = price;
         }
 
         public String getSeatNumber() {
