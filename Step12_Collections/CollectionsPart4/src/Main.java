@@ -35,6 +35,12 @@ public class Main {
         Theatre.Seat maxSeat = Collections.max(seatCopy);
         System.out.println("Min seat number is " + minSeat.getSeatNumber());
         System.out.println("Max seat number is " + maxSeat.getSeatNumber());
+        System.out.println();
+
+        //sort the list that's been randomized
+        sortList(seatCopy);
+        System.out.println("Printing sorted seatCopy");
+        printList(seatCopy);
     }
 
     //method that prints the List
