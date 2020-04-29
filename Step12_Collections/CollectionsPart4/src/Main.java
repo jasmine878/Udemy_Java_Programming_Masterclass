@@ -45,4 +45,15 @@ public class Main {
         System.out.println();
         System.out.println("============================");
     }
+
+    //we're creating a bubbleSort here using nested loops
+    public static void sortList(List<Theatre.Seat> list) {
+        for (int i = 0; i < list.size() - 1; i++) {
+            for (int j = i + 1; j < list.size(); j++) {
+                if (list.get(i).compareTo(list.get(j)) > 0) {
+                    Collections.swap(list, i, j);
+                };
+            }
+        }
+    }
 }
