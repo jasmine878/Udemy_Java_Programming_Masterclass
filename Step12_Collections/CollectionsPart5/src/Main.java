@@ -10,6 +10,12 @@ public class Main {
             System.out.println("Seat already reserved");
         }
 
+        if (theatre.reserveSeat("D12")) {
+            System.out.println("Please pay for D12");
+        } else {
+            System.out.println("Seat already reserved");
+        }
+
         if (theatre.reserveSeat("B13")) {
             System.out.println("Please pay for B13");
         } else {
