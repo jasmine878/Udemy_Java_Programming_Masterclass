@@ -27,7 +27,7 @@ public class Theatre {
                 return 0;
             }
         }
-    }
+    };
 
     public Theatre(String name, int numRows, int seatsPerRow) {
         this.name = name;

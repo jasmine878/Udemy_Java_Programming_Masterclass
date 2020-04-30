@@ -27,6 +27,14 @@ public class Main {
         List<Theatre.Seat> reverseSeats = new ArrayList<>(theatre.getSeats());
         Collections.reverse(reverseSeats);
         printList(reverseSeats);
+
+        //create a new arrayList of seats.  Add some seats.  Then sort by price with cheapest seat first
+        //by passing our new Comparator to the Collections.sort method
+        List<Theatre.Seat> priceSeats = new ArrayList<>(theatre.getSeats());        //copy of our seats
+        priceSeats.add(theatre.new Seat("B00", 13.00));           //we're instantiating an inner class Seat
+        priceSeats.add(theatre.new Seat("A00", 13.00));
+        Collections.sort(priceSeats, Theatre.PRICE_ORDER);                          //we're sorting priceSeats and passing the Comparator
+        printList(priceSeats);
     }
 
     //method that prints the List
