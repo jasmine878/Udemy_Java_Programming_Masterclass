@@ -15,5 +15,7 @@ public class MapProgram {
         languages.put("Lisp", "Therein lies madness");
 
         System.out.println(languages.get("Java"));
+        languages.put("Java", "this course is about Java");
+        System.out.println(languages.get("Java"));
     }
 }
