@@ -2,16 +2,32 @@
 //Theatre seats are numbered with a row letter and then a
 //seat number within each row
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Theatre {
     private final String name;
 
     //LIST CAN BE A COLLECTION
     private List<Seat> seats = new ArrayList<>();
+
+    //this is an anonymous inner class implementing a comparator and
+    //it's providing an implementation of a single "compare" method
+    static final Comparator<Seat> PRICE_ORDER = new Comparator<Seat>() {
+        @Override
+        public int compare(Seat seat1, Seat seat2) {
+            //we're sorting by the price of the ticket
+            //returns -1 if the price of seat1 < seat 2
+            //returns 1 if the price of seat 1 > seat 2
+            //returns 0 if the price of seat 1 == seat 2
+            if(seat1.getPrice() < seat2.getPrice()) {
+                return -1;
+            } else if (seat1.getPrice() > seat2.getPrice()) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+    }
 
     public Theatre(String name, int numRows, int seatsPerRow) {
         this.name = name;

@@ -32,7 +32,7 @@ public class Main {
     //method that prints the List
     public static void printList(List<Theatre.Seat> list) {
         for (Theatre.Seat seat : list) {
-            System.out.print(" " + seat.getSeatNumber() + " " + seat.getPrice());
+            System.out.print(" " + seat.getSeatNumber() + " $" + seat.getPrice());
         }
         System.out.println();
         System.out.println("============================");
