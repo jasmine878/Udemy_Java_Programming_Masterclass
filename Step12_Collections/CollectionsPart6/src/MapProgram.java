@@ -38,5 +38,23 @@ public class MapProgram {
         for (String key: languages.keySet()) {
             System.out.println(key + " : " + languages.get(key));
         }
+
+        System.out.println("===============================");
+        languages.remove("Lisp");
+
+        for (String key: languages.keySet()) {
+            System.out.println(key + " : " + languages.get(key));
+        }
+
+        System.out.println("===============================");
+        if (languages.remove("Algol", "algorithmic language")) {
+            System.out.println("Algol removed");
+        } else {
+            System.out.println("Algol not removed, key/value pair not found");
+        }
+
+        for (String key: languages.keySet()) {
+            System.out.println(key + " : " + languages.get(key));
+        }
     }
 }
