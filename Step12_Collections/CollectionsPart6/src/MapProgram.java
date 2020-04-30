@@ -32,5 +32,11 @@ public class MapProgram {
             languages.put("Java", "this course is about Java");
         }
 
+        System.out.println("===============================");
+
+        //loops through the map and prints all of the keys and values
+        for (String key: languages.keySet()) {
+            System.out.println(key + " : " + languages.get(key));
+        }
     }
 }
