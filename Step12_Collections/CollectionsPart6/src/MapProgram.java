@@ -8,7 +8,13 @@ public class MapProgram {
         //so we need to specify the type of Map Class to remove any errors
         Map<String, String> languages = new HashMap<>();
 
-        languages.put("Java", "a compiled high level, object-oriented, platform independent language");
+        if (languages.containsKey("Java")) {
+            System.out.println("Java is already in the map");
+        } else {
+            languages.put("Java", "a compiled high level, object-oriented, platform independent language");
+            System.out.println("Java added successfully");
+        }
+
         languages.put("Python", "an interpreted, object-oriented, high-level programming language with dynamic semantics");
         languages.put("Algol", "algorithmic language");
 
@@ -19,6 +25,12 @@ public class MapProgram {
         System.out.println(languages.put("BASIC", "Beginners All Purposes Symbolic Instruction Code"));
         System.out.println(languages.put("Lisp", "Therein lies madness"));
         System.out.println(languages.put("Python", "this is a test"));
+
+        if (languages.containsKey("Java")) {
+            System.out.println("Java is already in the map");
+        } else {
+            languages.put("Java", "this course is about Java");
+        }
 
     }
 }
