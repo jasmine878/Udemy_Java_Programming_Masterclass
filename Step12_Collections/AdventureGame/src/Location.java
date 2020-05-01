@@ -20,8 +20,8 @@ public class Location {
         return this.description;
     }
 
-    public Map<String, Integer> getExits() {
-        return this.exits;
+    public Map<String, Integer> getExits() {                //we're putting exits in the constructor
+        return new HashMap<String, Integer>(exits);         //returns a copy of the exits HashMap
     }
 
     public void addExit(String direction, int location) {
