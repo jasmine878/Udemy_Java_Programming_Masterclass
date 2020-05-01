@@ -44,9 +44,20 @@ public class Main {
                 break;
             }
 
-            System.out.println("Enter another number between 1 and 5 or 0 to exit");
-            loc = scanner.nextInt();
-            if(!locations.containsKey(loc)) {
+            Map<String, Integer> exits = locations.get(loc).getExits();
+
+            System.out.print("Available exits are ");
+            for (String exit : exits.keySet()) {
+                System.out.print(exit + ", ");
+            }
+            System.out.println();
+
+            System.out.println("Enter a direction you want to go");
+            String direction = scanner.nextLine().toUpperCase();
+
+            if (exits.containsKey(direction)) {
+                loc = exits.get(direction);
+            } else {
                 System.out.println("You cannot go in that direction");
             }
         }
