@@ -50,6 +50,7 @@ public class Main {
         int loc = 1;
         while(true) {
             System.out.println(locations.get(loc).getDescription());
+            tempExit.remove("S");                           //only impacts the tempExit copy, not the original!!
             if (loc == 0) {
                 break;
             }
