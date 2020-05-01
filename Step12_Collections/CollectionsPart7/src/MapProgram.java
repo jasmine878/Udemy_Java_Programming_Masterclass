@@ -62,6 +62,12 @@ public class MapProgram {
             System.out.println("Lisp was not replaced");
         }
 
+        if (languages.replace("Lisp", "a functional programming language with imperative features", "another definition")) {
+            System.out.println("Lisp replaced");
+        } else {
+            System.out.println("Lisp was not replaced");
+        }
+
         for (String key: languages.keySet()) {
             System.out.println(key + " : " + languages.get(key));
         }
