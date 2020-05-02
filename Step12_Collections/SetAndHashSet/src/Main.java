@@ -19,5 +19,11 @@ public class Main {
         temp = new HeavenlyBody("Earth", 365);
         solarSystem.put(temp.getName(), temp);
         planets.add(temp);
+
+        //we're adding the Moon to Earth's satellites HashSet
+        HeavenlyBody tempMoon = new HeavenlyBody("Moon", 27);
+        solarSystem.put(tempMoon.getName(), tempMoon);
+        temp.addMoon(tempMoon);
+
     }
 }
