@@ -90,5 +90,24 @@ public class Main {
         for (HeavenlyBody moon : body.getSatellites()) {
             System.out.println("\t" + moon.getName());
         }
+        System.out.println();
+
+        HeavenlyBody body2 = solarSystem.get("Mars");
+        System.out.println("Moons of " + body2.getName());
+        for (HeavenlyBody moon : body2.getSatellites()) {
+            System.out.println("\t" + moon.getName());
+        }
+
+        //we're adding all of the satellites from each planet to our new moons hashSet
+        Set<HeavenlyBody> moons = new HashSet<>();
+        for (HeavenlyBody planet : planets) {
+            moons.addAll(planet.getSatellites());
+        }
+        System.out.println();
+
+        System.out.println("All Moons");
+        for (HeavenlyBody moon : moons) {
+            System.out.println("\t" + moon.getName());
+        }
     }
 }
