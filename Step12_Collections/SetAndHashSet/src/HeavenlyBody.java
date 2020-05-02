@@ -1,6 +1,8 @@
 import java.util.HashSet;
 import java.util.Set;
 
+//This is a program that models the heavenly bodies in the solar system
+//including planets, moons, asteroids, and comets
 public final class HeavenlyBody {
     private final String name;
     private final double orbitalPeriod;
@@ -18,5 +20,14 @@ public final class HeavenlyBody {
 
     public double getOrbitalPeriod() {
         return this.orbitalPeriod;
+    }
+
+    public Set<HeavenlyBody> getSatellites() {
+        return new HashSet<>(this.satellites);
+    }
+
+    //adds a moon to our solar system or Set
+    public boolean addMoon(HeavenlyBody moon) {
+        return this.satellites.add(moon);
     }
 }
