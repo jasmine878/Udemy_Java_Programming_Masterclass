@@ -44,7 +44,7 @@ public final class HeavenlyBody {
         System.out.println("this.getClass() is " + this.getClass());
 
         //check to see whether object is null
-        //check to see whether the objects we're comparing have the same class
+        //check to see whether the objects we're comparing have the same class HeavenlyBody
         if (obj == null || obj.getClass() != this.getClass()) {
             return false;
         }
@@ -52,5 +52,14 @@ public final class HeavenlyBody {
 
         //if the names of the objects are the same then return true as well
         return this.name.equals(objName);
+    }
+
+    //this is extremely easy because the String Class already has a built-in hash code method
+    //and in this case, we're comparing only Strings .getName()
+    @Override
+    public int hashCode() {
+        System.out.println("hashcode called");
+        //in this case we're using the hashCode() method from the String Class
+        return this.name.hashCode() + 57;
     }
 }
