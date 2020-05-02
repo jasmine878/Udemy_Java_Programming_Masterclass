@@ -30,4 +30,27 @@ public final class HeavenlyBody {
     public boolean addMoon(HeavenlyBody moon) {
         return this.satellites.add(moon);
     }
+
+    //if we don't use the @Override notation then our equals method overloads the one from the base class
+    //instead of overriding it and it ultimately will never be used by the Collection
+    @Override
+    public boolean equals(Object obj) {
+        //checking for referential equals meaning it's the same object or reference
+        if (this == obj) {
+            return true;
+        }
+
+        System.out.println("obj.getClass() is " + obj.getClass());
+        System.out.println("this.getClass() is " + this.getClass());
+
+        //check to see whether object is null
+        //check to see whether the objects we're comparing have the same class
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        String objName = ((HeavenlyBody) obj).getName();
+
+        //if the names of the objects are the same then return true as well
+        return this.name.equals(objName);
+    }
 }
