@@ -78,5 +78,10 @@ public class Main {
         temp = new HeavenlyBody("Pluto", 248);
         solarSystem.put(temp.getName(), temp);
         planets.add(temp);
+
+        System.out.println("Planets");
+        for (HeavenlyBody planet : planets) {
+            System.out.println("\t" + planet.getName());
+        }
     }
 }
