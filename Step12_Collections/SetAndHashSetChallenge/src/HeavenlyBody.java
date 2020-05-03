@@ -5,10 +5,10 @@ import java.util.Set;
 //including planets, moons, asteroids, and comets
 public final class HeavenlyBody {
     private final String name;
+    //    private final int bodyType;
+    private final BodyTypes bodyType;
     private final double orbitalPeriod;
     private final Set<HeavenlyBody> satellites;
-//    private final int bodyType;
-    private final BodyTypes bodyType;
 
     //defining the various bodyTypes as constants
     //using separate declarations
@@ -54,8 +54,8 @@ public final class HeavenlyBody {
         return new HashSet<>(this.satellites);
     }
 
-    //adds a moon to our solar system or Set
-    public boolean addMoon(HeavenlyBody moon) {
+    //adds any type of heavenly body as a satellite to another
+    public boolean addSatellite(HeavenlyBody moon) {
         return this.satellites.add(moon);
     }
 
