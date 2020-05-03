@@ -14,5 +14,9 @@ public class Asymmetric {
         System.out.println("There are " + squares.size() + " squares and " + cubes.size());
         System.out.println();
 
+        //These bulk operations are destructive which means they modify the set they're called upon
+        Set<Integer> squaresAndCubes = new HashSet<>(squares);
+        squaresAndCubes.addAll(cubes);
+        System.out.println("A union of the hashSets results in " + squaresAndCubes.size() + " elements.");
     }
 }
