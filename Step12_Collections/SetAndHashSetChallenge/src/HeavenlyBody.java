@@ -88,6 +88,10 @@ public final class HeavenlyBody {
     public int hashCode() {
         System.out.println("hashcode called");
         //in this case we're using the hashCode() method from the String Class
-        return this.name.hashCode() + 57;
+        //we want to modify our hashCode() because various heavenly body types can now have the same names
+        //we need to make our hashcode method more unique
+
+        //fortunately, enum constants have a hashCode method as well
+        return this.name.hashCode() + this.bodyType.hashCode() + 57;
     }
 }
