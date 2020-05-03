@@ -46,6 +46,10 @@ public final class HeavenlyBody {
         return this.orbitalPeriod;
     }
 
+    public BodyTypes getBodyType() {
+        return this.bodyType;
+    }
+
     public Set<HeavenlyBody> getSatellites() {
         return new HashSet<>(this.satellites);
     }
