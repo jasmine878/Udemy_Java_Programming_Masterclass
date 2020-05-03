@@ -3,7 +3,7 @@ import java.util.Set;
 
 //This is a program that models the heavenly bodies in the solar system
 //including planets, moons, asteroids, and comets
-public final class HeavenlyBody {
+public class HeavenlyBody {
     private final String name;
     //    private final int bodyType;
     private final BodyTypes bodyType;
