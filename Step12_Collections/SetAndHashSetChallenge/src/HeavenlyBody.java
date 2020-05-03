@@ -59,27 +59,27 @@ public final class HeavenlyBody {
         return this.satellites.add(moon);
     }
 
-    //if we don't use the @Override notation then our equals method overloads the one from the base class
-    //instead of overriding it and it ultimately will never be used by the Collection
+  //we need to mark our equals method as final, because we plan on subclassing this Class
+  //and we want to avoid problems with equals not being symmetric
     @Override
-    public boolean equals(Object obj) {
+    public final boolean equals(Object obj) {
         //checking for referential equals meaning it's the same object or reference
         if (this == obj) {
             return true;
         }
 
-        System.out.println("obj.getClass() is " + obj.getClass());
-        System.out.println("this.getClass() is " + this.getClass());
-
-        //check to see whether object is null
         //check to see whether the objects we're comparing have the same class HeavenlyBody
-        if (obj == null || obj.getClass() != this.getClass()) {
-            return false;
-        }
-        String objName = ((HeavenlyBody) obj).getName();
+        //if true, we can caste the obj as a HeavenlyBody type
+        if (obj instanceof HeavenlyBody) {
+            String objName = ((HeavenlyBody) obj).getName();
+            BodyTypes objType = ((HeavenlyBody) obj).getBodyType();
 
-        //if the names of the objects are the same then return true as well
-        return this.name.equals(objName);
+            //if the names of the objects are the same and
+            // the bodyTypes are the same, then return true as well
+            return this.name.equals(objName) && this.bodyType.equals(objType);
+        }
+
+        return false;
     }
 
     //this is extremely easy because the String Class already has a built-in hash code method
