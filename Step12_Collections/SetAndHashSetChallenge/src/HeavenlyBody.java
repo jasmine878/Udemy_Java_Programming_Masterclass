@@ -94,4 +94,10 @@ public final class HeavenlyBody {
         //fortunately, enum constants have a hashCode method as well
         return this.name.hashCode() + this.bodyType.hashCode() + 57;
     }
+
+    //override the toString method to make printing out the heavenly bodies easier
+    @Override
+    public String toString() {
+        return this.name + ": " + this.bodyType + ", " + this.orbitalPeriod;
+    }
 }
