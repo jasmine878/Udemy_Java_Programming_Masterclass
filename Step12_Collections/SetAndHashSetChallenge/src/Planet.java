@@ -8,5 +8,14 @@ public class Planet extends HeavenlyBody {
         super(name, orbitalPeriod, BodyTypes.PLANET);
     }
 
-
+    //for the planet type, satellites are restricted to Moons
+    //we should add a test here to make sure the parameter is a moon
+    @Override
+    public boolean addSatellite(HeavenlyBody moon) {
+        if(moon.getBodyType() == BodyTypes.MOON) {
+            return super.addSatellite(moon);
+        } else {
+            return false;
+        }
+    }
 }
