@@ -81,6 +81,19 @@ public class Asymmetric {
         System.out.println("Symmetric different");
         union.removeAll(intersectionExample);
         printSet(union);
+        System.out.println();
+
+        if (nature.containsAll(divine)) {                           //expect false
+            System.out.println("divine is a subset of nature");
+        }
+
+        if (nature.containsAll(intersectionExample)) {              //expect true
+            System.out.println("intersection is a subset of nature");
+        }
+
+        if (divine.containsAll(intersectionExample)) {              //expect true
+            System.out.println("intersection is a subset of divine");
+        }
     }
 
     private static void printSet(Set<String> set) {
