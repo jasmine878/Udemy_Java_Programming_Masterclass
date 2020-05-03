@@ -66,13 +66,28 @@ public class Asymmetric {
         Set<String> diff2 = new HashSet<>(divine);
         diff2.removeAll(nature);
         printSet(diff2);
+
+        //calculate the symmetric difference between 2 sets
+        //first we combine both sets
+        Set<String> union = new HashSet<>(nature);
+        union.addAll(divine);
+
+        //then we calculate the overlap between the two sets
+        Set<String> intersectionExample = new HashSet<>(nature);
+        intersectionExample.retainAll(divine);
+
+        //then remove the intersection Set from the union Set
+        //we return both sets combined without any of the overlapping elements
+        System.out.println("Symmetric different");
+        union.removeAll(intersectionExample);
+        printSet(union);
     }
 
     private static void printSet(Set<String> set) {
-        System.out.println("\t");
+        System.out.print("\t");
 
         for (String word : set) {
-            System.out.println(word + " ");
+            System.out.print(word + " ");
         }
 
         System.out.println();
