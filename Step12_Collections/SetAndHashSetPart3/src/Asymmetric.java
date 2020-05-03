@@ -25,7 +25,8 @@ public class Asymmetric {
         //Since we're missing 4 elements, they must be in the intersection
         Set<Integer> intersection = new HashSet<>(squares);
         intersection.retainAll(cubes);
-        System.out.println("Intersection contains " + intersection.size() + " elements.");;
+        System.out.println("Intersection contains " + intersection.size() + " elements.");
+        ;
         System.out.println();
 
         for (int i : intersection) {
@@ -43,5 +44,37 @@ public class Asymmetric {
         for (String word : words) {
             System.out.println(word);
         }
+        System.out.println();
+
+        //add the elements of our array into its respective Set
+        Set<String> nature = new HashSet<>();
+        Set<String> divine = new HashSet<>();
+        String[] natureArr = {"all", "nature", "is", "but", "art", "unknown", "to", "thee"};
+        nature.addAll(Arrays.asList(natureArr));
+        String[] divineArr = {"to", "err", "is", "human", "to", "forgive", "divine"};
+        divine.addAll(Arrays.asList(divineArr));
+
+        //ASYMMETRIC DIFFERENCE BECAUSE BOTH WAYS YIELDS DIFFERENT RESULTS!!
+        //should only print nature without any intersection
+        System.out.println("nature - divine: ");
+        Set<String> diff1 = new HashSet<>(nature);
+        diff1.removeAll(divine);
+        printSet(diff1);
+
+        //should only print divine without any intersection
+        System.out.println("divine - nature");
+        Set<String> diff2 = new HashSet<>(divine);
+        diff2.removeAll(nature);
+        printSet(diff2);
+    }
+
+    private static void printSet(Set<String> set) {
+        System.out.println("\t");
+
+        for (String word : set) {
+            System.out.println(word + " ");
+        }
+
+        System.out.println();
     }
 }
