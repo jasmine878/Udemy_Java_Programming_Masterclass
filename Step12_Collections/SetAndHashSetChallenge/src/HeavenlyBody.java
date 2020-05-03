@@ -34,8 +34,8 @@ public class HeavenlyBody {
     public HeavenlyBody(String name, double orbitalPeriod, BodyTypes bodyType) {
         this.name = name;
         this.orbitalPeriod = orbitalPeriod;
-        this.satellites = new HashSet<>();
         this.bodyType = bodyType;
+        this.satellites = new HashSet<>();
     }
 
     public String getName() {
