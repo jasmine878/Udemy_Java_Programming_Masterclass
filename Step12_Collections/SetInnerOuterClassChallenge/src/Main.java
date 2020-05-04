@@ -117,10 +117,10 @@ public class Main {
 
         //Our 2nd Pluto can be added as a DwarfPlanet since its a different type form the 1st Pluto
         //its being passed through our equals method and returns false
-//        HeavenlyBody pluto = new DwarfPlanet("Pluto", 842);
+        HeavenlyBody pluto = new DwarfPlanet("Pluto", 842);
 
         //Check to see if adding a duplicate in a Map results in the original being replaced by the new object
-        HeavenlyBody pluto = new Planet("Pluto", 842);
+//        HeavenlyBody pluto = new Planet("Pluto", 842);
         planets.add(pluto);
 
         for(HeavenlyBody planet : planets) {
@@ -150,5 +150,10 @@ public class Main {
         System.out.println(solarSystem.get(HeavenlyBody.makeKey("Pluto", HeavenlyBody.BodyTypes.DWARF_PLANET)));
         System.out.println();
 
+        System.out.println("the solar system contains:");
+
+        for (HeavenlyBody heavenlyBody : solarSystem.values()) {
+            System.out.println(heavenlyBody);
+        }
     }
 }
