@@ -85,14 +85,15 @@ public class Main {
         }
         System.out.println();
 
-        HeavenlyBody body = solarSystem.get("Jupiter");
+        //our HeavenlyBody instance no longer has a name field.  We need to use a key field
+        HeavenlyBody body = solarSystem.get(HeavenlyBody.makeKey("Jupiter", HeavenlyBody.BodyTypes.PLANET));
         System.out.println("Moons of " + body.getKey());
         for (HeavenlyBody moon : body.getSatellites()) {
             System.out.println("\t" + moon.getKey());
         }
         System.out.println();
 
-        HeavenlyBody body2 = solarSystem.get("Mars");
+        HeavenlyBody body2 = solarSystem.get(HeavenlyBody.makeKey("Mars", HeavenlyBody.BodyTypes.PLANET));
         System.out.println("Moons of " + body2.getKey());
         for (HeavenlyBody moon : body2.getSatellites()) {
             System.out.println("\t" + moon.getKey());
