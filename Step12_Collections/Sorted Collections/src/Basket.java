@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,5 +26,10 @@ public class Basket {
         }
 
         return 0;
+    }
+
+    //gets the items from our HashMap
+    public Map<StockItem, Integer> getItems() {
+        return Collections.unmodifiableMap(list);
     }
 }
