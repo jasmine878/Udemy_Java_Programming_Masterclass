@@ -49,4 +49,11 @@ public class StockItem implements Comparable<StockItem>{
 
         return this.name.equals(objName);
     }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Hashcode called");
+
+        return this.name.hashCode() + 31;
+    }
 }
