@@ -117,7 +117,10 @@ public class Main {
 
         //Our 2nd Pluto can be added as a DwarfPlanet since its a different type form the 1st Pluto
         //its being passed through our equals method and returns false
-        HeavenlyBody pluto = new DwarfPlanet("Pluto", 842);
+//        HeavenlyBody pluto = new DwarfPlanet("Pluto", 842);
+
+        //Check to see if adding a duplicate in a Map results in the original being replaced by the new object
+        HeavenlyBody pluto = new Planet("Pluto", 842);
         planets.add(pluto);
 
         for(HeavenlyBody planet : planets) {
@@ -134,5 +137,18 @@ public class Main {
         System.out.println(earth2.equals(earth1));              //expect true
         System.out.println(earth1.equals(pluto));               //expect false
         System.out.println(pluto.equals(earth1));               //expect false
+        System.out.println();
+
+        //we're putting in the 2nd pluto since we didn't put it in the MAP above
+        solarSystem.put(pluto.getKey(), pluto);
+        System.out.println("KEY: " + pluto.getKey());
+        System.out.println("HeavenlyBody: " + pluto);
+        System.out.println();
+
+        //checking to make sure both Plutos were added to the Map
+        System.out.println(solarSystem.get(HeavenlyBody.makeKey("Pluto", HeavenlyBody.BodyTypes.PLANET)));
+        System.out.println(solarSystem.get(HeavenlyBody.makeKey("Pluto", HeavenlyBody.BodyTypes.DWARF_PLANET)));
+        System.out.println();
+
     }
 }
