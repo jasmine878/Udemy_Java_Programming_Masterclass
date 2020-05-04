@@ -134,5 +134,11 @@ public abstract class HeavenlyBody {
         public int hashCode() {
             return this.name.hashCode() + this.bodyType.hashCode() + 57;
         }
+
+        //we need to create a toString method for the key instance
+        @Override
+        public String toString() {
+            return this.name + ": " + this.bodyType;
+        }
     }
 }
