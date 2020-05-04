@@ -37,7 +37,9 @@ public abstract class HeavenlyBody {
         this.satellites = new HashSet<>();
     }
 
-
+    public Key getKey() {
+        return key;
+    }
 
     public double getOrbitalPeriod() {
         return this.orbitalPeriod;
