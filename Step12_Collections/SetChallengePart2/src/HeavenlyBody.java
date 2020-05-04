@@ -3,9 +3,8 @@ import java.util.Set;
 
 //make the HeavenlyBody class abstract to restrict instances to its Child Classes
 public abstract class HeavenlyBody {
-    private final String name;
-    //    private final int bodyType;
-    private final BodyTypes bodyType;
+    //replace the name and bodyType fields with a key field from our inner class
+    private final Key key;
     private final double orbitalPeriod;
     private final Set<HeavenlyBody> satellites;
 
@@ -30,23 +29,18 @@ public abstract class HeavenlyBody {
     }
 
     //an enum will only accept a parameter that is in its acceptable list
+    //we're able to instantiate our private constructor in the Key Class
+    //because heavenly body is the outer class
     public HeavenlyBody(String name, double orbitalPeriod, BodyTypes bodyType) {
-        this.name = name;
+        this.key = new Key(name, bodyType);
         this.orbitalPeriod = orbitalPeriod;
-        this.bodyType = bodyType;
         this.satellites = new HashSet<>();
     }
 
-    public String getName() {
-        return this.name;
-    }
+
 
     public double getOrbitalPeriod() {
         return this.orbitalPeriod;
-    }
-
-    public BodyTypes getBodyType() {
-        return this.bodyType;
     }
 
     public Set<HeavenlyBody> getSatellites() {
