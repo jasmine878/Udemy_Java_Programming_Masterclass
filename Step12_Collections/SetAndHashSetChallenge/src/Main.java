@@ -111,7 +111,12 @@ public class Main {
         }
 
         //we confirmed that our second pluto planet hasn't overwritten the first pluto planet
-        HeavenlyBody pluto = new Planet("Pluto", 842);
+//        HeavenlyBody pluto = new Planet("Pluto", 842);
+//        planets.add(pluto);
+
+        //Our 2nd Pluto can be added as a DwarfPlanet since its a different type form the 1st Pluto
+        //its being passed through our equals method and returns false
+        HeavenlyBody pluto = new DwarfPlanet("Pluto", 842);
         planets.add(pluto);
 
         for(HeavenlyBody planet : planets) {
