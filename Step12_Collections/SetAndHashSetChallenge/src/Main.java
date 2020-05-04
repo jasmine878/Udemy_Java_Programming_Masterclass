@@ -124,5 +124,14 @@ public class Main {
             System.out.println(planet);
 //            System.out.println(planet.getName() + ": " + planet.getOrbitalPeriod());
         }
+
+        //a.equals(b) must return the same result as b.equals(a)
+        //equals method should exhibit Symmetric Difference
+        HeavenlyBody earth1 = new Planet("Earth", 365);
+        HeavenlyBody earth2 = new Planet("Earth", 365);
+        System.out.println(earth1.equals(earth2));              //expect true
+        System.out.println(earth2.equals(earth1));              //expect true
+        System.out.println(earth1.equals(pluto));               //expect false
+        System.out.println(pluto.equals(earth1));               //expect false
     }
 }
