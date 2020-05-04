@@ -32,4 +32,17 @@ public class Basket {
     public Map<StockItem, Integer> getItems() {
         return Collections.unmodifiableMap(list);
     }
+
+    @Override
+    public String toString() {
+        String stockList = "\nShopping Basket " + name + " contains " + list.size() + " items\n";
+        double totalCost = 0.0;
+
+        for (Map.Entry<StockItem, Integer> item : list.entrySet()) {
+            stockList = stockList + item.getKey() + ". " + item.getValue() + " purchased\n";
+            totalCost += item.getKey().getPrice() + item.getValue();
+        }
+
+        return stockList + "Total cost " + totalCost;
+    }
 }
