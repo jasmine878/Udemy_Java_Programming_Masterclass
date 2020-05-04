@@ -60,6 +60,7 @@ public abstract class HeavenlyBody {
 
   //we need to mark our equals method as final, because we plan on subclassing this Class
   //and we want to avoid problems with equals not being symmetric
+    //we're calling the equals method from our inner Class
     @Override
     public final boolean equals(Object obj) {
         //checking for referential equals meaning it's the same object or reference
@@ -70,28 +71,20 @@ public abstract class HeavenlyBody {
         //check to see whether the objects we're comparing have the same class HeavenlyBody
         //if true, we can caste the obj as a HeavenlyBody type
         if (obj instanceof HeavenlyBody) {
-            String objName = ((HeavenlyBody) obj).getName();
-            BodyTypes objType = ((HeavenlyBody) obj).getBodyType();
+            //we need to caste the obj as the HeavenlyBody type so we can access its key
+            HeavenlyBody theObject = (HeavenlyBody) obj;
 
-            //if the names of the objects are the same and
-            // the bodyTypes are the same, then return true as well
-            return this.name.equals(objName) && this.bodyType.equals(objType);
+            return this.key.equals(theObject.getKey());
         }
 
         return false;
     }
 
-    //this is extremely easy because the String Class already has a built-in hash code method
-    //and in this case, we're comparing only Strings .getName()
+    //we're calling the hashCode method from our Inner Class
     @Override
     public int hashCode() {
 //        System.out.println("hashcode called");
-        //in this case we're using the hashCode() method from the String Class
-        //we want to modify our hashCode() because various heavenly body types can now have the same names
-        //we need to make our hashcode method more unique
-
-        //fortunately, enum constants have a hashCode method as well
-        return this.name.hashCode() + this.bodyType.hashCode() + 57;
+        return this.key.hashCode();
     }
 
     //override the toString method to make printing out the heavenly bodies easier
