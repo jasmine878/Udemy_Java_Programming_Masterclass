@@ -79,46 +79,45 @@ public class Main {
         solarSystem.put(temp.getName(), temp);
         planets.add(temp);
 
-//        System.out.println("Planets");
-//        for (HeavenlyBody planet : planets) {
-//            System.out.println("\t" + planet.getName());
-//        }
-//        System.out.println();
-//
-//        HeavenlyBody body = solarSystem.get("Jupiter");
-//        System.out.println("Moons of " + body.getName());
-//        for (HeavenlyBody moon : body.getSatellites()) {
-//            System.out.println("\t" + moon.getName());
-//        }
-//        System.out.println();
-//
-//        HeavenlyBody body2 = solarSystem.get("Mars");
-//        System.out.println("Moons of " + body2.getName());
-//        for (HeavenlyBody moon : body2.getSatellites()) {
-//            System.out.println("\t" + moon.getName());
-//        }
-//
-//        //we're adding all of the satellites from each planet to our new moons hashSet
-//        Set<HeavenlyBody> moons = new HashSet<>();
-//        for (HeavenlyBody planet : planets) {
-//            moons.addAll(planet.getSatellites());
-//        }
-//        System.out.println();
-//
-//        System.out.println("All Moons");
-//        for (HeavenlyBody moon : moons) {
-//            System.out.println("\t" + moon.getName());
-//        }
-//
-//        HeavenlyBody pluto = new HeavenlyBody("Pluto", 842);
-//        planets.add(pluto);
-//
-//        for(HeavenlyBody planet : planets) {
+        System.out.println("Planets");
+        for (HeavenlyBody planet : planets) {
+            System.out.println("\t" + planet.getName());
+        }
+        System.out.println();
+
+        HeavenlyBody body = solarSystem.get("Jupiter");
+        System.out.println("Moons of " + body.getName());
+        for (HeavenlyBody moon : body.getSatellites()) {
+            System.out.println("\t" + moon.getName());
+        }
+        System.out.println();
+
+        HeavenlyBody body2 = solarSystem.get("Mars");
+        System.out.println("Moons of " + body2.getName());
+        for (HeavenlyBody moon : body2.getSatellites()) {
+            System.out.println("\t" + moon.getName());
+        }
+
+        //we're adding all of the satellites from each planet to our new moons hashSet
+        Set<HeavenlyBody> moons = new HashSet<>();
+        for (HeavenlyBody planet : planets) {
+            moons.addAll(planet.getSatellites());
+        }
+        System.out.println();
+
+        System.out.println("All Moons");
+        for (HeavenlyBody moon : moons) {
+            System.out.println("\t" + moon.getName());
+        }
+
+        //we confirmed that our second pluto planet hasn't overwritten the first pluto planet
+        HeavenlyBody pluto = new Planet("Pluto", 842);
+        planets.add(pluto);
+
+        for(HeavenlyBody planet : planets) {
+            //we're using our override method for toString() here
+            System.out.println(planet);
 //            System.out.println(planet.getName() + ": " + planet.getOrbitalPeriod());
-//        }
-//
-//        Object obj = new Object();
-//        obj.equals(obj);
-//        "pluto".equals("");
+        }
     }
 }

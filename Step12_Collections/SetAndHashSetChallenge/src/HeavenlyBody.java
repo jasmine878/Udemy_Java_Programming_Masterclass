@@ -86,7 +86,7 @@ public class HeavenlyBody {
     //and in this case, we're comparing only Strings .getName()
     @Override
     public int hashCode() {
-        System.out.println("hashcode called");
+//        System.out.println("hashcode called");
         //in this case we're using the hashCode() method from the String Class
         //we want to modify our hashCode() because various heavenly body types can now have the same names
         //we need to make our hashcode method more unique
