@@ -1,5 +1,5 @@
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 //this class holds a list of all the stock items in a map
@@ -9,7 +9,7 @@ public class StockList {
     private final Map<String, StockItem> list;
 
     public StockList() {
-        list = new HashMap<>();
+        list = new LinkedHashMap<>();
     }
 
     //gets the Item from our HashMap
@@ -79,7 +79,7 @@ public class StockList {
             //determine the item value
             double itemValue = stockItem.getPrice() * stockItem.getQuantity();
 
-            stockList = stockList + ". There are " + stockItem.getQuantity() + " in stock. Value of items: ";
+            stockList = stockList + stockItem + ". There are " + stockItem.getQuantity() + " in stock. Value of items: ";
             stockList = stockList + String.format("%.2f", itemValue) + "\n";
             totalCost += itemValue;
         }
