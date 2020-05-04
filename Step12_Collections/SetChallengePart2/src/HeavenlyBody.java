@@ -89,6 +89,13 @@ public abstract class HeavenlyBody {
         return this.key.getName() + ": " + this.key.getBodyType() + ", " + this.orbitalPeriod;
     }
 
+    //this method makes a key that we can use to do lookups in our Map object
+    //we're making the method static so that the key can be obtained
+    // without an instance of heavenly body to call the method on
+    public static Key makeKey(String name, BodyTypes bodyType) {
+        return new Key(name, bodyType);
+    }
+
     //creating a static inner Class because it's closely tied to the Heavenly Body class
     //and will not be used in another other situation
     //this is a key class that gives the heavenly body class a field of type key
