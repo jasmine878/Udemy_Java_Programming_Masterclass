@@ -11,6 +11,11 @@ public class StockList {
         list = new HashMap<>();
     }
 
+    //gets the Item from our HashMap
+    public StockItem getItem(String key) {
+        return list.get(key);
+    }
+
     public int addStock(StockItem item) {
         if (item != null) {
             //we're using the item name for our key in our map
