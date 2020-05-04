@@ -10,6 +10,13 @@ public class StockItem implements Comparable<StockItem>{
         this.quantity = 0;
     }
 
+    //overload the Constructor method in case we start with a quantity > 0
+    public StockItem(String name, double price, int quantity) {
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
     public String getName() {
         return name;
     }
