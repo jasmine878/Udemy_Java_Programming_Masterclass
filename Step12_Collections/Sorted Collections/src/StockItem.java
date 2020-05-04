@@ -56,4 +56,17 @@ public class StockItem implements Comparable<StockItem>{
 
         return this.name.hashCode() + 31;
     }
+
+    @Override
+    public int compareTo(StockItem item) {
+        System.out.println("Entering StockItem.compareTo");
+
+        if (this == item) return 0;
+
+        //we have to always check for null, because if we invoke a method on a null value, it will break our code
+        //we're using the in-built compareTo method for a String
+        if (item != null) return this.name.compareToIgnoreCase(item.getName());
+
+        throw new NullPointerException();
+    }
 }
