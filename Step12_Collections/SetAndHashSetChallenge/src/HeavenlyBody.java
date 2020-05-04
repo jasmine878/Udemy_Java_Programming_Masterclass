@@ -121,5 +121,21 @@ public abstract class HeavenlyBody {
             return bodyType;
         }
 
+        @Override
+        //if the key name and body type matches return true
+        public boolean equals(Object obj) {
+            Key key = (Key) obj;
+
+            if (this.name.equals(key.getName())) {
+                return this.bodyType == key.getBodyType();
+            }
+
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.name.hashCode() + this.bodyType.hashCode() + 57;
+        }
     }
 }
