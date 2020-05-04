@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,6 +15,11 @@ public class StockList {
     //gets the Item from our HashMap
     public StockItem getItem(String key) {
         return list.get(key);
+    }
+
+    //returns our HashMap which is unmodifiable
+    public Map<String, StockItem> Items() {
+        return Collections.unmodifiableMap(list);
     }
 
     public int addStock(StockItem item) {
@@ -52,5 +58,32 @@ public class StockList {
         }
 
         return 0;
+    }
+
+    //this method is confusing and convoluted
+    //we're printing our Stock List HashMap
+    //it's returning a list of all of the items in list
+    @Override
+    public String toString() {
+        String stockList = "\nStock List\n";
+        double totalCost = 0.0;
+
+        //Map.Entry interface provides certain methods to access the entry in the Map
+        //By gaining access to the entry of the Map we can easily manipulate them
+        //Map.Entry is a generic and is defined in the java.util package
+        //.entrySet returns a Set containing the Map.Entry values
+        for (Map.Entry<String, StockItem> item : list.entrySet()) {         //we're iterating through the entire Map
+            //.getValue returns the value of the corresponding map entry
+            StockItem stockItem = item.getValue();                          //returns a single stock item
+
+            //determine the item value
+            double itemValue = stockItem.getPrice() * stockItem.getQuantity();
+
+            stockList = stockList + ". There are " + stockItem.getQuantity() + " in stock. Value of items: ";
+            stockList = stockList + itemValue + "\n";
+            totalCost += itemValue;
+        }
+
+        return stockList + "Total stock value " + totalCost;
     }
 }
