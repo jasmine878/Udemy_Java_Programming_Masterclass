@@ -69,4 +69,9 @@ public class StockItem implements Comparable<StockItem>{
 
         throw new NullPointerException();
     }
+
+    @Override
+    public String toString() {
+        return this.name + " : price " + this.price;
+    }
 }
