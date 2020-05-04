@@ -86,7 +86,7 @@ public abstract class HeavenlyBody {
     //override the toString method to make printing out the heavenly bodies easier
     @Override
     public String toString() {
-        return this.name + ": " + this.bodyType + ", " + this.orbitalPeriod;
+        return this.key.getName() + ": " + this.key.getBodyType() + ", " + this.orbitalPeriod;
     }
 
     //creating a static inner Class because it's closely tied to the Heavenly Body class
