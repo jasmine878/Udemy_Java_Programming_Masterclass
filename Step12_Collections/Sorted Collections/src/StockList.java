@@ -33,4 +33,19 @@ public class StockList {
 
         return 0;
     }
+
+    public int sellStock(String item, int quantity) {
+        //we can't sell something that's not in stock.  Assuming we will always get the item inStock
+        //otherwise, our item is set to null for default
+        StockItem inStock = list.getOrDefault(item, null);
+
+        if (inStock != null && inStock.getQuantity() >= quantity && quantity > 0) {
+            //we're deducting the quantity from our stock
+            inStock.adjustQuantity(-quantity);
+
+            return quantity;
+        }
+
+        return 0;
+    }
 }
