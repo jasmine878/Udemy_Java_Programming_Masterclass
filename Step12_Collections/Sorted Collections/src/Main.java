@@ -31,5 +31,9 @@ public class Main {
         stockList.addStock(temp);
 
         System.out.println(stockList);
+
+        for (String stockItem : stockList.Items().keySet()) {
+            System.out.println(stockItem);
+        }
     }
 }
