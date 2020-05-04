@@ -13,5 +13,17 @@ public class Basket {
         list = new HashMap<>();
     }
 
+    public int addToBasket(StockItem item, int quantity) {
+        if (item != null && quantity > 0) {
 
+            //if we don't already have the item in our basket then the qty in our basket should be zero
+            int qtyInBasket = list.getOrDefault(item, 0);
+
+            list.put(item, qtyInBasket + quantity);
+
+            return qtyInBasket;
+        }
+
+        return 0;
+    }
 }
