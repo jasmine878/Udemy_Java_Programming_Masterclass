@@ -99,4 +99,27 @@ public abstract class HeavenlyBody {
     public String toString() {
         return this.name + ": " + this.bodyType + ", " + this.orbitalPeriod;
     }
+
+    //creating a static inner Class because it's closely tied to the Heavenly Body class
+    //and will not be used in another other situation
+    //this is a key class that gives the heavenly body class a field of type key
+
+    public static final class Key {
+        private String name;
+        private BodyTypes bodyType;
+
+        private Key(String name, BodyTypes bodyType) {
+            this.name = name;
+            this.bodyType = bodyType;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public BodyTypes getBodyType() {
+            return bodyType;
+        }
+
+    }
 }
