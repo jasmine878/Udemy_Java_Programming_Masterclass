@@ -37,4 +37,16 @@ public class StockItem implements Comparable<StockItem>{
             this.quantity = newQuantity;
         }
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        System.out.println("Entering StockItem.equals");
+        //return true if the obj shares the same reference to this
+        if (obj == this) return true;
+        if (obj == null || obj.getClass() != this.getClass()) return false;
+
+        String objName = ((StockItem) obj).getName();
+
+        return this.name.equals(objName);
+    }
 }
