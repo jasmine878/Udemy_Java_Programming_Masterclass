@@ -58,7 +58,16 @@ public class StockItem implements Comparable<StockItem>{
         return 0;
     }
 
+    //make sure the amount we remove from our shopping cart actually exists
+    //make sure the amount we remove from our shopping cart is not greater than what's actually in the shopping cart
+    public int unreserveStock(int quantity) {
+        if (quantity <= shoppingCart) {
+            shoppingCart -= quantity;
+            return quantity;
+        }
 
+        return 0;
+    }
 
     @Override
     public boolean equals(Object obj) {
