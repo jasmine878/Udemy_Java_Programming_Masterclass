@@ -61,16 +61,25 @@ public class StockList {
         return 0;
     }
 
+    //with the customer checkout use the item from our LinkedHashMap to checkout
     public int sellStock(String item, int quantity) {
         //we can't sell something that's not in stock.  Assuming we will always get the item inStock
         //otherwise, our item is set to null for default
-        StockItem inStock = list.getOrDefault(item, null);
+//        StockItem inStock = list.getOrDefault(item, null);
+//
+//        if (inStock != null && inStock.availableQuantity() >= quantity && quantity > 0) {
+//            //we're deducting the quantity from our stock
+//            inStock.adjustQuantity(-quantity);
+//
+//            return quantity;
+//        }
+//
+//        return 0;
 
-        if (inStock != null && inStock.availableQuantity() >= quantity && quantity > 0) {
-            //we're deducting the quantity from our stock
-            inStock.adjustQuantity(-quantity);
+        StockItem inStock = list.get(item);
 
-            return quantity;
+        if (inStock != null && quantity > 0) {
+            return inStock.finalizeStock(quantity);
         }
 
         return 0;
