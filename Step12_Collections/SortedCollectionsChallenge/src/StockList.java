@@ -46,7 +46,7 @@ public class StockList {
             StockItem inStock = list.getOrDefault(item.getName(), item);
 
             //if the item exists add our existing quantity to our item qty
-            if (inStock != item) item.adjustQuantity(inStock.getQuantity());
+            if (inStock != item) item.adjustQuantity(inStock.availableQuantity());
 
             //we're adding the item to our inventory
             //with an existing item, we're updating the quantity that exists first
@@ -55,7 +55,7 @@ public class StockList {
             list.put(item.getName(), item);
 
             //then we're returning the updated quantity of the item
-            return item.getQuantity();
+            return item.availableQuantity();
         }
 
         return 0;
@@ -66,7 +66,7 @@ public class StockList {
         //otherwise, our item is set to null for default
         StockItem inStock = list.getOrDefault(item, null);
 
-        if (inStock != null && inStock.getQuantity() >= quantity && quantity > 0) {
+        if (inStock != null && inStock.availableQuantity() >= quantity && quantity > 0) {
             //we're deducting the quantity from our stock
             inStock.adjustQuantity(-quantity);
 
@@ -93,9 +93,9 @@ public class StockList {
             StockItem stockItem = item.getValue();                          //returns a single stock item
 
             //determine the item value
-            double itemValue = stockItem.getPrice() * stockItem.getQuantity();
+            double itemValue = stockItem.getPrice() * stockItem.availableQuantity();
 
-            stockList = stockList + stockItem + ". There are " + stockItem.getQuantity() + " in stock. Value of items: ";
+            stockList = stockList + stockItem + ". There are " + stockItem.availableQuantity() + " in stock. Value of items: ";
             stockList = stockList + String.format("%.2f", itemValue) + "\n";
             totalCost += itemValue;
         }

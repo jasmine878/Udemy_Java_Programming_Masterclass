@@ -28,7 +28,7 @@ public class StockItem implements Comparable<StockItem>{
     }
 
     //available quantity is quantity minus what's being held in a shopping cart
-    public int getQuantity() {
+    public int availableQuantity() {
         return quantity - shoppingCart;
     }
 
@@ -48,9 +48,11 @@ public class StockItem implements Comparable<StockItem>{
         }
     }
 
-    //keep track of how many items are in people's shopping carts
+    //only add to the shopping cart if the quantity is still available
+    //calculate what's still available with the getQauntity() method
+    //we don't modify the actual quantity until we checkout
     public int reserveStock(int quantity) {
-        if (quantity <= this.quantity) {
+        if (quantity <= availableQuantity()) {            //USE THE METHOD, NOT THE FIELD
             shoppingCart += quantity;
             return quantity;
         }
@@ -68,6 +70,19 @@ public class StockItem implements Comparable<StockItem>{
 
         return 0;
     }
+
+    //when we checkout finalize the changes in quantity and remove from shopping cart
+    public int finalizeStock(int quantity) {
+        if (quantity <= shoppingCart) {
+            quantity -= quantity;
+            shoppingCart -= quantity;
+
+            return quantity;
+        }
+
+        return 0;
+    }
+
 
     @Override
     public boolean equals(Object obj) {
