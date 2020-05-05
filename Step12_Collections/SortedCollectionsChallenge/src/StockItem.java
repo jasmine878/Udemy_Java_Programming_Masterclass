@@ -27,8 +27,9 @@ public class StockItem implements Comparable<StockItem>{
         return price;
     }
 
+    //available quantity is quantity minus what's being held in a shopping cart
     public int getQuantity() {
-        return quantity;
+        return quantity - shoppingCart;
     }
 
     public void setPrice(double price) {
