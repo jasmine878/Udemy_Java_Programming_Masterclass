@@ -83,6 +83,7 @@ public class Main {
         }
     }
 
+    //use our reserveStock method in StockList class
     public static int sellItem(Basket basket, String item, int quantity) {
         //retrieve the item from stock list
         StockItem stockItem = stockList.getItem(item);
@@ -92,9 +93,9 @@ public class Main {
             return 0;
         }
 
-        if (stockList.sellStock(item, quantity) > 0) {
+        if (stockList.reserveStock(item, quantity) > 0) {
             basket.addToBasket(stockItem, quantity);
-            return quantity;
+            return basket.addToBasket(stockItem, quantity);
         }
 
         return 0;
