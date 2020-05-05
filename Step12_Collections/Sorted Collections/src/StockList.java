@@ -18,9 +18,12 @@ public class StockList {
     }
 
     //returns our HashMap which is unmodifiable
+    //only the list itself is unmodifiable and will generate an error
+    //However, we can still access the individual items in the list and then modify them
     public Map<String, StockItem> Items() {
         return Collections.unmodifiableMap(list);
     }
+
 
     public int addStock(StockItem item) {
         if (item != null) {

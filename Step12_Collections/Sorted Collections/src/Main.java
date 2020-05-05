@@ -67,8 +67,13 @@ public class Main {
         //we can't modify the stockList directly using Items method
         // because Items method uses an unmodifiable List
         //THIS RETURNS AN ERROR!
-        temp = new StockItem("pen", 1.12);
-        stockList.Items().put(temp.getName(), temp);
+//        temp = new StockItem("pen", 1.12);
+//        stockList.Items().put(temp.getName(), temp);
+
+        //however, we can still update the individual items in the stockList
+        stockList.Items().get("car").adjustQuantity(2000);
+        stockList.Items().get("car").adjustQuantity(-1000);
+        System.out.println(stockList);
     }
 
     public static int sellItem(Basket basket, String item, int quantity) {
