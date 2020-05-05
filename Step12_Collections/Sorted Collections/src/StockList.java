@@ -24,6 +24,19 @@ public class StockList {
         return Collections.unmodifiableMap(list);
     }
 
+    //here we're adding double protection
+    //first we're creating another LinkedHashMap
+    //and we're making it an unmodifiable map
+    //if someone modifies the individual items, the original LinkedHashMap will not be affected
+    public Map<String, Double> PriceList() {
+        Map<String, Double> prices = new LinkedHashMap<>();
+
+        for (Map.Entry<String, StockItem> item: list.entrySet()) {
+            prices.put(item.getKey(), item.getValue().getPrice());
+        }
+
+        return Collections.unmodifiableMap(prices);
+    }
 
     public int addStock(StockItem item) {
         if (item != null) {
