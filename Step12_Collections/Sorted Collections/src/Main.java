@@ -41,6 +41,25 @@ public class Main {
         for (String stockItem : stockList.Items().keySet()) {
             System.out.println(stockItem);
         }
+
+        Basket timsBasket = new Basket("Tim");
+        sellItem(timsBasket, "car", 1);
+        System.out.println(timsBasket);
+
+        sellItem(timsBasket, "car", 1);
+        System.out.println(timsBasket);
+
+        //test what happens when inventory doesn't exist
+        sellItem(timsBasket, "car", 1);
+        sellItem(timsBasket, "spanner", 5);
+        System.out.println(timsBasket);
+
+        sellItem(timsBasket, "juice", 4);
+        sellItem(timsBasket, "cup", 12);
+        sellItem(timsBasket, "bread", 1);
+        System.out.println(timsBasket);
+
+        System.out.println(stockList);
     }
 
     public static int sellItem(Basket basket, String item, int quantity) {

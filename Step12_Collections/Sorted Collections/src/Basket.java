@@ -40,7 +40,7 @@ public class Basket {
 
         for (Map.Entry<StockItem, Integer> item : list.entrySet()) {
             stockList = stockList + item.getKey() + ". " + item.getValue() + " purchased\n";
-            totalCost += item.getKey().getPrice() + item.getValue();
+            totalCost += item.getKey().getPrice() * item.getValue();
         }
 
         return stockList + "Total cost " + totalCost;
