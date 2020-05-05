@@ -28,6 +28,26 @@ public class Basket {
         return 0;
     }
 
+    public int removeFromBasket(StockItem item, int quantity) {
+        if (item != null && quantity > 0) {
+            //check if we already have the item in the basket
+            int inBasket = list.getOrDefault(item, 0);
+            int newQuantity = inBasket + quantity;
+
+            //update customerBasket with the updated quantity
+            if (newQuantity > 0) {
+                list.put(item, newQuantity);
+
+                return quantity;
+                //if an item has 0 quantity then completely remove it from our basket
+            } else if (newQuantity == 0) {
+                list.remove(item);
+            }
+        }
+        //the updated quantity should not be less than 0
+        return 0;
+    }
+
     //gets the items from our HashMap
     public Map<StockItem, Integer> getItems() {
         return Collections.unmodifiableMap(list);
