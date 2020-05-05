@@ -1,6 +1,6 @@
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 //create a basket for each unique customer
 //each customer will have their own set of stockItems
@@ -11,7 +11,7 @@ public class Basket {
 
     public Basket(String name) {
         this.name = name;
-        list = new HashMap<>();
+        list = new TreeMap<>();
     }
 
     public int addToBasket(StockItem item, int quantity) {
