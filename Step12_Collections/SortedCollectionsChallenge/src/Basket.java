@@ -48,6 +48,11 @@ public class Basket {
         return 0;
     }
 
+    //empties the basket with a customer checkout
+    public void clearBasket() {
+        this.list.clear();
+    }
+
     //gets the items from our HashMap
     public Map<StockItem, Integer> getItems() {
         return Collections.unmodifiableMap(list);
