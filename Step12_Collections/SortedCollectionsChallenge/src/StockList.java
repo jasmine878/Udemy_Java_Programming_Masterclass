@@ -87,6 +87,16 @@ public class StockList {
         return 0;
     }
 
+    public int unreserveStock(String item, int quantity) {
+        StockItem inStock = list.get(item);
+
+        if (inStock != null & quantity > 0) {
+            return inStock.unreserveStock(quantity);
+        }
+
+        return 0;
+    }
+
     //this method is confusing and convoluted
     //we're printing our Stock List HashMap
     //it's returning a list of all of the items in list
