@@ -1,3 +1,5 @@
+import java.util.Map;
+
 public class Main {
     private static StockList stockList = new StockList();
 
@@ -72,8 +74,13 @@ public class Main {
 
         //however, we can still update the individual items in the stockList
         stockList.Items().get("car").adjustQuantity(2000);
-        stockList.Items().get("car").adjustQuantity(-1000);
+        stockList.getItem("car").adjustQuantity(-1000);
         System.out.println(stockList);
+        System.out.println();
+
+        for (Map.Entry<String, Double> price : stockList.PriceList().entrySet()) {
+            System.out.println(price.getKey() + " costs " + price.getValue());
+        }
     }
 
     public static int sellItem(Basket basket, String item, int quantity) {
