@@ -48,6 +48,18 @@ public class StockItem implements Comparable<StockItem>{
         }
     }
 
+    //keep track of how many items are in people's shopping carts
+    public int reserveStock(int quantity) {
+        if (quantity <= this.quantity) {
+            shoppingCart += quantity;
+            return quantity;
+        }
+
+        return 0;
+    }
+
+
+
     @Override
     public boolean equals(Object obj) {
         System.out.println("Entering StockItem.equals");
