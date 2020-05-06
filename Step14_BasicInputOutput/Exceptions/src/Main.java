@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -10,8 +11,11 @@ public class Main {
 //        System.out.println(divideError(x, y));
         System.out.println("=========================");
 
-        int num1 = getIntLBYL();
-        System.out.println("x is " + num1);
+//        int num1 = getIntLBYL();
+//        System.out.println("x is " + num1);
+
+        int num2 = getIntEAFP();
+        System.out.println("x is " + num2);
     }
 
     //lbyl - Look before you leap in coding
@@ -68,5 +72,15 @@ public class Main {
         }
 
         return 0;
+    }
+
+    private static int getIntEAFP() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter an integer");
+        try {
+            return scanner.nextInt();
+        } catch(InputMismatchException error) {
+            return 0;
+        }
     }
 }
