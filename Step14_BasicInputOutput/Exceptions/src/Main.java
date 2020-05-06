@@ -1,6 +1,10 @@
 public class Main {
     public static void main(String[] args) {
+        int x = 98;
+        int y = 0;
 
+        System.out.println(divideAttempt1(x, y));
+        System.out.println(divideAttempt2(x, y));
     }
 
     //lbyl - Look before you leap in coding
