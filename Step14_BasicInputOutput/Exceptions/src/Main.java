@@ -5,6 +5,7 @@ public class Main {
 
         System.out.println(divideAttempt1(x, y));
         System.out.println(divideAttempt2(x, y));
+        System.out.println(divideError(x, y));
     }
 
     //lbyl - Look before you leap in coding
@@ -25,5 +26,10 @@ public class Main {
         } catch(ArithmeticException error) {
             return 0;
         }
+    }
+
+    //dividing by 0 causes an error
+    private static int divideError(int x, int y) {
+        return x / y;
     }
 }
