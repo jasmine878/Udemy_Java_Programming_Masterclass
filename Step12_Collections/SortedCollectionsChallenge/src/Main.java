@@ -84,6 +84,7 @@ public class Main {
     }
 
     //use our reserveStock method in StockList class
+    //checks to make sure quantity is in the customer shoppin cart
     public static int sellItem(Basket basket, String item, int quantity) {
         //retrieve the item from stock list
         StockItem stockItem = stockList.getItem(item);
@@ -94,8 +95,25 @@ public class Main {
         }
 
         if (stockList.reserveStock(item, quantity) > 0) {
-            basket.addToBasket(stockItem, quantity);
+
             return basket.addToBasket(stockItem, quantity);
+        }
+
+        return 0;
+    }
+
+    public static int removeItem(Basket basket, String item, int quantity) {
+        //retrieve the item from stock list
+        StockItem stockItem = stockList.getItem(item);
+
+        if (stockItem == null) {
+            System.out.println("We don't sell " + item);
+            return 0;
+        }
+
+        if (basket.removeFromBasket(stockItem, quantity) == quantity) {
+
+            return stockList.unreserveStock(item, quantity);
         }
 
         return 0;
