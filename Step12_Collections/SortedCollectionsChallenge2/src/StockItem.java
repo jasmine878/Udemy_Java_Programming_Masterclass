@@ -51,10 +51,10 @@ public class StockItem implements Comparable<StockItem>{
     //only add to the shopping cart if the quantity is still available
     //calculate what's still available with the getQauntity() method
     //we don't modify the actual quantity until we checkout
-    public int reserveStock(int quantity) {
-        if (quantity <= availableQuantity()) {            //USE THE METHOD, NOT THE FIELD
-            shoppingCart += quantity;
-            return quantity;
+    public int reserveStock(int qty) {
+        if (qty <= availableQuantity()) {            //USE THE METHOD, NOT THE FIELD
+            shoppingCart += qty;
+            return qty;
         }
 
         return 0;
@@ -62,22 +62,22 @@ public class StockItem implements Comparable<StockItem>{
 
     //make sure the amount we remove from our shopping cart actually exists
     //make sure the amount we remove from our shopping cart is not greater than what's actually in the shopping cart
-    public int unreserveStock(int quantity) {
-        if (quantity <= shoppingCart) {
-            shoppingCart -= quantity;
-            return quantity;
+    public int unreserveStock(int qty) {
+        if (qty <= shoppingCart) {
+            shoppingCart -= qty;
+            return qty;
         }
 
         return 0;
     }
 
     //when we checkout finalize the changes in quantity and remove from shopping cart
-    public int finalizeStock(int quantity) {
-        if (quantity <= shoppingCart) {
-            quantity -= quantity;
-            shoppingCart -= quantity;
+    public int finalizeStock(int qty) {
+        if (qty <= shoppingCart) {
+            quantity -= qty;
+            shoppingCart -= qty;
 
-            return quantity;
+            return qty;
         }
 
         return 0;

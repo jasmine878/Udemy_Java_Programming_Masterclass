@@ -57,14 +57,41 @@ public class Main {
         }
 
         sellItem(timsBasket, "spanner", 5);
-        System.out.println(timsBasket);
 
         sellItem(timsBasket, "juice", 4);
         sellItem(timsBasket, "cup", 12);
         sellItem(timsBasket, "bread", 1);
+
+        Basket basket = new Basket("customer");
+        sellItem(basket,"cup", 100);
+        sellItem(basket, "juice", 5);
+        removeItem(basket, "cup", 1);
+        System.out.println(basket);
+
+        removeItem(timsBasket, "car", 1);
+        removeItem(timsBasket, "cup", 9);
+        removeItem(timsBasket, "car", 1);
+        System.out.println("cars removed: " + removeItem(timsBasket, "car", 1));    //should not remove any
+
         System.out.println(timsBasket);
 
+        //remove all items in Tim's basket
+        removeItem(timsBasket, "bread", 1);
+        removeItem(timsBasket, "cup", 3);
+        removeItem(timsBasket, "juice", 4);
+        removeItem(timsBasket, "cup", 3);
+        System.out.println(timsBasket);
+
+        System.out.println("\nDisplay stock list before and after checkout");
+        System.out.println(basket);
         System.out.println(stockList);
+        checkout(basket);
+        System.out.println(basket);
+        System.out.println(stockList);
+
+
+
+
 
         //we can't modify the stockList directly using Items method
         // because Items method uses an unmodifiable List
@@ -73,14 +100,13 @@ public class Main {
 //        stockList.Items().put(temp.getName(), temp);
 
         //however, we can still update the individual items in the stockList
-        stockList.Items().get("car").adjustQuantity(2000);
-        stockList.getItem("car").adjustQuantity(-1000);
-        System.out.println(stockList);
-        System.out.println();
+//        stockList.Items().get("car").adjustQuantity(2000);
+//        stockList.getItem("car").adjustQuantity(-1000);
+//        System.out.println(stockList);
+//        System.out.println();
 
-        for (Map.Entry<String, Double> price : stockList.PriceList().entrySet()) {
-            System.out.println(price.getKey() + " costs " + price.getValue());
-        }
+        checkout(timsBasket);
+        System.out.println(timsBasket);
     }
 
     //use our reserveStock method in StockList class
@@ -94,7 +120,7 @@ public class Main {
             return 0;
         }
 
-        if (stockList.reserveStock(item, quantity) > 0) {
+        if (stockList.reserveStock(item, quantity) != 0) {
 
             return basket.addToBasket(stockItem, quantity);
         }
@@ -112,7 +138,7 @@ public class Main {
         }
 
         if (basket.removeFromBasket(stockItem, quantity) == quantity) {
-
+            System.out.println("REMOVED: " + item + ", " + quantity);
             return stockList.unreserveStock(item, quantity);
         }
 
