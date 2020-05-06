@@ -1,4 +1,5 @@
 import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Example {
@@ -8,7 +9,14 @@ public class Example {
     }
 
     private static int divide() {
-        int x = getInt();
+        int x;
+
+        try {
+            x = getInt();
+        } catch (NoSuchElementException error) {
+            x = getInt();
+        }
+
         int y = getInt();
         System.out.println("x is " + x + ", y is " + y);
 
