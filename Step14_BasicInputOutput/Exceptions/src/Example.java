@@ -9,18 +9,22 @@ public class Example {
     }
 
     private static int divide() {
-        int x;
+        int x, y;
 
         try {
             x = getInt();
-        } catch (NoSuchElementException error) {
-            x = getInt();
-        }
+            y = getInt();
 
-        int y = getInt();
+        } catch (NoSuchElementException error) {
+            throw new ArithmeticException("no suitable input");
+        }
         System.out.println("x is " + x + ", y is " + y);
 
-        return x / y;
+        try {
+            return x / y;
+        } catch(ArithmeticException error) {
+            throw new ArithmeticException("attempt to divide by zero");
+        }
     }
 
     private static int getInt() {
