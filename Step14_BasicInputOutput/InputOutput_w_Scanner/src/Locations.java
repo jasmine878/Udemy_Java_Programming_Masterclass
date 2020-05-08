@@ -12,37 +12,37 @@ public class Locations implements Map<Integer, Location> {
 
     @Override
     public int size() {
-        return 0;
+        return locations.size();
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return locations.isEmpty();
     }
 
     @Override
-    public boolean containsKey(Object o) {
-        return false;
+    public boolean containsKey(Object key) {
+        return locations.containsKey(key);
     }
 
     @Override
-    public boolean containsValue(Object o) {
-        return false;
+    public boolean containsValue(Object value) {
+        return locations.containsValue(value);
     }
 
     @Override
-    public Location get(Object o) {
-        return null;
+    public Location get(Object key) {
+        return locations.get(key);
     }
 
     @Override
-    public Location put(Integer integer, Location location) {
-        return null;
+    public Location put(Integer key, Location value) {
+        return locations.put(key, value);
     }
 
     @Override
-    public Location remove(Object o) {
-        return null;
+    public Location remove(Object key) {
+        return locations.remove(key);
     }
 
     @Override
@@ -52,21 +52,21 @@ public class Locations implements Map<Integer, Location> {
 
     @Override
     public void clear() {
-
+        locations.clear();
     }
 
     @Override
     public Set<Integer> keySet() {
-        return null;
+        return locations.keySet();
     }
 
     @Override
     public Collection<Location> values() {
-        return null;
+        return locations.values();
     }
 
     @Override
     public Set<Entry<Integer, Location>> entrySet() {
-        return null;
+        return locations.entrySet();
     }
 }
