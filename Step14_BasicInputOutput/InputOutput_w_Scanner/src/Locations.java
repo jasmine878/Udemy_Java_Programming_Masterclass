@@ -10,6 +10,7 @@ import java.util.Set;
 public class Locations implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new HashMap<>();
 
+
     @Override
     public int size() {
         return locations.size();
@@ -45,6 +46,7 @@ public class Locations implements Map<Integer, Location> {
         return locations.remove(key);
     }
 
+    //we're not going to implement this for now
     @Override
     public void putAll(Map<? extends Integer, ? extends Location> map) {
 

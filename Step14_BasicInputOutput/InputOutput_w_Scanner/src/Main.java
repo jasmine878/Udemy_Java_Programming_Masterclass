@@ -3,8 +3,8 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
-    //our hashMap has an Integer for the key and the Class Location for our values
-    private static Map<Integer, Location> locations = new HashMap<>();
+    //we're replacing our locations map with our new Map class
+    private static Locations locations = new Locations();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
