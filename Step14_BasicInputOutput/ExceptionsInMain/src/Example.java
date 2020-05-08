@@ -3,11 +3,15 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Example {
+
+    //a real world application would normally catch all exceptions in main method
+    //instead of the divide method
     public static void main(String[] args) {
         try {
             int result = divide();
             System.out.println(result);
-        } catch (ArithmeticException error) {
+            // we use a bitwise OR to check multiple exceptions
+        } catch (ArithmeticException | NoSuchElementException error) {
             System.out.println(error.toString());
             System.out.println("Unable to perform division, autopilot shutting down");
         }
@@ -17,16 +21,16 @@ public class Example {
     private static int divide() {
         int x, y;
 
-        try {
+//        try {
             x = getInt();
             y = getInt();
             System.out.println("x is " + x + ", y is " + y);
             return x / y;
-        } catch (NoSuchElementException error) {
-            throw new NoSuchElementException("no suitable input");
-        } catch(ArithmeticException error) {
-            throw new ArithmeticException("attempt to divide by zero");
-        }
+//        } catch (NoSuchElementException error) {
+//            throw new NoSuchElementException("no suitable input");
+//        } catch(ArithmeticException error) {
+//            throw new ArithmeticException("attempt to divide by zero");
+//        }
     }
 
     private static int getInt() {
