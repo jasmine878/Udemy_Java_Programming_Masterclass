@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,6 +11,29 @@ import java.util.Set;
 //and we're implementing the methods that are part of the Map Interface
 public class Locations implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new HashMap<>();
+
+    public static void main(String[] args) {
+        //create a fileWriter object
+        FileWriter locFile = null;
+
+        //we can't ignore IOException error here.  It's a Java checked exception, and it prevents the code from compiling
+        //therefore, we put it in a try block
+        try {
+            //pass the file name as the parameter
+            locFile = new FileWriter("locations.txt");
+
+            //write data to the file
+            for(Location location : locations.values()) {
+                locFile.write(location.getLocationID() + ", " + location.getDescription());
+            }
+            //when all of the data has been written to the file, close the file
+            locFile.close();
+        } catch(IOException error) {
+            System.out.println("In catch block");
+            error.printStackTrace();
+        }
+
+    }
 
     //this is a static initialization block
     //static initialization blocks are only executed once when the Locations Class is loaded
