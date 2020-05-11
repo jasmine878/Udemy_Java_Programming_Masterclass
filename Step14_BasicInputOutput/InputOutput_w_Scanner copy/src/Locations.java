@@ -26,13 +26,21 @@ public class Locations implements Map<Integer, Location> {
             for(Location location : locations.values()) {
                 locFile.write(location.getLocationID() + ", " + location.getDescription() + "\n");
             }
-            //when all of the data has been written to the file, close the file
-            locFile.close();
         } catch(IOException error) {
             System.out.println("In catch block");
             error.printStackTrace();
+        } finally {
+            System.out.println("in finally block");
+            //when all of the data has been written to the file, close the file
+            try {
+                if (locFile != null) {
+                    System.out.println("Attempting to close locfile");
+                    locFile.close();
+                }
+            } catch (IOException error) {
+                error.printStackTrace();
+            }
         }
-
     }
 
     //this is a static initialization block
