@@ -12,7 +12,7 @@ import java.util.Set;
 public class Locations implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new HashMap<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //create a fileWriter object
         FileWriter locFile = null;
 
@@ -26,19 +26,12 @@ public class Locations implements Map<Integer, Location> {
             for(Location location : locations.values()) {
                 locFile.write(location.getLocationID() + ", " + location.getDescription() + "\n");
             }
-        } catch(IOException error) {
-            System.out.println("In catch block");
-            error.printStackTrace();
         } finally {
             System.out.println("in finally block");
             //when all of the data has been written to the file, close the file
-            try {
-                if (locFile != null) {
-                    System.out.println("Attempting to close locfile");
-                    locFile.close();
-                }
-            } catch (IOException error) {
-                error.printStackTrace();
+            if (locFile != null) {
+                System.out.println("Attempting to close locfile");
+                locFile.close();
             }
         }
     }
