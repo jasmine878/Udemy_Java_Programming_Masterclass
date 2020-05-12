@@ -25,7 +25,7 @@ public class Locations implements Map<Integer, Location> {
             //write data to the file
             for(Location location : locations.values()) {
                 locFile.write(location.getLocationID() + ", " + location.getDescription() + "\n");
-                throw new IOException("test exception thrown while writing");
+//                throw new IOException("test exception thrown while writing");
             }
         } finally {
             System.out.println("in finally block");
