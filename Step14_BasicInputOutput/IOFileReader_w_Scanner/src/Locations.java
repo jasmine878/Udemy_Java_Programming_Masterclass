@@ -13,28 +13,36 @@ public class Locations implements Map<Integer, Location> {
     private static Map<Integer, Location> locations = new HashMap<>();
 
     public static void main(String[] args) throws IOException {
-        //create a fileWriter object
-        FileWriter locFile = null;
-
-        //we can't ignore IOException error here.  It's a Java checked exception, and it prevents the code from compiling
-        //therefore, we put it in a try block
-        try {
-            //pass the file name as the parameter
-            locFile = new FileWriter("locations.txt");
-
-            //write data to the file
-            for(Location location : locations.values()) {
+        try(FileWriter locFile = new FileWriter("locations.txt")) {
+            for (Location location : locations.values()) {
                 locFile.write(location.getLocationID() + ", " + location.getDescription() + "\n");
-//                throw new IOException("test exception thrown while writing");
-            }
-        } finally {
-            System.out.println("in finally block");
-            //when all of the data has been written to the file, close the file
-            if (locFile != null) {
-                System.out.println("Attempting to close locfile");
-                locFile.close();
+
             }
         }
+
+
+//        //create a fileWriter object
+//        FileWriter locFile = null;
+//
+//        //we can't ignore IOException error here.  It's a Java checked exception, and it prevents the code from compiling
+//        //therefore, we put it in a try block
+//        try {
+//            //pass the file name as the parameter
+//            locFile = new FileWriter("locations.txt");
+//
+//            //write data to the file
+//            for(Location location : locations.values()) {
+//                locFile.write(location.getLocationID() + ", " + location.getDescription() + "\n");
+////                throw new IOException("test exception thrown while writing");
+//            }
+//        } finally {
+//            System.out.println("in finally block");
+//            //when all of the data has been written to the file, close the file
+//            if (locFile != null) {
+//                System.out.println("Attempting to close locfile");
+//                locFile.close();
+//            }
+//        }
     }
 
     //this is a static initialization block
